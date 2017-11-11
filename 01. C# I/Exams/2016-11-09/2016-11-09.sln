@@ -15,6 +15,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Secret Message", "3. Sec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecretMessage", "SecretMessage\SecretMessage.csproj", "{D65261FB-F180-42B0-AC11-271DAF05407E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Merging numbers", "4. Merging numbers", "{4D918E3A-CDD2-4B5D-94E6-C41086C5E47A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MergingNumbers", "MergingNumbers\MergingNumbers.csproj", "{9217F95D-FC2D-41D2-9625-111A50974EEA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,10 @@ Global
 		{D65261FB-F180-42B0-AC11-271DAF05407E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D65261FB-F180-42B0-AC11-271DAF05407E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D65261FB-F180-42B0-AC11-271DAF05407E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9217F95D-FC2D-41D2-9625-111A50974EEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9217F95D-FC2D-41D2-9625-111A50974EEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9217F95D-FC2D-41D2-9625-111A50974EEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9217F95D-FC2D-41D2-9625-111A50974EEA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,5 +49,6 @@ Global
 		{E35869EF-6478-468D-9403-9E4C53A2C9A0} = {91869D08-E68E-445E-93C2-B40DADC6F6A4}
 		{C61A8B05-D465-4DF4-A023-1C5E7C14B68B} = {E0EBBBF4-6926-417B-9995-905D72F31AD6}
 		{D65261FB-F180-42B0-AC11-271DAF05407E} = {8D6B080F-F88F-4793-9550-1F99391D54F5}
+		{9217F95D-FC2D-41D2-9625-111A50974EEA} = {4D918E3A-CDD2-4B5D-94E6-C41086C5E47A}
 	EndGlobalSection
 EndGlobal
