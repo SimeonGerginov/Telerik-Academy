@@ -7,6 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Feathers", "1.Feathers", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Feathers", "Feathers\Feathers.csproj", "{F8BC4A30-EE67-4CE4-B16E-E33F1122933D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Busses", "2.Busses", "{2C65BEDF-BCC2-45F1-A2CC-8838C4772946}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Busses", "Busses\Busses.csproj", "{432A7D61-4565-4D1A-A2F5-6E1576AB27DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,11 +21,16 @@ Global
 		{F8BC4A30-EE67-4CE4-B16E-E33F1122933D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8BC4A30-EE67-4CE4-B16E-E33F1122933D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8BC4A30-EE67-4CE4-B16E-E33F1122933D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{432A7D61-4565-4D1A-A2F5-6E1576AB27DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{432A7D61-4565-4D1A-A2F5-6E1576AB27DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{432A7D61-4565-4D1A-A2F5-6E1576AB27DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{432A7D61-4565-4D1A-A2F5-6E1576AB27DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F8BC4A30-EE67-4CE4-B16E-E33F1122933D} = {52B15E00-1266-44CB-B016-A96F6A1125A9}
+		{432A7D61-4565-4D1A-A2F5-6E1576AB27DA} = {2C65BEDF-BCC2-45F1-A2CC-8838C4772946}
 	EndGlobalSection
 EndGlobal
