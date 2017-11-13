@@ -4,8 +4,8 @@ namespace Feathers
 {
     public class Startup
     {
-        private const long magicNumberForMultiply = 123123123123;
-        private const int magicNumberForDivide = 317;
+        private const long MagicNumberForMultiply = 123123123123;
+        private const int MagicNumberForDivide = 317;
 
         public static void Main()
         {
@@ -16,11 +16,11 @@ namespace Feathers
 
             if (B % 2 == 0)
             {
-                result *= (double)magicNumberForMultiply;
+                result *= (double)MagicNumberForMultiply;
             }
             else
             {
-                result /= (double)magicNumberForDivide;
+                result /= (double)MagicNumberForDivide;
             }
 
             Console.WriteLine("{0:F4}", result);

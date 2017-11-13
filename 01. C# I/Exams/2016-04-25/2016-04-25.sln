@@ -15,6 +15,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.NumberOfDigits - Morning"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumberOfDigits", "NumberOfDigits\NumberOfDigits.csproj", "{65CA1AE9-ECDA-4CC1-A952-AFB2788AFB66}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.NumberOfPages - Evening", "3.NumberOfPages - Evening", "{5B035F10-A61F-401B-8505-E5E53AB3E314}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumberOfPages", "NumberOfPages\NumberOfPages.csproj", "{CDE46269-1FAF-4A3B-A004-63AF23B4ADE6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,10 @@ Global
 		{65CA1AE9-ECDA-4CC1-A952-AFB2788AFB66}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65CA1AE9-ECDA-4CC1-A952-AFB2788AFB66}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65CA1AE9-ECDA-4CC1-A952-AFB2788AFB66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDE46269-1FAF-4A3B-A004-63AF23B4ADE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDE46269-1FAF-4A3B-A004-63AF23B4ADE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDE46269-1FAF-4A3B-A004-63AF23B4ADE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDE46269-1FAF-4A3B-A004-63AF23B4ADE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,5 +49,6 @@ Global
 		{F8BC4A30-EE67-4CE4-B16E-E33F1122933D} = {52B15E00-1266-44CB-B016-A96F6A1125A9}
 		{432A7D61-4565-4D1A-A2F5-6E1576AB27DA} = {2C65BEDF-BCC2-45F1-A2CC-8838C4772946}
 		{65CA1AE9-ECDA-4CC1-A952-AFB2788AFB66} = {5F27CAC9-25B8-4C14-8EDF-8B1237CFFD8F}
+		{CDE46269-1FAF-4A3B-A004-63AF23B4ADE6} = {5B035F10-A61F-401B-8505-E5E53AB3E314}
 	EndGlobalSection
 EndGlobal
