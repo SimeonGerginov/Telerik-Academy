@@ -47,7 +47,7 @@ namespace Batman
             string emptySpacesPartOfBody = new string(' ', dictionary[S] + 1);
             string partOfBody = new string(C, (S * 2) + 1);
 
-            for (int i = 0; i < dictionary[S]; i++)
+            for (int i = 0; i < S / 3; i++)
             {
                 Console.Write(emptySpacesPartOfBody + partOfBody);
                 Console.WriteLine();
