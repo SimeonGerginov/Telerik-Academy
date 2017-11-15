@@ -12,14 +12,20 @@ namespace BobbyAvokadoto
             return maskedComb >> position;
         }
 
-        private static int GetMinLength(int firstLength, int secondLength)
+        private static bool IsOverlaping(uint head, uint comb)
         {
-            if (firstLength < secondLength)
+            bool isOverlaping = false;
+            uint hc = head ^ comb;
+
+            for (int i = 0; i < 32; i++)
             {
-                return firstLength;
+                if (GetBitValue(head, i) == 1 && GetBitValue(hc, i) == 0)
+                {
+                    isOverlaping = true;
+                }
             }
 
-            return secondLength;
+            return isOverlaping;
         }
 
         private static int GetCountOfOneBits(uint comb)
@@ -41,43 +47,27 @@ namespace BobbyAvokadoto
 
         public static void Main()
         {
-            var N = uint.Parse(Console.ReadLine());
+            var head = uint.Parse(Console.ReadLine());
             var C = uint.Parse(Console.ReadLine());
 
-            var lengthOfNInBits = Convert.ToString(N, 2).Length;
             uint bestComb = uint.MinValue;
-            var countOfOneBitsInComb = int.MinValue;
+            var maxTeeths = 0;
 
             for (int i = 0; i < C; i++)
             {
                 var currentComb = uint.Parse(Console.ReadLine());
-                var lengthOfCombInBits = Convert.ToString(currentComb, 2).Length;
 
-                var minLengthOfBits = GetMinLength(lengthOfNInBits, lengthOfCombInBits);
-                var counterForCurrentComb = 0;
-
-                for (int k = 0; k < minLengthOfBits; k++)
+                if (IsOverlaping(head, currentComb))
                 {
-                    var bitOfN = GetBitValue(N, k);
-                    var bitOfComb = GetBitValue(currentComb, k);
-
-                    if (bitOfN == bitOfComb)
-                    {
-                        break;
-                    }
-
-                    counterForCurrentComb++;
+                    continue;
                 }
 
-                if (counterForCurrentComb == minLengthOfBits)
-                {
-                    var currentCountOfOneBitsInComb = GetCountOfOneBits(currentComb);
+                var teeths = GetCountOfOneBits(currentComb);
 
-                    if (countOfOneBitsInComb < currentCountOfOneBitsInComb)
-                    {
-                        countOfOneBitsInComb = currentCountOfOneBitsInComb;
-                        bestComb = currentComb;
-                    }
+                if (teeths > maxTeeths)
+                {
+                    maxTeeths = teeths;
+                    bestComb = currentComb;
                 }
             }
 
