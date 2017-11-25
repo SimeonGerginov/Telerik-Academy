@@ -7,6 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Mythical numbers", "1. M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MythicalNumbers", "MythicalNumbers\MythicalNumbers.csproj", "{DFFD71CE-E4B0-4441-B102-D6B075AB2340}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Jump, Jump", "2. Jump, Jump", "{60598774-634F-4EFC-8C94-9B3685356EFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JumpJump", "JumpJump\JumpJump.csproj", "{567BF1F9-8379-40D1-8756-D6CB575104B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,11 +21,16 @@ Global
 		{DFFD71CE-E4B0-4441-B102-D6B075AB2340}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFFD71CE-E4B0-4441-B102-D6B075AB2340}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFFD71CE-E4B0-4441-B102-D6B075AB2340}.Release|Any CPU.Build.0 = Release|Any CPU
+		{567BF1F9-8379-40D1-8756-D6CB575104B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{567BF1F9-8379-40D1-8756-D6CB575104B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{567BF1F9-8379-40D1-8756-D6CB575104B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{567BF1F9-8379-40D1-8756-D6CB575104B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{DFFD71CE-E4B0-4441-B102-D6B075AB2340} = {5AE19F24-3D6D-4C1D-BB89-F3F1AE2C1899}
+		{567BF1F9-8379-40D1-8756-D6CB575104B4} = {60598774-634F-4EFC-8C94-9B3685356EFB}
 	EndGlobalSection
 EndGlobal
