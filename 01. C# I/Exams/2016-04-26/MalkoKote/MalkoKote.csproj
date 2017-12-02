@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{31810BF4-597D-4ACB-893E-3CE0931900AF}</ProjectGuid>
+    <ProjectGuid>{104D3D2D-0906-4B17-871D-949F66708D5D}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>SumOfOddDivisors</RootNamespace>
-    <AssemblyName>SumOfOddDivisors</AssemblyName>
+    <RootNamespace>MalkoKote</RootNamespace>
+    <AssemblyName>MalkoKote</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
