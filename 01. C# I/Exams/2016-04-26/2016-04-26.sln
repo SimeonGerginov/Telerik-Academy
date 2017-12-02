@@ -7,6 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.MutantSquirrels", "1.Muta
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MutantSquirrels", "MutantSquirrels\MutantSquirrels.csproj", "{CF7CA1A3-2F07-4B99-B59D-E1BF1493C6A8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Speeds", "2.Speeds", "{2EB1D421-387C-4AED-AC45-D53CE4577032}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Speeds", "Speeds\Speeds.csproj", "{08BD3118-9D48-4BC8-81B2-C8D8BD1517C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,11 +21,16 @@ Global
 		{CF7CA1A3-2F07-4B99-B59D-E1BF1493C6A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF7CA1A3-2F07-4B99-B59D-E1BF1493C6A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF7CA1A3-2F07-4B99-B59D-E1BF1493C6A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08BD3118-9D48-4BC8-81B2-C8D8BD1517C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08BD3118-9D48-4BC8-81B2-C8D8BD1517C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08BD3118-9D48-4BC8-81B2-C8D8BD1517C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08BD3118-9D48-4BC8-81B2-C8D8BD1517C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{CF7CA1A3-2F07-4B99-B59D-E1BF1493C6A8} = {D5367A09-D788-4BD3-96F6-C73E86236C8E}
+		{08BD3118-9D48-4BC8-81B2-C8D8BD1517C7} = {2EB1D421-387C-4AED-AC45-D53CE4577032}
 	EndGlobalSection
 EndGlobal
