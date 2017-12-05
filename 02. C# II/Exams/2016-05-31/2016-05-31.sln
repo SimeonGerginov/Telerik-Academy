@@ -7,6 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Messages", "1. Messages"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messages", "Messages\Messages.csproj", "{155A86A3-4A16-4FF6-9831-5155A0139E5C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. DancingMoves", "2. DancingMoves", "{52F70AE8-3703-452C-AE9C-B1D0411C3AC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DancingMoves", "DancingMoves\DancingMoves.csproj", "{26964600-A8B0-4141-865A-F4124EFBF93E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,11 +21,16 @@ Global
 		{155A86A3-4A16-4FF6-9831-5155A0139E5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{155A86A3-4A16-4FF6-9831-5155A0139E5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{155A86A3-4A16-4FF6-9831-5155A0139E5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26964600-A8B0-4141-865A-F4124EFBF93E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26964600-A8B0-4141-865A-F4124EFBF93E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26964600-A8B0-4141-865A-F4124EFBF93E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26964600-A8B0-4141-865A-F4124EFBF93E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{155A86A3-4A16-4FF6-9831-5155A0139E5C} = {297C6CBB-1E89-4961-927D-8D4A61DDBC1B}
+		{26964600-A8B0-4141-865A-F4124EFBF93E} = {52F70AE8-3703-452C-AE9C-B1D0411C3AC7}
 	EndGlobalSection
 EndGlobal
