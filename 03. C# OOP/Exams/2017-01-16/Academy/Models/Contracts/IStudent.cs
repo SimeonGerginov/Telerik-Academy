@@ -1,5 +1,7 @@
-﻿using Academy.Models.Utils.Contracts;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+
+using Academy.Models.Utils.Contracts;
+using Academy.Models.Enums;
 
 namespace Academy.Models.Contracts
 {

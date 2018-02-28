@@ -1,6 +1,6 @@
-﻿using Academy.Models.Enums;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+
+using Academy.Models.Enums;
 
 namespace Academy.Models.Contracts
 {
