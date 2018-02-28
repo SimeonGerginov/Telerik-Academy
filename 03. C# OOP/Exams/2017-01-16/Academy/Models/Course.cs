@@ -125,12 +125,12 @@ namespace Academy.Models
             {
                 foreach (var lecturer in this.Lectures)
                 {
-                    sb.AppendLine(lecturer.ToString());
+                    sb.Append(lecturer.ToString());
                 }
             }
             else
             {
-                sb.AppendLine("  * There are no lectures in this course!");
+                sb.Append("  * There are no lectures in this course!");
             }
 
             return sb.ToString();

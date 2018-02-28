@@ -82,12 +82,12 @@ namespace Academy.Models
             {
                 foreach (var courseResult in this.CourseResults)
                 {
-                    sb.AppendLine("  " + courseResult.ToString());
+                    sb.Append("  " + courseResult.ToString());
                 }
             }
             else
             {
-                sb.AppendLine("  * User has no course results!");
+                sb.Append("  * User has no course results!");
             }
 
             return sb.ToString(); 

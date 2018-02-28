@@ -69,17 +69,14 @@ namespace Academy.Core.Factories
             // Use this instead of DateTime.Now if you want any points in BGCoder!!
             var currentDate = DateTimeProvider.Now;
 
-            //switch (type)
-            //{
-            //    case "video":
-            //    case "presentation": 
-            //    case "demo": 
-            //    case "homework": 
-            //    default: throw new ArgumentException("Invalid lecture resource type");
-            //}
-
-            // TODO: Implement this
-            throw new NotImplementedException("LectureResource classes not attached to factory.");
+            switch (type)
+            {
+                case "video": return new VideoResource(name, url, currentDate);
+                case "presentation": return new PresentationResource(name, url); 
+                case "demo": return new DemoResource(name, url); 
+                case "homework": return new HomeworkResource(name, url, currentDate.AddDays(7)); 
+                default: throw new ArgumentException("Invalid lecture resource type");
+            }
         }
 
         public ICourseResult CreateCourseResult(ICourse course, string examPoints, string coursePoints)

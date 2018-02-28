@@ -91,7 +91,7 @@ namespace Academy.Models
             {
                 foreach (var resource in this.Resources)
                 {
-                    sb.AppendLine(resource.ToString());
+                    sb.Append(resource.ToString());
                 }
             }
             else
