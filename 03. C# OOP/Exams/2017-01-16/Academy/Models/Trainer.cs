@@ -73,6 +73,8 @@ namespace Academy.Models
                 }
             }
 
+            sb.Append(Environment.NewLine);
+
             return sb.ToString(); 
         }
     }
