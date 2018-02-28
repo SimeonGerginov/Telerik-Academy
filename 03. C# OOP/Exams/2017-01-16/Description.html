@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8" />
+      <title>README</title>
+      <style>.markdown-preview:not([data-use-github-style]) { padding: 2em; font-size: 1.2em; color: rgb(85, 85, 85); overflow: auto; background-color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) > :first-child { margin-top: 0px; }
+.markdown-preview:not([data-use-github-style]) h1, .markdown-preview:not([data-use-github-style]) h2, .markdown-preview:not([data-use-github-style]) h3, .markdown-preview:not([data-use-github-style]) h4, .markdown-preview:not([data-use-github-style]) h5, .markdown-preview:not([data-use-github-style]) h6 { line-height: 1.2; margin-top: 1.5em; margin-bottom: 0.5em; color: rgb(3, 3, 3); }
+.markdown-preview:not([data-use-github-style]) h1 { font-size: 2.4em; font-weight: 300; }
+.markdown-preview:not([data-use-github-style]) h2 { font-size: 1.8em; font-weight: 400; }
+.markdown-preview:not([data-use-github-style]) h3 { font-size: 1.5em; font-weight: 500; }
+.markdown-preview:not([data-use-github-style]) h4 { font-size: 1.2em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h5 { font-size: 1.1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h6 { font-size: 1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) strong { color: rgb(3, 3, 3); }
+.markdown-preview:not([data-use-github-style]) del { color: rgb(126, 126, 126); }
+.markdown-preview:not([data-use-github-style]) a, .markdown-preview:not([data-use-github-style]) a code { color: rgb(0, 0, 0); }
+.markdown-preview:not([data-use-github-style]) img { max-width: 100%; }
+.markdown-preview:not([data-use-github-style]) > p { margin-top: 0px; margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) > ul, .markdown-preview:not([data-use-github-style]) > ol { margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) blockquote { margin: 1.5em 0px; font-size: inherit; color: rgb(126, 126, 126); border-color: rgb(214, 214, 214); border-width: 4px; }
+.markdown-preview:not([data-use-github-style]) hr { margin: 3em 0px; border-top: 2px dashed rgb(214, 214, 214); background: none; }
+.markdown-preview:not([data-use-github-style]) table { margin: 1.5em 0px; }
+.markdown-preview:not([data-use-github-style]) th { color: rgb(3, 3, 3); }
+.markdown-preview:not([data-use-github-style]) th, .markdown-preview:not([data-use-github-style]) td { padding: 0.66em 1em; border: 1px solid rgb(214, 214, 214); }
+.markdown-preview:not([data-use-github-style]) code { color: rgb(3, 3, 3); background-color: rgb(240, 240, 240); }
+.markdown-preview:not([data-use-github-style]) pre.editor-colors { margin: 1.5em 0px; padding: 1em; font-size: 0.92em; border-radius: 3px; background-color: rgb(245, 245, 245); }
+.markdown-preview:not([data-use-github-style]) kbd { color: rgb(3, 3, 3); border-width: 1px 1px 2px; border-style: solid; border-color: rgb(214, 214, 214) rgb(214, 214, 214) rgb(199, 199, 199); background-color: rgb(240, 240, 240); }
+.markdown-preview[data-use-github-style] { font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif; line-height: 1.6; word-wrap: break-word; padding: 30px; font-size: 16px; color: rgb(51, 51, 51); overflow: scroll; background-color: rgb(255, 255, 255); }
+.markdown-preview[data-use-github-style] > :first-child { margin-top: 0px !important; }
+.markdown-preview[data-use-github-style] > :last-child { margin-bottom: 0px !important; }
+.markdown-preview[data-use-github-style] a:not([href]) { color: inherit; text-decoration: none; }
+.markdown-preview[data-use-github-style] .absent { color: rgb(204, 0, 0); }
+.markdown-preview[data-use-github-style] .anchor { position: absolute; top: 0px; left: 0px; display: block; padding-right: 6px; padding-left: 30px; margin-left: -30px; }
+.markdown-preview[data-use-github-style] .anchor:focus { outline: none; }
+.markdown-preview[data-use-github-style] h1, .markdown-preview[data-use-github-style] h2, .markdown-preview[data-use-github-style] h3, .markdown-preview[data-use-github-style] h4, .markdown-preview[data-use-github-style] h5, .markdown-preview[data-use-github-style] h6 { position: relative; margin-top: 1em; margin-bottom: 16px; font-weight: bold; line-height: 1.4; }
+.markdown-preview[data-use-github-style] h1 .octicon-link, .markdown-preview[data-use-github-style] h2 .octicon-link, .markdown-preview[data-use-github-style] h3 .octicon-link, .markdown-preview[data-use-github-style] h4 .octicon-link, .markdown-preview[data-use-github-style] h5 .octicon-link, .markdown-preview[data-use-github-style] h6 .octicon-link { display: none; color: rgb(0, 0, 0); vertical-align: middle; }
+.markdown-preview[data-use-github-style] h1:hover .anchor, .markdown-preview[data-use-github-style] h2:hover .anchor, .markdown-preview[data-use-github-style] h3:hover .anchor, .markdown-preview[data-use-github-style] h4:hover .anchor, .markdown-preview[data-use-github-style] h5:hover .anchor, .markdown-preview[data-use-github-style] h6:hover .anchor { padding-left: 8px; margin-left: -30px; text-decoration: none; }
+.markdown-preview[data-use-github-style] h1:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h2:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h3:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h4:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h5:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h6:hover .anchor .octicon-link { display: inline-block; }
+.markdown-preview[data-use-github-style] h1 tt, .markdown-preview[data-use-github-style] h2 tt, .markdown-preview[data-use-github-style] h3 tt, .markdown-preview[data-use-github-style] h4 tt, .markdown-preview[data-use-github-style] h5 tt, .markdown-preview[data-use-github-style] h6 tt, .markdown-preview[data-use-github-style] h1 code, .markdown-preview[data-use-github-style] h2 code, .markdown-preview[data-use-github-style] h3 code, .markdown-preview[data-use-github-style] h4 code, .markdown-preview[data-use-github-style] h5 code, .markdown-preview[data-use-github-style] h6 code { font-size: inherit; }
+.markdown-preview[data-use-github-style] h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom: 1px solid rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h1 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom: 1px solid rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h2 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h3 { font-size: 1.5em; line-height: 1.43; }
+.markdown-preview[data-use-github-style] h3 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h4 { font-size: 1.25em; }
+.markdown-preview[data-use-github-style] h4 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h5 { font-size: 1em; }
+.markdown-preview[data-use-github-style] h5 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] h6 { font-size: 1em; color: rgb(119, 119, 119); }
+.markdown-preview[data-use-github-style] h6 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] p, .markdown-preview[data-use-github-style] blockquote, .markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol, .markdown-preview[data-use-github-style] dl, .markdown-preview[data-use-github-style] table, .markdown-preview[data-use-github-style] pre { margin-top: 0px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] hr { height: 4px; padding: 0px; margin: 16px 0px; border: 0px none; background-color: rgb(231, 231, 231); }
+.markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol { padding-left: 2em; }
+.markdown-preview[data-use-github-style] ul.no-list, .markdown-preview[data-use-github-style] ol.no-list { padding: 0px; list-style-type: none; }
+.markdown-preview[data-use-github-style] ul ul, .markdown-preview[data-use-github-style] ul ol, .markdown-preview[data-use-github-style] ol ol, .markdown-preview[data-use-github-style] ol ul { margin-top: 0px; margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] li > p { margin-top: 16px; }
+.markdown-preview[data-use-github-style] dl { padding: 0px; }
+.markdown-preview[data-use-github-style] dl dt { padding: 0px; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: bold; }
+.markdown-preview[data-use-github-style] dl dd { padding: 0px 16px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] blockquote { padding: 0px 15px; color: rgb(119, 119, 119); border-left: 4px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] blockquote > :first-child { margin-top: 0px; }
+.markdown-preview[data-use-github-style] blockquote > :last-child { margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] table { display: block; width: 100%; overflow: auto; word-break: keep-all; }
+.markdown-preview[data-use-github-style] table th { font-weight: bold; }
+.markdown-preview[data-use-github-style] table th, .markdown-preview[data-use-github-style] table td { padding: 6px 13px; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] table tr { border-top: 1px solid rgb(204, 204, 204); background-color: rgb(255, 255, 255); }
+.markdown-preview[data-use-github-style] table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+.markdown-preview[data-use-github-style] img { max-width: 100%; box-sizing: border-box; }
+.markdown-preview[data-use-github-style] .emoji { max-width: none; }
+.markdown-preview[data-use-github-style] span.frame { display: block; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.frame > span { display: block; float: left; width: auto; padding: 7px; margin: 13px 0px 0px; overflow: hidden; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] span.frame span img { display: block; float: left; }
+.markdown-preview[data-use-github-style] span.frame span span { display: block; padding: 5px 0px 0px; clear: both; color: rgb(51, 51, 51); }
+.markdown-preview[data-use-github-style] span.align-center { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-center > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-center span img { margin: 0px auto; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-right { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-right > span { display: block; margin: 13px 0px 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] span.align-right span img { margin: 0px; text-align: right; }
+.markdown-preview[data-use-github-style] span.float-left { display: block; float: left; margin-right: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-left span { margin: 13px 0px 0px; }
+.markdown-preview[data-use-github-style] span.float-right { display: block; float: right; margin-left: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-right > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] code, .markdown-preview[data-use-github-style] tt { padding: 0.2em 0px; margin: 0px; font-size: 85%; border-radius: 3px; background-color: rgba(0, 0, 0, 0.0392157); }
+.markdown-preview[data-use-github-style] code::before, .markdown-preview[data-use-github-style] tt::before, .markdown-preview[data-use-github-style] code::after, .markdown-preview[data-use-github-style] tt::after { letter-spacing: -0.2em; content: " "; }
+.markdown-preview[data-use-github-style] code br, .markdown-preview[data-use-github-style] tt br { display: none; }
+.markdown-preview[data-use-github-style] del code { text-decoration: inherit; }
+.markdown-preview[data-use-github-style] pre > code { padding: 0px; margin: 0px; font-size: 100%; word-break: normal; white-space: pre; border: 0px; background: transparent; }
+.markdown-preview[data-use-github-style] .highlight { margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] .highlight pre, .markdown-preview[data-use-github-style] pre { padding: 16px; overflow: auto; font-size: 85%; line-height: 1.45; border-radius: 3px; background-color: rgb(247, 247, 247); }
+.markdown-preview[data-use-github-style] .highlight pre { margin-bottom: 0px; word-break: normal; }
+.markdown-preview[data-use-github-style] pre { word-wrap: normal; }
+.markdown-preview[data-use-github-style] pre code, .markdown-preview[data-use-github-style] pre tt { display: inline; max-width: initial; padding: 0px; margin: 0px; overflow: initial; line-height: inherit; word-wrap: normal; border: 0px; background-color: transparent; }
+.markdown-preview[data-use-github-style] pre code::before, .markdown-preview[data-use-github-style] pre tt::before, .markdown-preview[data-use-github-style] pre code::after, .markdown-preview[data-use-github-style] pre tt::after { content: normal; }
+.markdown-preview[data-use-github-style] kbd { display: inline-block; padding: 3px 5px; font-size: 11px; line-height: 10px; color: rgb(85, 85, 85); vertical-align: middle; border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(187, 187, 187); border-radius: 3px; box-shadow: rgb(187, 187, 187) 0px -1px 0px inset; background-color: rgb(252, 252, 252); }
+.markdown-preview[data-use-github-style] a { color: rgb(51, 122, 183); }
+.markdown-preview[data-use-github-style] code { color: inherit; }
+.markdown-preview[data-use-github-style] pre.editor-colors { padding: 0.8em 1em; margin-bottom: 1em; font-size: 0.85em; border-radius: 4px; overflow: auto; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors .horizontal-scrollbar { visibility: hidden; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors:hover .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors:hover .horizontal-scrollbar { visibility: visible; }
+.markdown-preview .task-list-item-checkbox { position: absolute; margin: 0.25em 0px 0px -1.4em; }
+.markdown-preview { color: rgba(85, 85, 85, 0.8); background-color: rgb(255, 255, 255); }
+.markdown-preview code { color: rgba(85, 85, 85, 0.8); background-color: rgb(255, 255, 255); }
+.markdown-preview h1, .markdown-preview h2, .markdown-preview h3 { border-color: rgba(85, 85, 85, 0.0980392); }
+.markdown-preview table tr { border-color: rgb(255, 255, 255); background: none; }
+.markdown-preview table tr:nth-child(2n) { background-color: rgb(255, 255, 255); }
+.markdown-preview table th, .markdown-preview table td { border-color: rgb(255, 255, 255); }
+.markdown-preview table th { background-color: rgb(255, 255, 255); }
+:root {
+  font-size: 16px;
+}
+.conflict-resolved {
+  background: rgba(0, 150, 136, 0.1);
+}
+.conflict-ours {
+  background: rgba(200, 227, 170, 0.4);
+}
+.conflict-ours.cursor-line {
+  background: rgba(200, 227, 170, 0.3);
+}
+.conflict-theirs {
+  background: rgba(154, 207, 250, 0.4);
+}
+.conflict-theirs.cursor-line {
+  background: rgba(154, 207, 250, 0.3);
+}
+.conflict-base {
+  background: rgba(255, 240, 110, 0.4);
+}
+.conflict-base.cursor-line {
+  background: rgba(255, 240, 110, 0.3);
+}
+.conflict-dirty {
+  background: rgba(255, 235, 59, 0.4);
+}
+.conflict-dirty.cursor-line {
+  background: rgba(255, 235, 59, 0.3);
+}
+
+.bracket-matcher .region {
+  border-bottom: 1px dotted lime;
+  position: absolute;
+}
+
+.spell-check-misspelling .region {
+  border-bottom: 2px dotted rgba(255, 51, 51, 0.75);
+}
+.spell-check-corrections {
+  width: 25em !important;
+}
+
+pre.editor-colors {
+  background-color: #ffffff;
+  color: #555555;
+}
+pre.editor-colors .invisible-character {
+  color: rgba(85, 85, 85, 0.2);
+}
+pre.editor-colors .indent-guide {
+  color: rgba(85, 85, 85, 0.2);
+}
+pre.editor-colors .wrap-guide {
+  background-color: rgba(85, 85, 85, 0.2);
+}
+pre.editor-colors .gutter {
+  color: #555555;
+  background: #ffffff;
+}
+pre.editor-colors .gutter .line-number.folded,
+pre.editor-colors .gutter .line-number:after,
+pre.editor-colors .fold-marker:after {
+  color: #e87b00;
+}
+pre.editor-colors .invisible {
+  color: #555;
+}
+pre.editor-colors .selection .region {
+  background-color: #e1e1e1;
+}
+pre.editor-colors .bracket-matcher .region {
+  background-color: #C9C9C9;
+  opacity: .7;
+  border-bottom: 0 none;
+}
+pre.editor-colors.is-focused .cursor {
+  border-color: #000000;
+}
+pre.editor-colors.is-focused .selection .region {
+  background-color: #afc4da;
+}
+pre.editor-colors.is-focused .line-number.cursor-line-no-selection,
+pre.editor-colors.is-focused .line.cursor-line {
+  background-color: rgba(255, 255, 134, 0.34);
+}
+pre.editor-colors .syntax--source.syntax--gfm {
+  color: #444;
+}
+pre.editor-colors .syntax--gfm .syntax--markup.syntax--heading {
+  color: #111;
+}
+pre.editor-colors .syntax--gfm .syntax--link {
+  color: #888;
+}
+pre.editor-colors .syntax--gfm .syntax--variable.syntax--list {
+  color: #888;
+}
+pre.editor-colors .syntax--markdown .syntax--paragraph {
+  color: #444;
+}
+pre.editor-colors .syntax--markdown .syntax--heading {
+  color: #111;
+}
+pre.editor-colors .syntax--markdown .syntax--link {
+  color: #888;
+}
+pre.editor-colors .syntax--markdown .syntax--link .syntax--string {
+  color: #888;
+}
+.syntax--comment {
+  color: #999988;
+  font-style: italic;
+}
+.syntax--string {
+  color: #D14;
+}
+.syntax--string .syntax--source,
+.syntax--string .syntax--meta.syntax--embedded.syntax--line {
+  color: #5A5A5A;
+}
+.syntax--string .syntax--punctuation.syntax--section.syntax--embedded {
+  color: #920B2D;
+}
+.syntax--string .syntax--punctuation.syntax--section.syntax--embedded .syntax--source {
+  color: #920B2D;
+}
+.syntax--constant.syntax--numeric {
+  color: #D14;
+}
+.syntax--constant.syntax--language {
+  color: #606aa1;
+}
+.syntax--constant.syntax--character,
+.syntax--constant.syntax--other {
+  color: #606aa1;
+}
+.syntax--constant.syntax--symbol {
+  color: #990073;
+}
+.syntax--constant.syntax--numeric.syntax--line-number.syntax--find-in-files .syntax--match {
+  color: rgba(143, 190, 0, 0.63);
+}
+.syntax--variable {
+  color: #008080;
+}
+.syntax--variable.syntax--parameter {
+  color: #606aa1;
+}
+.syntax--keyword {
+  color: #222;
+  font-weight: bold;
+}
+.syntax--keyword.syntax--unit {
+  color: #445588;
+}
+.syntax--keyword.syntax--special-method {
+  color: #0086B3;
+}
+.syntax--storage {
+  color: #222;
+}
+.syntax--storage.syntax--type {
+  color: #222;
+}
+.syntax--entity.syntax--name.syntax--class {
+  text-decoration: underline;
+  color: #606aa1;
+}
+.syntax--entity.syntax--other.syntax--inherited-class {
+  text-decoration: underline;
+  color: #606aa1;
+}
+.syntax--entity.syntax--name.syntax--function {
+  color: #900;
+}
+.syntax--entity.syntax--name.syntax--tag {
+  color: #008080;
+}
+.syntax--entity.syntax--other.syntax--attribute-name {
+  color: #458;
+  font-weight: bold;
+}
+.syntax--entity.syntax--name.syntax--filename.syntax--find-in-files {
+  color: #E6DB74;
+}
+.syntax--support.syntax--constant,
+.syntax--support.syntax--function,
+.syntax--support.syntax--type {
+  color: #458;
+}
+.syntax--support.syntax--class {
+  color: #008080;
+}
+.syntax--invalid {
+  color: #F8F8F0;
+  background-color: #00A8C6;
+}
+.syntax--invalid.syntax--deprecated {
+  color: #F8F8F0;
+  background-color: #8FBE00;
+}
+.syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--string.syntax--quoted.syntax--double.syntax--json,
+.syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--string.syntax--quoted.syntax--double.syntax--json .syntax--punctuation.syntax--string {
+  color: #000080;
+}
+.syntax--meta.syntax--structure.syntax--dictionary.syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--double.syntax--json {
+  color: #d14;
+}
+.syntax--meta.syntax--diff,
+.syntax--meta.syntax--diff.syntax--header {
+  color: #75715E;
+}
+.syntax--css.syntax--support.syntax--property-name {
+  font-weight: bold;
+  color: #333;
+}
+.syntax--css.syntax--constant {
+  color: #099;
+}
+</style>
+  </head>
+  <body class='markdown-preview' data-use-github-style><p><img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/logos/telerik-header-logo.png"></p>
+<h1 id="c-oop-exam-january-2017-academy-system">C# OOP Exam - January 2017 - Academy System</h1>
+<h2 id="changes-17-23">Changes @ 17:23</h2>
+<ul>
+<li>The course&#39;s end date is calculated by adding 30 days to the starting date.</li>
+<li>You are allowed to modify the Grade enum.</li>
+<li>You are allowed to include a using to the Track enum in the interface.</li>
+<li>You are allowed to include usings in the AcademyFactory.</li>
+<li>Use the provided zero tests for the most accurate data </li>
+</ul>
+<h2 id="general-description">General description</h2>
+<p>You are given a task to recreate the Telerik Academy Integrated Learning System. Of course, it&#39;s a lot simplified. Instead of creating a web application, you need to create a console app by using your mighty OOP skills. The application already accepts commands and outputs text for each submitted command, you just need to write the OOP behind most of the command. You can create students, trainers, courses, lectures and so on. You can view the list of the commands below. Example inputs and outputs will be provided with each task, so that you can validate the code you are writing. Make sure to follow the all the Object Orientated Programming practices and conventions that we have talked about during the lectures and don&#39;t let the length of this description intimidate you, read it carefully and start hacking!</p>
+<h2 id="commands">Commands</h2>
+<p>Here is the full list of commands that you can use inside the TAILS.</p>
+<ul>
+<li><strong>CreateSeason</strong> <em>&lt;startingYear&gt; &lt;endingYear&gt; &lt;initiative&gt;</em> - Creates a new season that starts and ends at the given years and is a part of one of the 4 initiatives in Telerik Academy.</li>
+<li><strong>CreateStudent</strong> <em>&lt;username&gt; &lt;track&gt;</em> - Creates a new student with that unique username and has the given track.</li>
+<li><strong>CreateTrainer</strong> <em>&lt;username&gt; &lt;technologiesList&gt;</em> - Creates a new trainer with that unique username and a list of technologies, seperated by a comma (no spaces).</li>
+<li><strong>CreateCourse</strong> <em>&lt;seasonId&gt; &lt;name&gt; &lt;lecturesPerWeek&gt; &lt;startingDate&gt;</em> - Creates a new lecture with the given name, lectures per week count and starting date, into the season with that ID.</li>
+<li><strong>CreateCourseResult</strong> <em>&lt;seasonId&gt; &lt;courseId&gt; &lt;examPoints&gt; &lt;coursePoints&gt; &lt;username&gt;</em> - Creates a new course result for the course with that ID that is in a season with that ID with the given points into the given user.</li>
+<li><strong>CreateLecture</strong> <em>&lt;seasonId&gt; &lt;courseId&gt; &lt;name&gt; &lt;date&gt; &lt;trainerUsername&gt;</em> - Creates a new lecture with the given name, date and trainer into the course with that ID that is in the season with that ID.</li>
+<li><strong>CreateLectureResource</strong> <em>&lt;seasonId&gt; &lt;courseId&gt; &lt;lectureId&gt; &lt;type&gt; &lt;name&gt; &lt;url&gt;</em> - Creates a new lecture resource with the given type, name and url into the lecture with that ID that is in the course with that ID that is in the season with that ID.</li>
+</ul>
+<hr>
+<ul>
+<li><strong>AddTrainerToSeason</strong> <em>&lt;username&gt; &lt;seasonId&gt;</em> - Adds the trainer with that username into the season with that ID.</li>
+<li><strong>AddStudentToSeason</strong> <em>&lt;username&gt; &lt;seasonId&gt;</em> - Adds the student with that username into the season with that ID.</li>
+<li><strong>AddStudentToCourse</strong> <em>&lt;username&gt; &lt;seasonId&gt; &lt;courseId&gt; &lt;form&gt;</em>  - Adds the trainer with that username into the course with that ID that is in the season with that ID.</li>
+</ul>
+<hr>
+<ul>
+<li><strong>ListUsers</strong> - Lists all registered students and trainers.</li>
+<li><strong>ListUsersInSeason</strong> <em>&lt;seasonId&gt;</em> - Lists all registered students and trainers that have been added to that course.</li>
+<li><strong>ListCoursesInSeason</strong> <em>&lt;seasonId&gt;</em> - Lists all coruses that are in that season.</li>
+</ul>
+<hr>
+<ul>
+<li><strong>Exit</strong> - Terminates the program.</li>
+</ul>
+<h2 id="architecture">Architecture</h2>
+<p>Let&#39;s talk a bit about how the system works (you are already provided with all of this stuff, there is no need to implement it). There is an <code>Engine</code> located in the <code>Core</code> namespace that has a loop that cycles until the <code>Exit</code> command is submitted. With each cycle, it takes the input, passes it to the command parser that find the command with that name and executes it with those parameters. All commands are located in the <code>Commands</code> namespace. The commands themselves use the <code>AcademyFactory</code> located in the <code>Core.Factories</code> namespace to create the needed objects. After the command executes, it returns a result message to the <code>Engine</code> that prints it to the console and then the cycle beings again. In the <code>Engine</code>, there is a try-catch block that catches every possible exception type and prints the exception&#39;s message to the console. Do not bother reading those classes, your focus should be on the <code>Models</code> namespace, where you need to place the classes you create, using the provided interfaces in the <code>Contracts</code> namespace. The result from the execution of the commands is printed after executing the <code>Exit</code> command.</p>
+<h2 id="restrictions">Restrictions</h2>
+<p>Violation of these restrictions will cause severe points penalties or exam disqualification.</p>
+<ul>
+<li>You are allowed create new <strong>classes, interfaces, enumerations and namespaces</strong> inside the <code>Models</code> namespace.</li>
+<li>You are allowed to modify the <strong>AcademyFactory</strong> in the <code>Core.Factories</code> namespace.</li>
+<li>You are allowed to modify the <strong>ListUsersCommand</strong> in the <code>Commands.Listing</code> namespace.</li>
+<li><strong>You are NOT allowed to modify any existing interfaces!</strong></li>
+<li><strong>You are NOT allowed to modify any other existing classes, enumerations and namespaces!</strong></li>
+</ul>
+<h2 id="section-i-tasks">Section I - Tasks</h2>
+<p>All validation lenghts are exclusive (&lt;, &gt;)</p>
+<h3 id="course-class">Course class</h3>
+<p>Create a <strong>Course</strong> class that implements the <code>ICourse</code> interface. Each <strong>Cours</strong> must have a valid <strong>Name</strong> that is a non-empty string, between <code>3</code> and <code>45</code> symbols long. If the <strong>Name</strong> is not valid, the error message <em>&quot;The name of the course must be between 3 and 45 symbols!&quot;</em> should be thrown. In addition, the <strong>Course</strong> must have <strong>LecturesPerWeek</strong> that is an integer between <code>1</code> and <code>7</code>. If that is not valid, the error message <em>&quot;The number of lectures per week must be between 1 and 7!&quot;</em> must be thrown. The <strong>Course</strong> must print in the following format, if it does not contain lectures:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;Course</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span><span class="meta paragraph text"><span>-&nbsp;Name:&nbsp;&lt;name&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;-&nbsp;Lectures&nbsp;per&nbsp;week:&nbsp;&lt;lecturesPerWeek&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;-&nbsp;Starting&nbsp;date:&nbsp;&lt;startingDate&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;-&nbsp;Ending&nbsp;date:&nbsp;&lt;endingDate&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;-&nbsp;Lectures:</span></span></span></div><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span>&nbsp;&nbsp;</span><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;There&nbsp;are&nbsp;no&nbsp;lectures&nbsp;in&nbsp;this&nbsp;course!</span></span></span></div></pre><h3 id="trainer-class">Trainer Class</h3>
+<p>Create a <strong>Trainer</strong> class that implements the <code>ITrainer</code> interface. Each Trainer must have a valid <code>Username</code> that is a non-empty string, between <code>3</code> and <code>16</code> symbols long. If the <code>Username</code> is not valid, the error message <em>&quot;User&#39;s username should be between 3 and 16 symbols long!&quot;</em> must be thrown. Each <strong>Trainer</strong> has a collection of <strong>Technologies</strong> that he knows. The <strong>Trainer</strong> must be convertable to a string in the following format:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;Trainer:</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span><span class="meta paragraph text"><span>-&nbsp;Username:&nbsp;&lt;username&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;-&nbsp;Technologies:&nbsp;&lt;technology&gt;;&nbsp;&lt;technology&gt;;&nbsp;&lt;technology&gt;</span></span></span></div></pre><h3 id="student-class">Student class</h3>
+<p>Create a <strong>Student</strong> class that implements the <code>IStudent</code> interface. Each Student must have a valid <code>Username</code> that is a non-empty string between <code>3</code> and <code>16</code> symbols long. If the <code>Username</code> is not valid, the error message <em>&quot;User&#39;s username should be between 3 and 16 symbols long!&quot;</em> must be thrown. Each <strong>Student</strong> must also have a <strong>Track</strong> that is either <code>Frontend</code>, <code>Dev</code> or <code>None</code> and a collection of course results. If the <strong>Track</strong> is invalid, the error message <em>&quot;The provided track is not valid!&quot;</em> should be thorwn The <strong>Student</strong> must be convertable to a string in the following format if he has no course results:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;Student:</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span><span class="meta paragraph text"><span>-&nbsp;Username:&nbsp;&lt;username&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;-&nbsp;Track:&nbsp;&lt;track&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;-&nbsp;Course&nbsp;results:</span></span></span></div><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span>&nbsp;&nbsp;</span><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;User&nbsp;has&nbsp;no&nbsp;course&nbsp;results!</span></span></span></div></pre><h2 id="section-i-zero-test">Section I - Zero test</h2>
+<h3 id="input">Input</h3>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>CreateSeason&nbsp;2016&nbsp;2017&nbsp;SoftwareAcademy</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>CreateStudent&nbsp;Pesho&nbsp;Frontend</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>CreateTrainer&nbsp;Gosho&nbsp;Java,Spring</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>AddStudentToSeason&nbsp;Pesho&nbsp;0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>AddTrainerToSeason&nbsp;Gosho&nbsp;0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>CreateCourse&nbsp;0&nbsp;JavaScriptOOP&nbsp;2&nbsp;2017-01-24</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>AddStudentToCourse&nbsp;Pesho&nbsp;0&nbsp;0&nbsp;onsite</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>ListUsersInSeason&nbsp;0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>ListCoursesInSeason&nbsp;0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Exit</span></span></span></div></pre><h3 id="output">Output</h3>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Season&nbsp;with&nbsp;ID&nbsp;0&nbsp;was&nbsp;created.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Student&nbsp;with&nbsp;ID&nbsp;0&nbsp;was&nbsp;created.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Trainer&nbsp;with&nbsp;ID&nbsp;0&nbsp;was&nbsp;created.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Student&nbsp;Pesho&nbsp;was&nbsp;added&nbsp;to&nbsp;Season&nbsp;0.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Trainer&nbsp;Gosho&nbsp;was&nbsp;assigned&nbsp;to&nbsp;Season&nbsp;0.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Course&nbsp;with&nbsp;ID&nbsp;0&nbsp;was&nbsp;created&nbsp;in&nbsp;Season&nbsp;0.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Student&nbsp;Pesho&nbsp;was&nbsp;added&nbsp;to&nbsp;Course&nbsp;0.JavaScriptOOP.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>*&nbsp;Trainer:</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span><span class="meta paragraph text"><span>-&nbsp;Username:&nbsp;Gosho</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;-&nbsp;Technologies:&nbsp;Java;&nbsp;Spring</span></span></span></div><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;Student:</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span><span class="meta paragraph text"><span>-&nbsp;Username:&nbsp;Pesho</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;-&nbsp;Track:&nbsp;Frontend</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;-&nbsp;Course&nbsp;results:</span></span></span></div><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span>&nbsp;&nbsp;</span><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;User&nbsp;has&nbsp;no&nbsp;course&nbsp;results!</span></span></span></div><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;Course:</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span><span class="meta paragraph text"><span>-&nbsp;Name:&nbsp;JavaScriptOOP</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;-&nbsp;Lectures&nbsp;per&nbsp;week:&nbsp;2</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;-&nbsp;Starting&nbsp;date:&nbsp;2017-01-24&nbsp;12:00:00&nbsp;AM</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;-&nbsp;Ending&nbsp;date:&nbsp;2017-02-23&nbsp;12:00:00&nbsp;AM</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;-&nbsp;Onsite&nbsp;students:&nbsp;1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;-&nbsp;Online&nbsp;students:&nbsp;0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;-&nbsp;Lectures:</span></span></span></div><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span>&nbsp;&nbsp;</span><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;There&nbsp;are&nbsp;no&nbsp;lectures&nbsp;in&nbsp;this&nbsp;course!</span></span></span></div></pre><h2 id="section-ii-tasks">Section II - Tasks</h2>
+<h3 id="courseresult-class">CourseResult class</h3>
+<p>Create a <strong>CourseResult</strong> class that implements the <code>ICourseResult</code> interface. Each <strong>CourseResult</strong> should have a valid <strong>Course</strong>. The <strong>ExamPoints</strong> should be between <code>0</code> and <code>1000</code>, if not, the error message <em>&quot;Course result&#39;s exam points should be between 0 and 1000!&quot;</em> should be thrown. The <strong>CoursePoints</strong> should be between <code>0</code> and <code>125</code> and their error message should be <strong>&quot;Course result&#39;s course points should be between 0 and 125!&quot;</strong>. The <strong>Grade</strong> can be <code>Excellent</code>, <code>Passed</code> or <code>Failed</code> and it is calculated based on the points. If the <strong>ExamPoints</strong> are equal or above <code>65</code> or the <strong>CoursePoints</strong> are equal or above <code>75</code>, the grade should be <code>Excellent</code>. If the <strong>ExamPoints</strong> are below <code>60</code> but equal or above <code>30</code>, or the <strong>CoursePoints</strong> are below <code>75</code> but equal or above <code>45</code>, the grade should be <code>Passed</code>. Any score below that should be <code>Failed</code>. The <strong>Student</strong> must be signed up for that course in order to create a <strong>CourseResult</strong>. The <strong>CourseResult</strong> must print to the following format:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span>&nbsp;&nbsp;</span><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;&lt;Course&nbsp;name&gt;:&nbsp;Points&nbsp;-&nbsp;&lt;Course&nbsp;points&gt;,&nbsp;Grade&nbsp;-&nbsp;&lt;Grade&gt;</span></span></span></div></pre><p>A student that contains course results should have the following format (Note that the inner class is indented with two spaces):</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;Student:</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span><span class="meta paragraph text"><span>-&nbsp;Username:&nbsp;&lt;username&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;-&nbsp;Track:&nbsp;&lt;track&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;-&nbsp;Course&nbsp;results:</span></span></span></div><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span>&nbsp;&nbsp;</span><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;&lt;Course&nbsp;name&gt;:&nbsp;Points&nbsp;-&nbsp;&lt;Course&nbsp;points&gt;,&nbsp;Grade&nbsp;-&nbsp;&lt;Grade&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span>&nbsp;&nbsp;</span><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;&lt;Course&nbsp;name&gt;:&nbsp;Points&nbsp;-&nbsp;&lt;Course&nbsp;points&gt;,&nbsp;Grade&nbsp;-&nbsp;&lt;Grade&gt;</span></span></span></div></pre><h2 id="lecture-class">Lecture class</h2>
+<p>Create a <strong>Lecture</strong> class that implements the <code>ILecture</code> interface. Each <strong>Lecture</strong> has a <strong>Name</strong> that has a lenght between <code>5</code> and <code>30</code> symbols. If that is invalid, the error message <em>&quot;Lecture&#39;s name should be between 5 and 30 symbols long!&quot;</em> should be thrown. Each <strong>Lecture</strong> has a <strong>Date</strong>, <strong>Trainer</strong> and a <strong>collection of resources</strong>. The <strong>Lecture</strong> must be convertable to a string in the following format if it has no resources:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span>&nbsp;&nbsp;</span><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;Lecture:</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>-&nbsp;Name:&nbsp;&lt;name&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;-&nbsp;Date:&nbsp;&lt;date&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;-&nbsp;Trainer&nbsp;username:&nbsp;&lt;username&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;-&nbsp;Resources:</span></span></span></div><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;There&nbsp;are&nbsp;no&nbsp;resources&nbsp;in&nbsp;this&nbsp;lecture.</span></span></span></div></pre><h2 id="section-ii-zero-test">Section II - Zero test</h2>
+<h3 id="input">Input</h3>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>CreateSeason&nbsp;2016&nbsp;2017&nbsp;SoftwareAcademy</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>CreateStudent&nbsp;Pesho&nbsp;Frontend</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>CreateTrainer&nbsp;Cyku&nbsp;JS,&nbsp;C#,&nbsp;Haskell</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>AddStudentToSeason&nbsp;Pesho&nbsp;0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>AddTrainerToSeason&nbsp;Cyku&nbsp;0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>CreateCourse&nbsp;0&nbsp;JavaScriptOOP&nbsp;2&nbsp;2017-01-24</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>CreateLecture&nbsp;0&nbsp;0&nbsp;Introduction&nbsp;2017-01-25&nbsp;Cyku</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>CreateLecture&nbsp;0&nbsp;0&nbsp;Functions&nbsp;2017-01-25&nbsp;Cyku</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>AddStudentToCourse&nbsp;Pesho&nbsp;0&nbsp;0&nbsp;onsite</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>CreateCourseResult&nbsp;0&nbsp;0&nbsp;85&nbsp;92&nbsp;Pesho</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>ListUsersInSeason&nbsp;0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>ListCoursesInSeason&nbsp;0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Exit</span></span></span></div></pre><h3 id="output">Output</h3>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Season&nbsp;with&nbsp;ID&nbsp;0&nbsp;was&nbsp;created.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Student&nbsp;with&nbsp;ID&nbsp;0&nbsp;was&nbsp;created.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Trainer&nbsp;with&nbsp;ID&nbsp;0&nbsp;was&nbsp;created.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Student&nbsp;Pesho&nbsp;was&nbsp;added&nbsp;to&nbsp;Season&nbsp;0.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Trainer&nbsp;Cyku&nbsp;was&nbsp;assigned&nbsp;to&nbsp;Season&nbsp;0.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Course&nbsp;with&nbsp;ID&nbsp;0&nbsp;was&nbsp;created&nbsp;in&nbsp;Season&nbsp;0.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Lecture&nbsp;with&nbsp;ID&nbsp;0&nbsp;was&nbsp;created&nbsp;in&nbsp;course&nbsp;0.JavaScriptOOP.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Lecture&nbsp;with&nbsp;ID&nbsp;1&nbsp;was&nbsp;created&nbsp;in&nbsp;course&nbsp;0.JavaScriptOOP.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Student&nbsp;Pesho&nbsp;was&nbsp;added&nbsp;to&nbsp;Course&nbsp;0.JavaScriptOOP.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Course&nbsp;result&nbsp;with&nbsp;ID&nbsp;0&nbsp;was&nbsp;created&nbsp;for&nbsp;Student&nbsp;Pesho.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>*&nbsp;Trainer:</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span><span class="meta paragraph text"><span>-&nbsp;Username:&nbsp;Cyku</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;-&nbsp;Technologies:&nbsp;JS;</span></span></span></div><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;Student:</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span><span class="meta paragraph text"><span>-&nbsp;Username:&nbsp;Pesho</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;-&nbsp;Track:&nbsp;Frontend</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;-&nbsp;Course&nbsp;results:</span></span></span></div><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span>&nbsp;&nbsp;</span><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;JavaScriptOOP:&nbsp;Points&nbsp;-&nbsp;92,&nbsp;Grade&nbsp;-&nbsp;Excellent</span></span></span></div><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;Course:</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span><span class="meta paragraph text"><span>-&nbsp;Name:&nbsp;JavaScriptOOP</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;-&nbsp;Lectures&nbsp;per&nbsp;week:&nbsp;2</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;-&nbsp;Starting&nbsp;date:&nbsp;2017-01-24&nbsp;12:00:00&nbsp;AM</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;-&nbsp;Ending&nbsp;date:&nbsp;2017-02-23&nbsp;12:00:00&nbsp;AM</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;-&nbsp;Onsite&nbsp;students:&nbsp;1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;-&nbsp;Online&nbsp;students:&nbsp;0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;-&nbsp;Lectures:</span></span></span></div><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span>&nbsp;&nbsp;</span><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;Lecture:</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>-&nbsp;Name:&nbsp;Introduction</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;-&nbsp;Date:&nbsp;2017-01-25&nbsp;12:00:00&nbsp;AM</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;-&nbsp;Trainer&nbsp;username:&nbsp;Cyku</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;-&nbsp;Resources:</span></span></span></div><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;There&nbsp;are&nbsp;no&nbsp;resources&nbsp;in&nbsp;this&nbsp;lecture.</span></span></span></div><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span>&nbsp;&nbsp;</span><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;Lecture:</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>-&nbsp;Name:&nbsp;Functions</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;-&nbsp;Date:&nbsp;2017-01-25&nbsp;12:00:00&nbsp;AM</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;-&nbsp;Trainer&nbsp;username:&nbsp;Cyku</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;-&nbsp;Resources:</span></span></span></div><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;There&nbsp;are&nbsp;no&nbsp;resources&nbsp;in&nbsp;this&nbsp;lecture.</span></span></span></div></pre><h2 id="section-iii-tasks">Section III - Tasks</h2>
+<h3 id="demoresource-class">DemoResource class</h3>
+<p>Create a <strong>DemoResource</strong> class that implements the <code>ILectureResource</code> interface. The <strong>DemoResource</strong> should have a <strong>Name</strong> that is a non-empty string, between <code>3</code> and <code>15</code> symbols long. If that is invalid, the error message <em>&quot;Resource name should be between 3 and 15 symbols long!&quot;</em> should be thrown. It also must have a <strong>Url</strong> that is a non-empty string between <code>5</code> and <code>150</code> symbols long. If that is invalid, the error message <em>&quot;Resource url should be between 5 and 150 symbols long!&quot;</em> should be thrown. The resource must print in the following format:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;Resource:</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>-&nbsp;Name:&nbsp;&lt;name&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Url:&nbsp;&lt;url&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Type:&nbsp;Demo</span></span></span></div></pre><h3 id="homeworkresource-class">HomeworkResource class</h3>
+<p>Create a <strong>HomeworkResource</strong> class that implements the <code>ILectureResource</code> interface. The <strong>HomeworkResource</strong> should have a <strong>Name</strong> that is a non-empty string, between <code>3</code> and <code>15</code> symbols long. If that is invalid, the error message <em>&quot;Resource name should be between 3 and 15 symbols long!&quot;</em> should be thrown. It also must have a <strong>Url</strong> that is a non-empty string between <code>5</code> and <code>150</code> symbols long. If that is invalid, the error message <em>&quot;Resource url should be between 5 and 150 symbols long!&quot;</em> should be thrown. It also has a <strong>DueDate</strong> that is automatically set to 7 days from now upon creation in the factory. The resource must print in the following format:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;Resource:</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>-&nbsp;Name:&nbsp;&lt;name&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Url:&nbsp;&lt;url&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Type:&nbsp;Homework</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Due&nbsp;date:&nbsp;&lt;due&nbsp;date&gt;</span></span></span></div></pre><h3 id="presentationresource-class">PresentationResource class</h3>
+<p>Create a <strong>PresentationResource</strong> class that implements the <code>ILectureResource</code> interface. The <strong>DemoResource</strong> should have a <strong>Name</strong> that is a non-empty string, between <code>3</code> and <code>15</code> symbols long. If that is invalid, the error message <em>&quot;Resource name should be between 3 and 15 symbols long!&quot;</em> should be thrown. It also must have a <strong>Url</strong> that is a non-empty string between <code>5</code> and <code>150</code> symbols long. If that is invalid, the error message <em>&quot;Resource url should be between 5 and 150 symbols long!&quot;</em> should be thrown. The resource must print in the following format:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;Resource:</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>-&nbsp;Name:&nbsp;&lt;name&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Url:&nbsp;&lt;url&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Type:&nbsp;Presentation</span></span></span></div></pre><h3 id="videoresource-class">VideoResource class</h3>
+<p>Create a <strong>DemoResource</strong> class that implements the <code>ILectureResource</code> interface. The <strong>DemoResource</strong> should have a <strong>Name</strong> that is a non-empty string, between <code>3</code> and <code>15</code> symbols long. If that is invalid, the error message <em>&quot;Resource name should be between 3 and 15 symbols long!&quot;</em> should be thrown. It also must have a <strong>Url</strong> that is a non-empty string between <code>5</code> and <code>150</code> symbols long. If that is invalid, the error message <em>&quot;Resource url should be between 5 and 150 symbols long!&quot;</em> should be thrown. It also has a <strong>UploadedOn</strong> date that is automatically set to the date of creation in the factory. The resource must print in the following format:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;Resource:</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>-&nbsp;Name:&nbsp;&lt;name&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Url:&nbsp;&lt;url&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Type:&nbsp;Video</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Uploaded&nbsp;on:&nbsp;&lt;uploaded&nbsp;date&gt;</span></span></span></div></pre><h2 id="section-iii-zero-test">Section III - Zero Test</h2>
+<h3 id="input">Input</h3>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>CreateSeason&nbsp;2016&nbsp;2017&nbsp;SoftwareAcademy</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>CreateStudent&nbsp;Pesho&nbsp;Frontend</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>CreateTrainer&nbsp;Cyku&nbsp;JS,&nbsp;C#,&nbsp;Haskell</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>AddStudentToSeason&nbsp;Pesho&nbsp;0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>AddTrainerToSeason&nbsp;Cyku&nbsp;0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>CreateCourse&nbsp;0&nbsp;JavaScriptOOP&nbsp;2&nbsp;2017-01-24</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>CreateLecture&nbsp;0&nbsp;0&nbsp;Introduction&nbsp;2017-01-25&nbsp;Cyku</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>CreateLecture&nbsp;0&nbsp;0&nbsp;Functions&nbsp;2017-01-25&nbsp;Cyku</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>CreateLectureResource&nbsp;0&nbsp;0&nbsp;0&nbsp;video&nbsp;Intro&nbsp;</span><span class="markup underline link https hyperlink"><span>https://www.youtube.com/watch?v=nhRJZ06JFxk</span></span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>CreateLectureResource&nbsp;0&nbsp;0&nbsp;1&nbsp;homework&nbsp;Closures&nbsp;</span><span class="markup underline link https hyperlink"><span>https://github.com/TelerikAcademy/JavaScript-OOP/tree/master/Topics/03.%20Closures-and-Scope/homework</span></span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>AddStudentToCourse&nbsp;Pesho&nbsp;0&nbsp;0&nbsp;onsite</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>CreateCourseResult&nbsp;0&nbsp;0&nbsp;85&nbsp;92&nbsp;Pesho</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>ListCoursesInSeason&nbsp;0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>ListUsersInSeason&nbsp;0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Exit</span></span></span></div></pre><h3 id="output">Output</h3>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Season&nbsp;with&nbsp;ID&nbsp;0&nbsp;was&nbsp;created.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Student&nbsp;with&nbsp;ID&nbsp;0&nbsp;was&nbsp;created</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Trainer&nbsp;with&nbsp;ID&nbsp;0&nbsp;was&nbsp;created.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Student&nbsp;Pesho&nbsp;was&nbsp;added&nbsp;to&nbsp;Season&nbsp;0.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Trainer&nbsp;Cyku&nbsp;was&nbsp;assigned&nbsp;to&nbsp;Season&nbsp;0.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Course&nbsp;with&nbsp;ID&nbsp;0&nbsp;was&nbsp;created&nbsp;in&nbsp;Season&nbsp;0.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Lecture&nbsp;with&nbsp;ID&nbsp;0&nbsp;was&nbsp;created&nbsp;in&nbsp;course&nbsp;0.JavaScriptOOP.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Lecture&nbsp;with&nbsp;ID&nbsp;1&nbsp;was&nbsp;created&nbsp;in&nbsp;course&nbsp;0.JavaScriptOOP.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Lecture&nbsp;resource&nbsp;with&nbsp;ID&nbsp;0&nbsp;was&nbsp;created&nbsp;in&nbsp;Lecture&nbsp;0.JavaScriptOOP.Introduction.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Lecture&nbsp;resource&nbsp;with&nbsp;ID&nbsp;0&nbsp;was&nbsp;created&nbsp;in&nbsp;Lecture&nbsp;0.JavaScriptOOP.Functions.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Student&nbsp;Pesho&nbsp;was&nbsp;added&nbsp;to&nbsp;Course&nbsp;0.JavaScriptOOP.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Course&nbsp;result&nbsp;with&nbsp;ID&nbsp;0&nbsp;was&nbsp;created&nbsp;for&nbsp;Student&nbsp;Pesho.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>*&nbsp;Course:</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span><span class="meta paragraph text"><span>-&nbsp;Name:&nbsp;JavaScriptOOP</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;-&nbsp;Lectures&nbsp;per&nbsp;week:&nbsp;2</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;-&nbsp;Starting&nbsp;date:&nbsp;2017-01-24&nbsp;12:00:00&nbsp;AM</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;-&nbsp;Ending&nbsp;date:&nbsp;2017-02-23&nbsp;12:00:00&nbsp;AM</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;-&nbsp;Onsite&nbsp;students:&nbsp;1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;-&nbsp;Online&nbsp;students:&nbsp;0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;-&nbsp;Lectures:</span></span></span></div><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span>&nbsp;&nbsp;</span><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;Lecture:</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>-&nbsp;Name:&nbsp;Introduction</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;-&nbsp;Date:&nbsp;2017-01-25&nbsp;12:00:00&nbsp;AM</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;-&nbsp;Trainer&nbsp;username:&nbsp;Cyku</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;-&nbsp;Resources:</span></span></span></div><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;Resource:</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>-&nbsp;Name:&nbsp;Intro</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Url:&nbsp;</span><span class="markup underline link https hyperlink"><span>https://www.youtube.com/watch?v=nhRJZ06JFxk</span></span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Type:&nbsp;Video</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Uploaded&nbsp;on:&nbsp;2017-01-16&nbsp;12:00:00&nbsp;AM</span></span></span></div><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span>&nbsp;&nbsp;</span><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;Lecture:</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>-&nbsp;Name:&nbsp;Functions</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;-&nbsp;Date:&nbsp;2017-01-25&nbsp;12:00:00&nbsp;AM</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;-&nbsp;Trainer&nbsp;username:&nbsp;Cyku</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;-&nbsp;Resources:</span></span></span></div><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;Resource:</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>-&nbsp;Name:&nbsp;Closures</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Url:&nbsp;</span><span class="markup underline link https hyperlink"><span>https://github.com/TelerikAcademy/JavaScript-OOP/tree/master/Topics/03.%20Closures-and-Scope/homework</span></span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Type:&nbsp;Homework</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Due&nbsp;date:&nbsp;2017-01-23&nbsp;12:00:00&nbsp;AM</span></span></span></div><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;Trainer:</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span><span class="meta paragraph text"><span>-&nbsp;Username:&nbsp;Cyku</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;-&nbsp;Technologies:&nbsp;JS;</span></span></span></div><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;Student:</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span><span class="meta paragraph text"><span>-&nbsp;Username:&nbsp;Pesho</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;-&nbsp;Track:&nbsp;Frontend</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;-&nbsp;Course&nbsp;results:</span></span></span></div><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span>&nbsp;&nbsp;</span><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;JavaScriptOOP:&nbsp;Points&nbsp;-&nbsp;92,&nbsp;Grade&nbsp;-&nbsp;Excellent</span></span></span></div></pre><h2 id="section-iv-tasks">Section IV - Tasks</h2>
+<h3 id="listuserscommand">ListUsersCommand</h3>
+<p>Implement the <strong>ListUsers</strong> command in the <strong>Commands.Listing</strong> namespace. It should list all <strong>Trainers</strong> and <strong>Students</strong> (in that order) from the <strong>Engine</strong>. If there are no users (no Trainers nor Students), the error message <em>&quot;There are no registered users!&quot;</em> should be thrown.</p>
+<h2 id="section-iv-zero-test">Section IV - Zero Test</h2>
+<h3 id="input">Input</h3>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>CreateStudent&nbsp;Pesho&nbsp;Frontend</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>CreateStudent&nbsp;Gosho&nbsp;Dev</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>CreateTrainer&nbsp;Mirto&nbsp;ASP.NET,Angular2</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>CreateTrainer&nbsp;Duncu&nbsp;ASP.NET,nodeJS</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>ListUsers</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Exit</span></span></span></div></pre><h3 id="output">Output</h3>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Student&nbsp;with&nbsp;ID&nbsp;0&nbsp;was&nbsp;created.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Student&nbsp;with&nbsp;ID&nbsp;1&nbsp;was&nbsp;created.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Trainer&nbsp;with&nbsp;ID&nbsp;0&nbsp;was&nbsp;created.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Trainer&nbsp;with&nbsp;ID&nbsp;1&nbsp;was&nbsp;created.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>*&nbsp;Trainer:</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span><span class="meta paragraph text"><span>-&nbsp;Username:&nbsp;Mirto</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;-&nbsp;Technologies:&nbsp;ASP.NET;&nbsp;Angular2</span></span></span></div><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;Trainer:</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span><span class="meta paragraph text"><span>-&nbsp;Username:&nbsp;Duncu</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;-&nbsp;Technologies:&nbsp;ASP.NET;&nbsp;nodeJS</span></span></span></div><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;Student:</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span><span class="meta paragraph text"><span>-&nbsp;Username:&nbsp;Pesho</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;-&nbsp;Track:&nbsp;Frontend</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;-&nbsp;Course&nbsp;results:</span></span></span></div><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span>&nbsp;&nbsp;</span><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;User&nbsp;has&nbsp;no&nbsp;course&nbsp;results!</span></span></span></div><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;Student:</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span><span class="meta paragraph text"><span>-&nbsp;Username:&nbsp;Gosho</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;-&nbsp;Track:&nbsp;Dev</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;-&nbsp;Course&nbsp;results:</span></span></span></div><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span>&nbsp;&nbsp;</span><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;User&nbsp;has&nbsp;no&nbsp;course&nbsp;results!</span></span></span></div></pre><p><img src="http://www.potato.es/wp-content/uploads/potato-slider.png"></p></body>
+</html>
