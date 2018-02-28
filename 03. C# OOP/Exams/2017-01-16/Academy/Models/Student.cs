@@ -17,10 +17,10 @@ namespace Academy.Models
         private string username;
         private Track track;
 
-        public Student(string username, string track)
+        public Student(string username, Track track)
         {
             this.Username = username;
-            this.Track = (Track)Enum.Parse(typeof(Track), track);
+            this.Track = track;
             this.CourseResults = new List<ICourseResult>();
         }
 
@@ -82,7 +82,7 @@ namespace Academy.Models
             {
                 foreach (var courseResult in this.CourseResults)
                 {
-                    sb.AppendLine(courseResult.ToString());
+                    sb.AppendLine("  " + courseResult.ToString());
                 }
             }
             else

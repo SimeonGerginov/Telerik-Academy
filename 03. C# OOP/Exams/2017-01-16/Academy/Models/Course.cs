@@ -17,12 +17,12 @@ namespace Academy.Models
         private DateTime startingDate;
         private DateTime endingDate;
 
-        public Course(string name, int lecturesPerWeek, DateTime startingDate, DateTime endingDate)
+        public Course(string name, int lecturesPerWeek, DateTime startingDate)
         {
             this.Name = name;
             this.LecturesPerWeek = lecturesPerWeek;
             this.StartingDate = startingDate;
-            this.EndingDate = endingDate;
+            this.EndingDate = this.StartingDate.AddDays(30);
 
             this.OnsiteStudents = new List<IStudent>();
             this.OnlineStudents = new List<IStudent>();
@@ -114,6 +114,10 @@ namespace Academy.Models
             sb.AppendFormat(" - Starting date: {0}", this.StartingDate);
             sb.Append(Environment.NewLine);
             sb.AppendFormat(" - Ending date: {0}", this.EndingDate);
+            sb.Append(Environment.NewLine);
+            sb.AppendFormat(" - Onsite students: {0}", this.OnsiteStudents.Count);
+            sb.Append(Environment.NewLine);
+            sb.AppendFormat(" - Online students: {0}", this.OnlineStudents.Count);
             sb.Append(Environment.NewLine);
             sb.AppendLine(" - Lectures:");
 

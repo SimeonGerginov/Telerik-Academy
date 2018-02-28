@@ -13,10 +13,12 @@ namespace Academy.Models
 
         private string username;
 
-        public Trainer(string username)
+        public Trainer(string username, string technologies)
         {
             this.Username = username;
             this.Technologies = new List<string>();
+
+            this.Technologies.Add(technologies);
         }
 
         public string Username
@@ -55,11 +57,12 @@ namespace Academy.Models
 
             if(this.Technologies.Any())
             {
-                for (int i = 0; i < this.Technologies.Count; i++)
+                string[] technologies = this.Technologies[0].Split(',');
+                for (int i = 0; i < technologies.Length; i++)
                 {
-                    string technology = this.Technologies[i];
+                    string technology = technologies[i];
 
-                    if (i == this.Technologies.Count - 1)
+                    if (i == technologies.Length - 1)
                     {
                         sb.Append(technology);
                     }

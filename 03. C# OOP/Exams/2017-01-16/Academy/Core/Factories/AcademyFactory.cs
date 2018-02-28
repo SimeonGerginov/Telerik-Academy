@@ -38,26 +38,30 @@ namespace Academy.Core.Factories
 
         public IStudent CreateStudent(string username, string track)
         {
-            // TODO: Implement this
-            throw new NotImplementedException("Student class not attached to factory.");
+            Track trackAsEnum;
+            Enum.TryParse<Track>(track, out trackAsEnum);
+
+            return new Student(username, trackAsEnum);
         }
 
         public ITrainer CreateTrainer(string username, string technologies)
         {
-            // TODO: Implement this
-            throw new NotImplementedException("Trainer class not attached to factory.");
+            return new Trainer(username, technologies);
         }
 
         public ICourse CreateCourse(string name, string lecturesPerWeek, string startingDate)
         {
-            // TODO: Implement this
-            throw new NotImplementedException("Course class not attached to factory.");
+            int lecturesPerWeekAsInt = int.Parse(lecturesPerWeek);
+            DateTime startingDateAsDate = Convert.ToDateTime(startingDate);
+
+            return new Course(name, lecturesPerWeekAsInt, startingDateAsDate);
         }
 
         public ILecture CreateLecture(string name, string date, ITrainer trainer)
         {
-            // TODO: Implement this
-            throw new NotImplementedException("Lecture class not attached to factory.");
+            DateTime dateAsDate = Convert.ToDateTime(date);
+
+            return new Lecture(name, dateAsDate, trainer);
         }
 
         public ILectureResource CreateLectureResource(string type, string name, string url)
@@ -80,8 +84,10 @@ namespace Academy.Core.Factories
 
         public ICourseResult CreateCourseResult(ICourse course, string examPoints, string coursePoints)
         {
-            // TODO: Implement this
-            throw new NotImplementedException("CourseResult class not attached to factory.");
+            float examPointsAsFloat = float.Parse(examPoints);
+            float coursePointsAsFloat = float.Parse(coursePoints);
+
+            return new CourseResult(course, examPointsAsFloat, coursePointsAsFloat);
         }
     }
 }
