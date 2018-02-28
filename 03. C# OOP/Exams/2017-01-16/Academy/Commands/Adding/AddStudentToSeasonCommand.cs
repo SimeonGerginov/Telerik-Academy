@@ -1,11 +1,12 @@
-﻿using Academy.Commands.Contracts;
-using Academy.Core.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace Academy.Commands.Adding
+﻿namespace Academy.Commands.Adding
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
+    using Academy.Commands.Contracts;
+    using Academy.Core.Contracts;
+
     public class AddStudentToSeasonCommand : ICommand
     {
         private readonly IAcademyFactory factory;

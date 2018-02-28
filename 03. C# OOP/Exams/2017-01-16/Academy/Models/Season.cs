@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Academy.Models.Contracts;
-using Academy.Models.Enums;
-
-namespace Academy.Models
+﻿namespace Academy.Models
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+
+    using Academy.Models.Contracts;
+    using Academy.Models.Enums;
+
     public class Season : ISeason
     {
         private int startingYear;
@@ -30,6 +30,7 @@ namespace Academy.Models
             {
                 return this.startingYear;
             }
+
             set
             {
                 if (value < 2016 || value > 2017)
@@ -47,6 +48,7 @@ namespace Academy.Models
             {
                 return this.startingYear;
             }
+
             set
             {
                 if (value < 2016 || value > 2017)
@@ -86,7 +88,7 @@ namespace Academy.Models
                 }
             }
 
-            if (builder.ToString().Equals(""))
+            if (builder.ToString().Equals(string.Empty))
             {
                 return $"There are no users in this season!";
             }

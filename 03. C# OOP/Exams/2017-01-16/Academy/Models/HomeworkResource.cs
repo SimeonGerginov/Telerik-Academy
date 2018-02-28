@@ -1,10 +1,10 @@
-﻿using System;
-using System.Text;
-
-using Academy.Models.Contracts;
-
-namespace Academy.Models
+﻿namespace Academy.Models
 {
+    using System;
+    using System.Text;
+
+    using Academy.Models.Contracts;
+
     public class HomeworkResource : ILectureResource
     {
         private const string NameError = "Resource name should be between 3 and 15 symbols long!";

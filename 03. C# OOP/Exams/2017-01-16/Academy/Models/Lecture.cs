@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Academy.Models.Contracts;
-
-namespace Academy.Models
+﻿namespace Academy.Models
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+
+    using Academy.Models.Contracts;
+
     public class Lecture : ILecture
     {
         private const string NameError = "Lecture's name should be between 5 and 30 symbols long!";

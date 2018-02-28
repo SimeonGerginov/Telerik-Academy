@@ -1,11 +1,9 @@
-﻿using Academy.Commands.Contracts;
-using Academy.Core.Contracts;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Academy.Commands.Listing
+﻿namespace Academy.Commands.Listing
 {
+    using System.Collections.Generic;
+    using Academy.Commands.Contracts;
+    using Academy.Core.Contracts;
+
     public class ListUsersInSeasonCommand : ICommand
     {
         private readonly IAcademyFactory factory;

@@ -1,11 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Academy.Commands.Contracts;
-using Academy.Core.Contracts;
-
-namespace Academy.Commands.Listing
+﻿namespace Academy.Commands.Listing
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    using Academy.Commands.Contracts;
+    using Academy.Core.Contracts;
+
     public class ListUsersCommand : ICommand
     {
         private const string ErrorMessage = "There are no registered users!";

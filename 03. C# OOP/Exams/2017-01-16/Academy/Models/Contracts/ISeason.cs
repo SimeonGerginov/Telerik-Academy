@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-
-using Academy.Models.Enums;
-
-namespace Academy.Models.Contracts
+﻿namespace Academy.Models.Contracts
 {
+    using System.Collections.Generic;
+
+    using Academy.Models.Enums;
+
     public interface ISeason
     {
         Initiative Initiative { get; set; }

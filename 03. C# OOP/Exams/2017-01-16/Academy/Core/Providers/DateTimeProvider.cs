@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace Academy.Core.Providers
+﻿namespace Academy.Core.Providers
 {
+    using System;
+
     internal abstract class DateTimeProvider
     {
         public static DateTime Now

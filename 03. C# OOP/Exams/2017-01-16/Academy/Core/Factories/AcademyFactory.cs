@@ -1,13 +1,14 @@
-﻿using Academy.Core.Contracts;
-using Academy.Core.Providers;
-using Academy.Models;
-using Academy.Models.Contracts;
-using Academy.Models.Enums;
-using Academy.Models.Utils.Contracts;
-using System;
-
-namespace Academy.Core.Factories
+﻿namespace Academy.Core.Factories
 {
+    using System;
+
+    using Academy.Core.Contracts;
+    using Academy.Core.Providers;
+    using Academy.Models;
+    using Academy.Models.Contracts;
+    using Academy.Models.Enums;
+    using Academy.Models.Utils.Contracts;
+
     public class AcademyFactory : IAcademyFactory
     {
         private static IAcademyFactory instanceHolder = new AcademyFactory();

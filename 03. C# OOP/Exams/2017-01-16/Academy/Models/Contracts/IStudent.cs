@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
-
-using Academy.Models.Utils.Contracts;
-using Academy.Models.Enums;
-
-namespace Academy.Models.Contracts
+﻿namespace Academy.Models.Contracts
 {
+    using System.Collections.Generic;
+
+    using Academy.Models.Enums;
+    using Academy.Models.Utils.Contracts;
+
     public interface IStudent : IUser
     {
         Track Track { get; set; }

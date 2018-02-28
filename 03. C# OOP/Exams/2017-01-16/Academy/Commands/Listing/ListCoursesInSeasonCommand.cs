@@ -1,9 +1,10 @@
-﻿using Academy.Commands.Contracts;
-using Academy.Core.Contracts;
-using System.Collections.Generic;
-
-namespace Academy.Commands.Listing
+﻿namespace Academy.Commands.Listing
 {
+    using System.Collections.Generic;
+
+    using Academy.Commands.Contracts;
+    using Academy.Core.Contracts;
+
     public class ListCoursesInSeasonCommand : ICommand
     {
         private readonly IAcademyFactory factory;

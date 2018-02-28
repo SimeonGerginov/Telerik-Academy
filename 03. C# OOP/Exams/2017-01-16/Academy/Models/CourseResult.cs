@@ -1,12 +1,12 @@
-﻿using System;
-using System.Text;
-
-using Academy.Models.Contracts;
-using Academy.Models.Enums;
-using Academy.Models.Utils.Contracts;
-
-namespace Academy.Models
+﻿namespace Academy.Models
 {
+    using System;
+    using System.Text;
+
+    using Academy.Models.Contracts;
+    using Academy.Models.Enums;
+    using Academy.Models.Utils.Contracts;
+
     public class CourseResult : ICourseResult
     {
         private const string ExamPointsError = "Course result's exam points should be between 0 and 1000!";
@@ -34,7 +34,7 @@ namespace Academy.Models
 
             set
             {
-                if(value < 0 || value > 100)
+                if (value < 0 || value > 100)
                 {
                     throw new ArgumentOutOfRangeException(ExamPointsError);
                 }
@@ -52,7 +52,7 @@ namespace Academy.Models
 
             set
             {
-                if(value < 0 || value > 125)
+                if (value < 0 || value > 125)
                 {
                     throw new ArgumentOutOfRangeException(CoursePointsError);
                 }
@@ -70,11 +70,11 @@ namespace Academy.Models
 
             private set
             {
-                if(this.ExamPoints >= 65 || this.CoursePoints >= 75)
+                if (this.ExamPoints >= 65 || this.CoursePoints >= 75)
                 {
                     this.grade = Grade.Excellent;
                 }
-                else if((this.ExamPoints < 60 && this.ExamPoints >= 30) || 
+                else if ((this.ExamPoints < 60 && this.ExamPoints >= 30) || 
                    (this.CoursePoints < 75 && this.CoursePoints >= 45))
                 {
                     this.grade = Grade.Passed;
@@ -90,8 +90,7 @@ namespace Academy.Models
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendFormat("* {0}: Points - {1}, Grade - {2}", this.Course.Name,
-                this.CoursePoints, this.Grade.ToString());
+            sb.AppendFormat("* {0}: Points - {1}, Grade - {2}", this.Course.Name, this.CoursePoints, this.Grade.ToString());
 
             return sb.ToString();
         }

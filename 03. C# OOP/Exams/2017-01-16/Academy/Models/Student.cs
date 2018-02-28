@@ -1,15 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Academy.Models.Contracts;
-using Academy.Models.Enums;
-using Academy.Models.Utils.Contracts;
-
-namespace Academy.Models
+﻿namespace Academy.Models
 {
-   public class Student : IStudent
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+
+    using Academy.Models.Contracts;
+    using Academy.Models.Enums;
+    using Academy.Models.Utils.Contracts;
+
+    public class Student : IStudent
     {
         private const string UsernameError = "User's username should be between 3 and 16 symbols long!";
         private const string TrackError = "The provided track is not valid!";
@@ -56,7 +56,7 @@ namespace Academy.Models
 
             set
             {
-                if(!Enum.IsDefined(typeof(Track), value))
+                if (!Enum.IsDefined(typeof(Track), value))
                 {
                     throw new ArgumentException(TrackError);
                 }
@@ -78,7 +78,7 @@ namespace Academy.Models
             sb.Append(Environment.NewLine);
             sb.AppendLine(" - Course results:");
 
-            if(this.CourseResults.Any())
+            if (this.CourseResults.Any())
             {
                 foreach (var courseResult in this.CourseResults)
                 {

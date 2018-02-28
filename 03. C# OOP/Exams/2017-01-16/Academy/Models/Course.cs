@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Academy.Models.Contracts;
-
-namespace Academy.Models
+﻿namespace Academy.Models
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+
+    using Academy.Models.Contracts;
+
     public class Course : ICourse
     {
         private const string NameError = "The name of the course must be between 3 and 45 symbols!";
@@ -121,7 +121,7 @@ namespace Academy.Models
             sb.Append(Environment.NewLine);
             sb.AppendLine(" - Lectures:");
 
-            if(this.Lectures.Any())
+            if (this.Lectures.Any())
             {
                 foreach (var lecturer in this.Lectures)
                 {

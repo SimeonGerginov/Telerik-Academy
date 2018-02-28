@@ -1,8 +1,8 @@
-﻿using Academy.Models.Contracts;
-using Academy.Models.Enums;
-
-namespace Academy.Models.Utils.Contracts
+﻿namespace Academy.Models.Utils.Contracts
 {
+    using Academy.Models.Contracts;
+    using Academy.Models.Enums;
+
     public interface ICourseResult
     {
         ICourse Course { get; }

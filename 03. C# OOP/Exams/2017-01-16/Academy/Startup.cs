@@ -1,7 +1,7 @@
-﻿using Academy.Core;
-
-namespace Academy
+﻿namespace Academy
 {
+    using Academy.Core;
+
     public class Startup
     {
         public static void Main(string[] args)

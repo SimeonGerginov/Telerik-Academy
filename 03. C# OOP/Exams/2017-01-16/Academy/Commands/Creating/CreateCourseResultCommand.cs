@@ -1,11 +1,12 @@
-﻿using Academy.Commands.Contracts;
-using Academy.Core.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace Academy.Commands.Creating
+﻿namespace Academy.Commands.Creating
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
+    using Academy.Commands.Contracts;
+    using Academy.Core.Contracts;
+
     public class CreateCourseResultCommand : ICommand
     {
         private readonly IAcademyFactory factory;

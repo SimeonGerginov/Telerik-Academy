@@ -1,19 +1,20 @@
-﻿using Academy.Core.Contracts;
-using Academy.Core.Providers;
-using Academy.Models.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Text.RegularExpressions;
-
-namespace Academy.Core
+﻿namespace Academy.Core
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    using Academy.Core.Contracts;
+    using Academy.Core.Providers;
+    using Academy.Models.Contracts;
+
     public class Engine : IEngine
     {
-        private static IEngine instanceHolder = new Engine();
-
         private const string TerminationCommand = "Exit";
         private const string NullProvidersExceptionMessage = "cannot be null.";
+
+        private static IEngine instanceHolder = new Engine();
+      
         private readonly StringBuilder builder = new StringBuilder();
 
         // private because of Singleton design pattern
@@ -43,13 +44,11 @@ namespace Academy.Core
 
         public IParser Parser { get; set; }
 
-
         public IList<ISeason> Seasons { get; private set; }
 
         public IList<IStudent> Students { get; private set; }
 
         public IList<ITrainer> Trainers { get; private set; }
-
 
         public void Start()
         {
@@ -67,7 +66,7 @@ namespace Academy.Core
 
                     this.ProcessCommand(commandAsString);
                 }
-                catch (ArgumentOutOfRangeException ex)
+                catch (ArgumentOutOfRangeException)
                 {
                     this.builder.AppendLine("Invalid command parameters supplied or the entity with that ID for does not exist.");
                 }
