@@ -28,7 +28,7 @@
                 return this.username;
             }
 
-            set
+            private set
             {
                 if (string.IsNullOrEmpty(value))
                 {

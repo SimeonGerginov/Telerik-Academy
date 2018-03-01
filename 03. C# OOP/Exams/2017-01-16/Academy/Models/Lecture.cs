@@ -30,7 +30,7 @@
                 return this.name;
             }
 
-            set
+            private set
             {
                 if (string.IsNullOrEmpty(value))
                 {
@@ -53,7 +53,7 @@
                 return this.date;
             }
 
-            set
+            private set
             {
                 this.date = value;
             }
@@ -66,7 +66,7 @@
                 return this.trainer;
             }
 
-            set
+            private set
             {
                 this.trainer = value;
             }

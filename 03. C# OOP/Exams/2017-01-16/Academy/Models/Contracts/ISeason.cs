@@ -6,11 +6,11 @@
 
     public interface ISeason
     {
-        Initiative Initiative { get; set; }
+        Initiative Initiative { get; }
 
-        int StartingYear { get; set; }
+        int StartingYear { get; }
 
-        int EndingYear { get; set; }
+        int EndingYear { get; }
 
         IList<IStudent> Students { get; set; }
 

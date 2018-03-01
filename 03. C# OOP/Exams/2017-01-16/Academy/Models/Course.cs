@@ -36,7 +36,7 @@
                 return this.name;
             }
 
-            set
+            private set
             {
                 if (string.IsNullOrEmpty(value))
                 {
@@ -59,7 +59,7 @@
                 return this.lecturesPerWeek;
             }
 
-            set
+            private set
             {
                 if (value < 1 || value > 7)
                 {
@@ -77,7 +77,7 @@
                 return this.startingDate;
             }
 
-            set
+            private set
             {
                 this.startingDate = value;
             }
@@ -90,7 +90,7 @@
                 return this.endingDate;
             }
 
-            set
+            private set
             {
                 this.endingDate = value;
             }

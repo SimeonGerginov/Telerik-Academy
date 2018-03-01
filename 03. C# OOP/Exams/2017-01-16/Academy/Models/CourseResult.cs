@@ -23,7 +23,7 @@
             this.CoursePoints = coursePoints;
         }
 
-        public ICourse Course { get; set; }
+        public ICourse Course { get; private set; }
 
         public float ExamPoints
         {
@@ -32,7 +32,7 @@
                 return this.examPoints;
             }
 
-            set
+            private set
             {
                 if (value < 0 || value > 100)
                 {
@@ -50,7 +50,7 @@
                 return this.coursePoints;
             }
 
-            set
+            private set
             {
                 if (value < 0 || value > 125)
                 {

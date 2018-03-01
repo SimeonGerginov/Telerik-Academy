@@ -28,7 +28,7 @@
                 return this.name;
             }
 
-            set
+            private set
             {
                 if (string.IsNullOrEmpty(value))
                 {
@@ -51,7 +51,7 @@
                 return this.url;
             }
 
-            set
+            private set
             {
                 if (string.IsNullOrEmpty(value))
                 {
@@ -74,7 +74,7 @@
                 return this.dueDate;
             }
 
-            set
+            private set
             {
                 this.dueDate = value;
             }

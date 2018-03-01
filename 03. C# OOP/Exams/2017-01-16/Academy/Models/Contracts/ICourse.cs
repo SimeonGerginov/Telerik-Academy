@@ -5,13 +5,13 @@
 
     public interface ICourse
     {
-        string Name { get; set; }
+        string Name { get; }
 
-        int LecturesPerWeek { get; set; }
+        int LecturesPerWeek { get; }
 
-        DateTime StartingDate { get; set; }
+        DateTime StartingDate { get; }
 
-        DateTime EndingDate { get; set; }
+        DateTime EndingDate { get; }
 
         IList<IStudent> OnsiteStudents { get; }
 

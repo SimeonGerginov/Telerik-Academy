@@ -2,8 +2,8 @@
 {
     public interface ILectureResource
     {
-        string Name { get; set; }
+        string Name { get; }
 
-        string Url { get; set; }
+        string Url { get; }
     }
 }

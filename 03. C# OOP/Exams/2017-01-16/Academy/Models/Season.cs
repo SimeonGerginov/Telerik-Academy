@@ -31,7 +31,7 @@
                 return this.startingYear;
             }
 
-            set
+            private set
             {
                 if (value < 2016 || value > 2017)
                 {
@@ -49,7 +49,7 @@
                 return this.startingYear;
             }
 
-            set
+            private set
             {
                 if (value < 2016 || value > 2017)
                 {
@@ -60,7 +60,7 @@
             }
         }
 
-        public Initiative Initiative { get; set; }
+        public Initiative Initiative { get; private set; }
 
         public IList<IStudent> Students { get; set; }
 

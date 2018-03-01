@@ -5,11 +5,11 @@
 
     public interface ILecture
     {
-        string Name { get; set; }
+        string Name { get; }
 
-        DateTime Date { get; set; }
+        DateTime Date { get; }
 
-        ITrainer Trainer { get; set; }
+        ITrainer Trainer { get; }
 
         IList<ILectureResource> Resources { get; }
     }

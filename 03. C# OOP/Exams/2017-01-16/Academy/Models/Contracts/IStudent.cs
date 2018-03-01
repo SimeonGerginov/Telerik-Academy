@@ -7,7 +7,7 @@
 
     public interface IStudent : IUser
     {
-        Track Track { get; set; }
+        Track Track { get; }
 
         IList<ICourseResult> CourseResults { get; set; }
     }

@@ -31,7 +31,7 @@
                 return this.username;
             }
 
-            set
+            private set
             {
                 if (string.IsNullOrEmpty(value))
                 {
@@ -54,7 +54,7 @@
                 return this.track;
             }
 
-            set
+            private set
             {
                 if (!Enum.IsDefined(typeof(Track), value))
                 {
