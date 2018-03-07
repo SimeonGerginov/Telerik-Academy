@@ -1,13 +1,13 @@
-﻿namespace Academy.Core
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+using Academy.Core.Contracts;
+using Academy.Core.Providers;
+using Academy.Models.Contracts;
+
+namespace Academy.Core
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
-
-    using Academy.Core.Contracts;
-    using Academy.Core.Providers;
-    using Academy.Models.Contracts;
-
     public class Engine : IEngine
     {
         private const string TerminationCommand = "Exit";

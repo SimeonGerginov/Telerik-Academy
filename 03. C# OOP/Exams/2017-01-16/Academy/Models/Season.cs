@@ -1,13 +1,13 @@
-﻿namespace Academy.Models
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+using Academy.Models.Contracts;
+using Academy.Models.Enums;
+
+namespace Academy.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-
-    using Academy.Models.Contracts;
-    using Academy.Models.Enums;
-
     public class Season : ISeason
     {
         private int startingYear;

@@ -1,8 +1,8 @@
-﻿namespace Academy.Core.Contracts
-{
-    using Academy.Models.Contracts;
-    using Academy.Models.Utils.Contracts;
+﻿using Academy.Models.Contracts;
+using Academy.Models.Utils.Contracts;
 
+namespace Academy.Core.Contracts
+{
     public interface IAcademyFactory
     {
         ISeason CreateSeason(string startingYear, string endingYear, string initiative);

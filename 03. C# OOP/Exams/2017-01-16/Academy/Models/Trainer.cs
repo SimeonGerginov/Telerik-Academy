@@ -1,12 +1,12 @@
-﻿namespace Academy.Models
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+using Academy.Models.Contracts;
+
+namespace Academy.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-
-    using Academy.Models.Contracts;
-
     public class Trainer : ITrainer
     {
         private const string UsernameError = "User's username should be between 3 and 16 symbols long!";

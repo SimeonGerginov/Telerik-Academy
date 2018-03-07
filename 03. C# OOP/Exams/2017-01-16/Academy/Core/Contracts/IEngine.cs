@@ -1,9 +1,8 @@
-﻿namespace Academy.Core.Contracts
+﻿using System.Collections.Generic;
+using Academy.Models.Contracts;
+
+namespace Academy.Core.Contracts
 {
-    using System.Collections.Generic;
-
-    using Academy.Models.Contracts;
-
     public interface IEngine
     {
         IReader Reader { get; set; }

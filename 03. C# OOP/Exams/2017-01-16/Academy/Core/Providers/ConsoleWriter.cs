@@ -1,9 +1,8 @@
-﻿namespace Academy.Core.Providers
+﻿using System;
+using Academy.Core.Contracts;
+
+namespace Academy.Core.Providers
 {
-    using System;
-
-    using Academy.Core.Contracts;
-
     public class ConsoleWriter : IWriter
     {
         public void Write(string message)

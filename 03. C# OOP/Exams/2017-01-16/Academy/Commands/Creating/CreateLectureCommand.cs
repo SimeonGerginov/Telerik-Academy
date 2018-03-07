@@ -1,11 +1,11 @@
-﻿namespace Academy.Commands.Creating
+﻿using System.Collections.Generic;
+using System.Linq;
+
+using Academy.Commands.Contracts;
+using Academy.Core.Contracts;
+
+namespace Academy.Commands.Creating
 {
-    using System.Collections.Generic;
-    using System.Linq;
-
-    using Academy.Commands.Contracts;
-    using Academy.Core.Contracts;
-
     public class CreateLectureCommand : ICommand
     {
         private readonly IAcademyFactory factory;

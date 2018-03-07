@@ -1,12 +1,12 @@
-﻿namespace Academy.Models
+﻿using System;
+using System.Text;
+
+using Academy.Models.Contracts;
+using Academy.Models.Enums;
+using Academy.Models.Utils.Contracts;
+
+namespace Academy.Models
 {
-    using System;
-    using System.Text;
-
-    using Academy.Models.Contracts;
-    using Academy.Models.Enums;
-    using Academy.Models.Utils.Contracts;
-
     public class CourseResult : ICourseResult
     {
         private const string ExamPointsError = "Course result's exam points should be between 0 and 1000!";

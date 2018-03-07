@@ -1,14 +1,14 @@
-﻿namespace Academy.Core.Providers
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+
+using Academy.Commands.Contracts;
+using Academy.Core.Contracts;
+using Academy.Core.Factories;
+
+namespace Academy.Core.Providers
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Reflection;
-
-    using Academy.Commands.Contracts;
-    using Academy.Core.Contracts;
-    using Academy.Core.Factories;
-
     public class CommandParser : IParser
     {
         // Magic, do not touch!

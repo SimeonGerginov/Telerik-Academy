@@ -1,7 +1,7 @@
-﻿namespace Academy.Models.Contracts
-{
-    using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
+namespace Academy.Models.Contracts
+{
     public interface ITrainer : IUser
     {
         IList<string> Technologies { get; set; }

@@ -1,8 +1,8 @@
-﻿namespace Academy.Models.Contracts
-{
-    using System;
-    using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
+namespace Academy.Models.Contracts
+{
     public interface ICourse
     {
         string Name { get; }
