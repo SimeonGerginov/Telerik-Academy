@@ -29,9 +29,16 @@ namespace Academy.Commands.Listing
                 throw new ArgumentException(ErrorMessage);
             }
 
+            int trainersCounter = 0;
             foreach (var trainer in this.engine.Trainers)
             {
                 sb.Append(trainer.ToString());
+                trainersCounter++;
+
+                if (trainersCounter <= this.engine.Trainers.Count)
+                {
+                    sb.Append(Environment.NewLine);
+                }
             }
 
             if (this.engine.Students.Count == 0)
@@ -39,9 +46,16 @@ namespace Academy.Commands.Listing
                 throw new ArgumentException(ErrorMessage);
             }
 
+            int studentsCounter = 0;
             foreach (var student in this.engine.Students)
             {
                 sb.Append(student.ToString());
+                studentsCounter++;
+
+                if (studentsCounter <= this.engine.Students.Count - 1)
+                {
+                    sb.Append(Environment.NewLine);
+                }
             }
 
             return sb.ToString();

@@ -96,7 +96,7 @@ namespace Academy.Models
             }
             else
             {
-                sb.Append("    * There are no resources in this lecture.");
+                sb.AppendLine("    * There are no resources in this lecture.");
             }
 
             return sb.ToString();

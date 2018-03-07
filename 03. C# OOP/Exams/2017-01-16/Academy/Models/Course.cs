@@ -106,7 +106,7 @@ namespace Academy.Models
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine("* Course");
+            sb.AppendLine("* Course:");
             sb.AppendFormat(" - Name: {0}", this.Name);
             sb.Append(Environment.NewLine);
             sb.AppendFormat(" - Lectures per week: {0}", this.LecturesPerWeek);

@@ -90,8 +90,6 @@ namespace Academy.Models
                 sb.Append("  * User has no course results!");
             }
 
-            sb.Append(Environment.NewLine);
-
             return sb.ToString(); 
         }
     }
