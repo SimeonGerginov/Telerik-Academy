@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Dealership.Common;
 using Dealership.Common.Enums;
@@ -49,7 +50,17 @@ namespace Dealership.Models
             private set
             {
                 Validator.ValidateNull(value, UsernameError);
-                Validator.ValidateSymbols(value, Constants.UsernamePattern, Constants.InvalidSymbols);
+
+                ValidateStringRange(value, 
+                    Constants.MinNameLength, 
+                    Constants.MaxNameLength, 
+                    string.Format(Constants.StringMustBeBetweenMinAndMax, 
+                    "Username", 
+                    Constants.MinNameLength.ToString(),
+                    Constants.MaxNameLength.ToString()));
+
+                Validator.ValidateSymbols(value, Constants.UsernamePattern, 
+                    string.Format(Constants.InvalidSymbols, "Username"));
 
                 this.username = value;
             }
@@ -65,8 +76,14 @@ namespace Dealership.Models
             private set
             {
                 Validator.ValidateNull(value, FirstNameError);
-                ValidateStringRange(value, Constants.MinNameLength, Constants.MaxNameLength,
-                    Constants.StringMustBeBetweenMinAndMax);
+
+                ValidateStringRange(value,
+                    Constants.MinNameLength,
+                    Constants.MaxNameLength,
+                    string.Format(Constants.StringMustBeBetweenMinAndMax,
+                    "Firstname",
+                    Constants.MinNameLength.ToString(),
+                    Constants.MaxNameLength.ToString()));
 
                 this.firstName = value;
             }
@@ -82,8 +99,14 @@ namespace Dealership.Models
             private set
             {
                 Validator.ValidateNull(value, LastNameError);
-                ValidateStringRange(value, Constants.MinNameLength, Constants.MaxNameLength, 
-                    Constants.StringMustBeBetweenMinAndMax);
+
+                ValidateStringRange(value,
+                    Constants.MinNameLength,
+                    Constants.MaxNameLength,
+                    string.Format(Constants.StringMustBeBetweenMinAndMax,
+                    "Lastname",
+                    Constants.MinNameLength.ToString(),
+                    Constants.MaxNameLength.ToString()));
 
                 this.lastName = value;
             }
@@ -99,9 +122,17 @@ namespace Dealership.Models
             private set
             {
                 Validator.ValidateNull(value, PasswordError);
-                ValidateStringRange(value, Constants.MinPasswordLength, Constants.MaxPasswordLength,
-                    Constants.StringMustBeBetweenMinAndMax);
-                Validator.ValidateSymbols(value, Constants.PasswordPattern, Constants.InvalidSymbols);
+
+                ValidateStringRange(value,
+                    Constants.MinPasswordLength,
+                    Constants.MaxPasswordLength,
+                    string.Format(Constants.StringMustBeBetweenMinAndMax,
+                    "Password",
+                    Constants.MinPasswordLength.ToString(),
+                    Constants.MaxPasswordLength.ToString()));
+
+                Validator.ValidateSymbols(value, Constants.PasswordPattern, 
+                    string.Format(Constants.InvalidSymbols, "Password"));
 
                 this.password = value;
             }
@@ -145,9 +176,9 @@ namespace Dealership.Models
                 throw new ArgumentException(Constants.AdminCannotAddVehicles);
             }
 
-            if (this.Role != Role.VIP && this.Vehicles.Count > 5)
+            if (this.Role != Role.VIP && this.Vehicles.Count >= 5)
             {
-                throw new ArgumentException(Constants.NotAnVipUserVehiclesAdd);
+                throw new ArgumentException(string.Format(Constants.NotAnVipUserVehiclesAdd, 5));
             }
 
             this.Vehicles.Add(vehicle);
@@ -157,8 +188,23 @@ namespace Dealership.Models
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendFormat($"Username: {this.Username}," +
-                $" FullName: {this.FirstName} {this.LastName}, Role: {Role}");
+            sb.AppendFormat("--USER {0}--", this.Username);
+            sb.AppendFormat(Environment.NewLine);
+
+            if (!this.Vehicles.Any())
+            {
+                sb.AppendLine("--NO VEHICLES--");
+                return sb.ToString();
+            }
+
+            int counter = 1;
+            foreach (var vehicle in this.Vehicles)
+            {
+                sb.AppendFormat("{0}. {1}:", counter, vehicle.Type.ToString());
+                sb.Append(Environment.NewLine);
+                sb.Append(vehicle.ToString());
+                counter++;
+            }
 
             return sb.ToString();
         }
@@ -176,6 +222,12 @@ namespace Dealership.Models
         public void RemoveVehicle(IVehicle vehicle)
         {
             this.Vehicles.Remove(vehicle);
+        }
+
+        public override string ToString()
+        {
+            return string.Format("Username: {0}, FullName: {1} {2}, Role: {3}", this.Username,
+                this.FirstName, this.LastName, this.Role.ToString());
         }
     }
 }

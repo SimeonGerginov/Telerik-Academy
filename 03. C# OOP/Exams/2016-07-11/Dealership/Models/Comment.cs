@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Text;
 using Dealership.Common;
 using Dealership.Contracts;
 
@@ -12,10 +12,9 @@ namespace Dealership.Models
         private string content;
         private string author;
 
-        public Comment(string content, string author)
+        public Comment(string content)
         {
             this.Content = content;
-            this.Author = author;
         }
 
         private void ValidateContentRange(string value, int min, int max, string message)
@@ -36,8 +35,14 @@ namespace Dealership.Models
             private set
             {
                 Validator.ValidateNull(value, Constants.CommentCannotBeNull);
-                this.ValidateContentRange(value, Constants.MinCommentLength, Constants.MaxCommentLength,
-                    Constants.StringMustBeBetweenMinAndMax);
+
+                this.ValidateContentRange(value, 
+                    Constants.MinCommentLength, 
+                    Constants.MaxCommentLength,
+                    string.Format(Constants.StringMustBeBetweenMinAndMax, 
+                    "Content",
+                    Constants.MinCommentLength, 
+                    Constants.MaxCommentLength));
 
                 this.content = value;
             }
@@ -56,6 +61,18 @@ namespace Dealership.Models
 
                 this.author = value;
             }
+        }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendFormat("    {0}", this.Content);
+            sb.Append(Environment.NewLine);
+            sb.AppendFormat("      User: {0}", this.Author);
+            sb.Append(Environment.NewLine);
+
+            return sb.ToString();
         }
     }
 }
