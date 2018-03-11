@@ -17,14 +17,6 @@ namespace Dealership.Models
             this.Content = content;
         }
 
-        private void ValidateContentRange(string value, int min, int max, string message)
-        {
-            if (value.Length < min || value.Length > max)
-            {
-                throw new ArgumentException(message);
-            }
-        }
-
         public string Content
         {
             get
@@ -36,13 +28,7 @@ namespace Dealership.Models
             {
                 Validator.ValidateNull(value, Constants.CommentCannotBeNull);
 
-                this.ValidateContentRange(value, 
-                    Constants.MinCommentLength, 
-                    Constants.MaxCommentLength,
-                    string.Format(Constants.StringMustBeBetweenMinAndMax, 
-                    "Content",
-                    Constants.MinCommentLength, 
-                    Constants.MaxCommentLength));
+                this.ValidateContentRange(value, Constants.MinCommentLength, Constants.MaxCommentLength, string.Format(Constants.StringMustBeBetweenMinAndMax, "Content", Constants.MinCommentLength, Constants.MaxCommentLength));
 
                 this.content = value;
             }
@@ -73,6 +59,14 @@ namespace Dealership.Models
             sb.Append(Environment.NewLine);
 
             return sb.ToString();
+        }
+
+        private void ValidateContentRange(string value, int min, int max, string message)
+        {
+            if (value.Length < min || value.Length > max)
+            {
+                throw new ArgumentException(message);
+            }
         }
     }
 }

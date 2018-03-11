@@ -32,14 +32,6 @@ namespace Dealership.Models
             this.Vehicles = new List<IVehicle>();
         }
 
-        private void ValidateStringRange(string value, int min, int max, string message)
-        {
-            if (value.Length < min || value.Length > max)
-            {
-                throw new ArgumentException(message);
-            }
-        }
-
         public string Username
         {
             get
@@ -51,16 +43,9 @@ namespace Dealership.Models
             {
                 Validator.ValidateNull(value, UsernameError);
 
-                ValidateStringRange(value, 
-                    Constants.MinNameLength, 
-                    Constants.MaxNameLength, 
-                    string.Format(Constants.StringMustBeBetweenMinAndMax, 
-                    "Username", 
-                    Constants.MinNameLength.ToString(),
-                    Constants.MaxNameLength.ToString()));
+                this.ValidateStringRange(value, Constants.MinNameLength, Constants.MaxNameLength, string.Format(Constants.StringMustBeBetweenMinAndMax, "Username", Constants.MinNameLength.ToString(), Constants.MaxNameLength.ToString()));
 
-                Validator.ValidateSymbols(value, Constants.UsernamePattern, 
-                    string.Format(Constants.InvalidSymbols, "Username"));
+                Validator.ValidateSymbols(value, Constants.UsernamePattern, string.Format(Constants.InvalidSymbols, "Username"));
 
                 this.username = value;
             }
@@ -77,13 +62,7 @@ namespace Dealership.Models
             {
                 Validator.ValidateNull(value, FirstNameError);
 
-                ValidateStringRange(value,
-                    Constants.MinNameLength,
-                    Constants.MaxNameLength,
-                    string.Format(Constants.StringMustBeBetweenMinAndMax,
-                    "Firstname",
-                    Constants.MinNameLength.ToString(),
-                    Constants.MaxNameLength.ToString()));
+                this.ValidateStringRange(value, Constants.MinNameLength, Constants.MaxNameLength, string.Format(Constants.StringMustBeBetweenMinAndMax, "Firstname", Constants.MinNameLength.ToString(), Constants.MaxNameLength.ToString()));
 
                 this.firstName = value;
             }
@@ -100,13 +79,7 @@ namespace Dealership.Models
             {
                 Validator.ValidateNull(value, LastNameError);
 
-                ValidateStringRange(value,
-                    Constants.MinNameLength,
-                    Constants.MaxNameLength,
-                    string.Format(Constants.StringMustBeBetweenMinAndMax,
-                    "Lastname",
-                    Constants.MinNameLength.ToString(),
-                    Constants.MaxNameLength.ToString()));
+                this.ValidateStringRange(value, Constants.MinNameLength, Constants.MaxNameLength, string.Format(Constants.StringMustBeBetweenMinAndMax, "Lastname", Constants.MinNameLength.ToString(), Constants.MaxNameLength.ToString()));
 
                 this.lastName = value;
             }
@@ -123,16 +96,9 @@ namespace Dealership.Models
             {
                 Validator.ValidateNull(value, PasswordError);
 
-                ValidateStringRange(value,
-                    Constants.MinPasswordLength,
-                    Constants.MaxPasswordLength,
-                    string.Format(Constants.StringMustBeBetweenMinAndMax,
-                    "Password",
-                    Constants.MinPasswordLength.ToString(),
-                    Constants.MaxPasswordLength.ToString()));
+                this.ValidateStringRange(value, Constants.MinPasswordLength, Constants.MaxPasswordLength, string.Format(Constants.StringMustBeBetweenMinAndMax, "Password", Constants.MinPasswordLength.ToString(), Constants.MaxPasswordLength.ToString()));
 
-                Validator.ValidateSymbols(value, Constants.PasswordPattern, 
-                    string.Format(Constants.InvalidSymbols, "Password"));
+                Validator.ValidateSymbols(value, Constants.PasswordPattern, string.Format(Constants.InvalidSymbols, "Password"));
 
                 this.password = value;
             }
@@ -226,8 +192,15 @@ namespace Dealership.Models
 
         public override string ToString()
         {
-            return string.Format("Username: {0}, FullName: {1} {2}, Role: {3}", this.Username,
-                this.FirstName, this.LastName, this.Role.ToString());
+            return string.Format("Username: {0}, FullName: {1} {2}, Role: {3}", this.Username, this.FirstName, this.LastName, this.Role.ToString());
+        }
+
+        private void ValidateStringRange(string value, int min, int max, string message)
+        {
+            if (value.Length < min || value.Length > max)
+            {
+                throw new ArgumentException(message);
+            }
         }
     }
 }

@@ -25,13 +25,7 @@ namespace Dealership.Models
             {
                 Validator.ValidateNull(value, PriceError);
 
-                Validator.ValidateDecimalRange(value,
-                    Constants.MinPrice,
-                    Constants.MaxPrice,
-                    string.Format(Constants.NumberMustBeBetweenMinAndMax,
-                    "Price",
-                    Constants.MinPrice,
-                    Constants.MaxPrice));
+                Validator.ValidateDecimalRange(value, Constants.MinPrice, Constants.MaxPrice, string.Format(Constants.NumberMustBeBetweenMinAndMax, "Price", Constants.MinPrice, Constants.MaxPrice));
 
                 this.price = value;
             }

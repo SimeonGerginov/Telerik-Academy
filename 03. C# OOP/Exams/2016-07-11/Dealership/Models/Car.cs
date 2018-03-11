@@ -32,13 +32,7 @@ namespace Dealership.Models
             {
                 Validator.ValidateNull(value, SeatsError);
 
-                Validator.ValidateIntRange(value, 
-                    Constants.MinSeats, 
-                    Constants.MaxSeats,
-                    string.Format(Constants.NumberMustBeBetweenMinAndMax, 
-                    "Seats", 
-                    Constants.MinSeats, 
-                    Constants.MaxSeats));
+                Validator.ValidateIntRange(value, Constants.MinSeats, Constants.MaxSeats, string.Format(Constants.NumberMustBeBetweenMinAndMax, "Seats", Constants.MinSeats, Constants.MaxSeats));
 
                 this.seats = value;
             }
@@ -50,7 +44,7 @@ namespace Dealership.Models
 
             sb.AppendFormat("  Seats: {0}", this.Seats);
             sb.Append(Environment.NewLine);
-            sb.Append(this.PrintComments());
+            sb.AppendLine(this.PrintComments());
 
             return base.ToString() + sb.ToString();
         }

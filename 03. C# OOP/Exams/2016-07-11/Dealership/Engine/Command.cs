@@ -30,7 +30,6 @@ namespace Dealership.Engine
             {
                 if (string.IsNullOrEmpty(value))
                 {
-
                     throw new ArgumentNullException("Name cannot be null or empty.");
                 }
 

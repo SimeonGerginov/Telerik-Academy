@@ -1,7 +1,8 @@
-﻿using Dealership.Contracts;
-using System;
-using Dealership.Models;
+﻿using System;
+
 using Dealership.Common.Enums;
+using Dealership.Contracts;
+using Dealership.Models;
 
 namespace Dealership.Factories
 {

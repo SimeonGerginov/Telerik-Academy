@@ -31,13 +31,7 @@ namespace Dealership.Models
             {
                 Validator.ValidateNull(value, WeightCapacityError);
 
-                Validator.ValidateIntRange(value,
-                    Constants.MinCapacity,
-                    Constants.MaxCapacity,
-                    string.Format(Constants.NumberMustBeBetweenMinAndMax,
-                    "Weight capacity",
-                    Constants.MinCapacity,
-                    Constants.MaxCapacity));
+                Validator.ValidateIntRange(value, Constants.MinCapacity, Constants.MaxCapacity, string.Format(Constants.NumberMustBeBetweenMinAndMax, "Weight capacity", Constants.MinCapacity, Constants.MaxCapacity));
 
                 this.weightCapacity = value;
             }
@@ -49,7 +43,7 @@ namespace Dealership.Models
 
             sb.AppendFormat("  Weight Capacity: {0}t", this.WeightCapacity);
             sb.Append(Environment.NewLine);
-            sb.Append(this.PrintComments());
+            sb.AppendLine(this.PrintComments());
 
             return base.ToString() + sb.ToString();
         }

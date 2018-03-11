@@ -30,46 +30,6 @@ namespace Dealership.Models
             this.Comments = new List<IComment>();
         }
 
-        private void ValidateStringRange(string value, int min, int max, string message)
-        {
-            if (value.Length < min || value.Length > max)
-            {
-                throw new ArgumentException(message);
-            }
-        }
-
-        protected string PrintComments()
-        {
-            StringBuilder sb = new StringBuilder();
-
-            if (!this.Comments.Any())
-            {
-                sb.AppendLine("    --NO COMMENTS--");
-                return sb.ToString();
-            }
-
-            int commentCount = 0;
-
-            sb.AppendLine("    --COMMENTS--");
-            sb.AppendLine("    ----------");
-
-            foreach (var comment in this.Comments)
-            {
-                sb.Append(comment.ToString());
-                if (commentCount < this.Comments.Count - 1)
-                {
-                    sb.AppendLine("    ----------");
-                    sb.AppendLine("    ----------");
-                }
-                commentCount++;
-            }
-
-            sb.AppendLine("    ----------");
-            sb.AppendLine("    --COMMENTS--");
-
-            return sb.ToString();
-        }
-
         public int Wheels
         {
             get
@@ -81,12 +41,7 @@ namespace Dealership.Models
             {
                 Validator.ValidateNull(value, WheelsError);
 
-                Validator.ValidateIntRange(value, 
-                    Constants.MinWheels, 
-                    Constants.MaxWheels,
-                    string.Format(Constants.NumberMustBeBetweenMinAndMax, "Wheels",
-                    Constants.MinWheels.ToString(),
-                    Constants.MaxWheels.ToString()));
+                Validator.ValidateIntRange(value, Constants.MinWheels, Constants.MaxWheels, string.Format(Constants.NumberMustBeBetweenMinAndMax, "Wheels", Constants.MinWheels.ToString(), Constants.MaxWheels.ToString()));
 
                 this.wheels = value;
             }
@@ -116,13 +71,7 @@ namespace Dealership.Models
             {
                 Validator.ValidateNull(value, MakeError);
 
-                ValidateStringRange(value,
-                    Constants.MinMakeLength,
-                    Constants.MaxMakeLength,
-                    string.Format(Constants.StringMustBeBetweenMinAndMax,
-                    "Make",
-                    Constants.MinMakeLength.ToString(),
-                    Constants.MaxMakeLength.ToString()));
+                this.ValidateStringRange(value, Constants.MinMakeLength, Constants.MaxMakeLength, string.Format(Constants.StringMustBeBetweenMinAndMax, "Make", Constants.MinMakeLength.ToString(), Constants.MaxMakeLength.ToString()));
 
                 this.make = value;
             }
@@ -139,13 +88,7 @@ namespace Dealership.Models
             {
                 Validator.ValidateNull(value, ModelError);
 
-                ValidateStringRange(value,
-                    Constants.MinModelLength,
-                    Constants.MaxModelLength,
-                    string.Format(Constants.StringMustBeBetweenMinAndMax,
-                    "Model",
-                    Constants.MinModelLength.ToString(),
-                    Constants.MaxModelLength.ToString()));
+                this.ValidateStringRange(value, Constants.MinModelLength, Constants.MaxModelLength, string.Format(Constants.StringMustBeBetweenMinAndMax, "Model", Constants.MinModelLength.ToString(), Constants.MaxModelLength.ToString()));
 
                 this.model = value;
             }
@@ -175,13 +118,7 @@ namespace Dealership.Models
             {
                 Validator.ValidateNull(value, PriceError);
 
-                Validator.ValidateDecimalRange(value, 
-                    Constants.MinPrice, 
-                    Constants.MaxPrice,
-                    string.Format(Constants.NumberMustBeBetweenMinAndMax, 
-                    "Price", 
-                    Constants.MinPrice, 
-                    Constants.MaxPrice));
+                Validator.ValidateDecimalRange(value, Constants.MinPrice, Constants.MaxPrice, string.Format(Constants.NumberMustBeBetweenMinAndMax, "Price", Constants.MinPrice, Constants.MaxPrice));
 
                 this.price = value;
             }
@@ -201,6 +138,47 @@ namespace Dealership.Models
             sb.Append(Environment.NewLine);
 
             return sb.ToString();
+        }
+
+        protected string PrintComments()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            if (!this.Comments.Any())
+            {
+                sb.AppendLine("    --NO COMMENTS--");
+                return sb.ToString().TrimEnd();
+            }
+
+            int commentCount = 0;
+
+            sb.AppendLine("    --COMMENTS--");
+            sb.AppendLine("    ----------");
+
+            foreach (var comment in this.Comments)
+            {
+                sb.Append(comment.ToString());
+                if (commentCount < this.Comments.Count - 1)
+                {
+                    sb.AppendLine("    ----------");
+                    sb.AppendLine("    ----------");
+                }
+
+                commentCount++;
+            }
+
+            sb.AppendLine("    ----------");
+            sb.AppendLine("    --COMMENTS--");
+
+            return sb.ToString().TrimEnd();
+        }
+
+        private void ValidateStringRange(string value, int min, int max, string message)
+        {
+            if (value.Length < min || value.Length > max)
+            {
+                throw new ArgumentException(message);
+            }
         }
     }
 }

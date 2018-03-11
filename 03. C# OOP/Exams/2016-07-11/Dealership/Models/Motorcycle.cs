@@ -18,14 +18,6 @@ namespace Dealership.Models
             this.Category = category;
         }
 
-        private void ValidateCategoryRange(string value, int min, int max, string message)
-        {
-            if (value.Length < min || value.Length > max)
-            {
-                throw new ArgumentException(message);
-            }
-        }
-
         public string Category
         {
             get
@@ -37,13 +29,7 @@ namespace Dealership.Models
             {
                 Validator.ValidateNull(value, Constants.VehicleCannotBeNull);
 
-                this.ValidateCategoryRange(value, 
-                    Constants.MinCategoryLength, 
-                    Constants.MaxCategoryLength,
-                    string.Format(Constants.StringMustBeBetweenMinAndMax, 
-                    "Category", 
-                    Constants.MinCategoryLength, 
-                    Constants.MaxCategoryLength));
+                this.ValidateCategoryRange(value, Constants.MinCategoryLength, Constants.MaxCategoryLength, string.Format(Constants.StringMustBeBetweenMinAndMax, "Category", Constants.MinCategoryLength, Constants.MaxCategoryLength));
 
                 this.category = value;
             }
@@ -55,9 +41,17 @@ namespace Dealership.Models
 
             sb.AppendFormat("  Category: {0}", this.Category);
             sb.Append(Environment.NewLine);
-            sb.Append(this.PrintComments());
+            sb.AppendLine(this.PrintComments());
 
             return base.ToString() + sb.ToString();
+        }
+
+        private void ValidateCategoryRange(string value, int min, int max, string message)
+        {
+            if (value.Length < min || value.Length > max)
+            {
+                throw new ArgumentException(message);
+            }
         }
     }
 }

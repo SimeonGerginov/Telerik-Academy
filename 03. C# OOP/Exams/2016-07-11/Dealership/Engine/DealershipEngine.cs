@@ -64,6 +64,14 @@ namespace Dealership.Engine
             this.PrintReports(commandResult);
         }
 
+        private static void ValidateRange(int? value, int min, int max, string message)
+        {
+            if (value < min || value >= max)
+            {
+                throw new ArgumentException(message);
+            }
+        }
+
         private IList<ICommand> ReadCommands()
         {
             var commands = new List<ICommand>();
@@ -339,14 +347,6 @@ namespace Dealership.Engine
             }
 
             return user.PrintVehicles();
-        }
-
-        private static void ValidateRange(int? value, int min, int max, string message)
-        {
-            if (value < min || value >= max)
-            {
-                throw new ArgumentException(message);
-            }
         }
     }
 }
