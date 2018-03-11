@@ -80,10 +80,7 @@ namespace Academy.Models
 
             if (this.CourseResults.Any())
             {
-                foreach (var courseResult in this.CourseResults)
-                {
-                    sb.Append("  " + courseResult.ToString());
-                }
+                sb.Append(string.Join(Environment.NewLine, this.CourseResults));
             }
             else
             {

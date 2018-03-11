@@ -74,7 +74,7 @@ namespace Academy.Models
             sb.Append(Environment.NewLine);
             sb.AppendFormat("     - Url: {0}", this.Url);
             sb.Append(Environment.NewLine);
-            sb.AppendLine("     - Type: Presentation");
+            sb.Append("     - Type: Presentation");
 
             return sb.ToString();
         }

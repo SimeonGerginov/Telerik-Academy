@@ -91,7 +91,6 @@ namespace Academy.Models
             sb.Append(Environment.NewLine);
             sb.AppendLine("     - Type: Video");
             sb.AppendFormat("     - Uploaded on: {0}", this.UploadedOn);
-            sb.Append(Environment.NewLine);
 
             return sb.ToString();
         }

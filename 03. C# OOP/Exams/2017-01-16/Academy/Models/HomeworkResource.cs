@@ -91,7 +91,6 @@ namespace Academy.Models
             sb.Append(Environment.NewLine);
             sb.AppendLine("     - Type: Homework");
             sb.AppendFormat("     - Due date: {0}", this.DueDate);
-            sb.Append(Environment.NewLine);
 
             return sb.ToString();
         }

@@ -89,14 +89,11 @@ namespace Academy.Models
 
             if (this.Resources.Any())
             {
-                foreach (var resource in this.Resources)
-                {
-                    sb.Append(resource.ToString());
-                }
+                sb.Append(string.Join(Environment.NewLine, this.Resources));
             }
             else
             {
-                sb.AppendLine("    * There are no resources in this lecture.");
+                sb.Append("    * There are no resources in this lecture.");
             }
 
             return sb.ToString();

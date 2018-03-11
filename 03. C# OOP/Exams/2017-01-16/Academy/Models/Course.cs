@@ -123,10 +123,7 @@ namespace Academy.Models
 
             if (this.Lectures.Any())
             {
-                foreach (var lecturer in this.Lectures)
-                {
-                    sb.Append(lecturer.ToString());
-                }
+                sb.Append(string.Join(Environment.NewLine, this.Lectures));
             }
             else
             {
