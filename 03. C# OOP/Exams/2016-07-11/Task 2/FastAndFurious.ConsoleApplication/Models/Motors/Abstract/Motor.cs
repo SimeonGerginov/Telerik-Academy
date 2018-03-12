@@ -1,11 +1,15 @@
-﻿using System;
-using FastAndFurious.ConsoleApplication.Common.Enums;
+﻿using FastAndFurious.ConsoleApplication.Common.Enums;
 using FastAndFurious.ConsoleApplication.Contracts;
+using FastAndFurious.ConsoleApplication.Models.Tunnings.Abstract;
 
 namespace FastAndFurious.ConsoleApplication.Models.Motors.Abstract
 {
-    public abstract class Motor : IMotor, ITunningPart, IAccelerateable, ITopSpeed, IWeightable, IValuable 
+    public abstract class Motor : TunningPart, IMotor
     {
+        private readonly int horsepower;
+        private readonly CylinderType cylinderType;
+        private readonly MotorType engineType;
+
         public Motor(
             decimal price,
             int weight,
@@ -15,62 +19,18 @@ namespace FastAndFurious.ConsoleApplication.Models.Motors.Abstract
             TunningGradeType gradeType,
             CylinderType cylinderType,
             MotorType engineType)
+            : base(price, weight, acceleration, topSpeed, gradeType)
         {
-        }
-
-        public int Id
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public TunningGradeType GradeType
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public int Acceleration
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public int TopSpeed
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public int Weight
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public decimal Price
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            this.horsepower = horsepower;
+            this.cylinderType = cylinderType;
+            this.engineType = engineType;
         }
 
         public int Horsepower
         {
             get
             {
-                throw new NotImplementedException();
+                return this.horsepower;
             }
         }
 
@@ -78,7 +38,7 @@ namespace FastAndFurious.ConsoleApplication.Models.Motors.Abstract
         {
             get
             {
-                throw new NotImplementedException();
+                return this.engineType;
             }
         }
 
@@ -86,7 +46,7 @@ namespace FastAndFurious.ConsoleApplication.Models.Motors.Abstract
         {
             get
             {
-                throw new NotImplementedException();
+                return this.cylinderType;
             }
         }
     }

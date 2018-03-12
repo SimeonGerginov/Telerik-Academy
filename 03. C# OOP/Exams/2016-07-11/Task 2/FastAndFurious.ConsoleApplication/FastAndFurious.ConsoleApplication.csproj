@@ -95,6 +95,7 @@
     <Compile Include="Models\Tracks\MonacoRaceTrack.cs" />
     <Compile Include="Models\Tracks\StormblazeRaceTrack.cs" />
     <Compile Include="Models\Tracks\TokioUndergroundRaceTrack.cs" />
+    <Compile Include="Models\Tunnings\Abstract\TunningPart.cs" />
     <Compile Include="Models\Tunnings\EngineControlUnits\Abstract\EngineControlUnit.cs" />
     <Compile Include="Models\Tunnings\EngineControlUnits\APREngineControlUnit.cs" />
     <Compile Include="Models\Tunnings\EngineControlUnits\DinanEngineControlUnit.cs" />
@@ -113,7 +114,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\Tunnings\Abstract\" />
     <Folder Include="Models\Tunnings\Intercoolers\Abstract\" />
     <Folder Include="Models\Tunnings\Transmissions\Abstract\" />
   </ItemGroup>
