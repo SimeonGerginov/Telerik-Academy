@@ -1,33 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
 using FastAndFurious.ConsoleApplication.Common.Constants;
 using FastAndFurious.ConsoleApplication.Common.Enums;
+using FastAndFurious.ConsoleApplication.Common.Utils;
 using FastAndFurious.ConsoleApplication.Contracts;
-using FastAndFurious.ConsoleApplication.Models.Common;
 
 namespace FastAndFurious.ConsoleApplication.Models.Drivers.Abstract
 {
-    public abstract class Driver : IdentifiableObject, IDriver
+    public abstract class Driver : IDriver
     {
-        private readonly string name;
-        private readonly GenderType gender;
-        private readonly ICollection<IMotorVehicle> vehicles;
-        private IMotorVehicle activeVehicle;
+        private readonly int id;
 
         public Driver(string name, GenderType gender)
         {
-            this.name = name;
-            this.gender = gender;
-            this.vehicles = new List<IMotorVehicle>();
+            this.id = DataGenerator.GenerateId();
         }
 
-        public string Name
+        public IMotorVehicle ActiveVehicle
         {
             get
             {
-                return this.name;
+                throw new NotImplementedException();
             }
         }
 
@@ -35,15 +29,23 @@ namespace FastAndFurious.ConsoleApplication.Models.Drivers.Abstract
         {
             get
             {
-                return this.gender;
+                throw new NotImplementedException();
             }
         }
 
-        public IMotorVehicle ActiveVehicle
+        public int Id
         {
             get
             {
-                return this.activeVehicle;
+                throw new NotImplementedException();
+            }
+        }
+
+        public string Name
+        {
+            get
+            {
+                throw new NotImplementedException();
             }
         }
 
@@ -51,38 +53,21 @@ namespace FastAndFurious.ConsoleApplication.Models.Drivers.Abstract
         {
             get
             {
-                return this.vehicles;
+                throw new NotImplementedException();
             }
         }
 
         public void AddVehicle(IMotorVehicle vehicle)
         {
-            if (this.Vehicles.Any(v => v.Id == vehicle.Id))
-            {
-                throw new ArgumentException(GlobalConstants.DriverCannotBeAssignedAsOwnerToVehicleMoreThanOnceExceptionMessage);
-            }
-
-            this.vehicles.Add(vehicle);
+            throw new NotImplementedException();
         }
-
         public bool RemoveVehicle(IMotorVehicle vehicle)
         {
-            return this.vehicles.Remove(vehicle);
+            throw new NotImplementedException();
         }
-
         public void SetActiveVehicle(IMotorVehicle vehicle)
         {
-            if (vehicle == null)
-            {
-                throw new ArgumentNullException(GlobalConstants.CannotSetNullObjectAsActiveVehicleExceptionMessage);
-            }
-
-            if (!this.Vehicles.Any(v => v.Id == vehicle.Id))
-            {
-                throw new InvalidOperationException(GlobalConstants.CannotSetForeignVehicleAsActiveExceptionMessage);
-            }
-
-            this.activeVehicle = vehicle;
+            throw new NotImplementedException();
         }
     }
 }
