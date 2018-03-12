@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using FastAndFurious.ConsoleApplication.Common.Constants;
 using FastAndFurious.ConsoleApplication.Contracts;
+using FastAndFurious.ConsoleApplication.Models.Common;
 
 namespace FastAndFurious.ConsoleApplication.Models.Tracks.Abstract
 {
-    public class RaceTrack : IRaceTrack
+    public class RaceTrack : IdentifiableObject, IRaceTrack
     {
         private readonly string trackName;
         private readonly int maxParticipantsCount;
@@ -72,14 +73,6 @@ namespace FastAndFurious.ConsoleApplication.Models.Tracks.Abstract
             }
         }
 
-        public int Id
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
         public void AddParticipant(IDriver participant)
         {
             if (this.participants.Count < this.MaxParticipantsCount)
@@ -87,10 +80,12 @@ namespace FastAndFurious.ConsoleApplication.Models.Tracks.Abstract
                 this.participants.Add(participant);
             }
         }
+
         public bool RemoveParticipant(IDriver participant)
         {
             return this.participants.Remove(participant);
         }
+
         public void RunRace()
         {
             var participantsCount = this.participants.Count();

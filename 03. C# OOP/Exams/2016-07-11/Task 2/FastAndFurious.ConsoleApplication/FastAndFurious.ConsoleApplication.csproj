@@ -90,6 +90,13 @@
     <Compile Include="Models\Motors\ShockblazePulsejetMotor.cs" />
     <Compile Include="Models\Motors\StingrayMotor.cs" />
     <Compile Include="Models\Motors\TyphoonPulseEngine.cs" />
+    <Compile Include="Models\MotorVehicles\AcuraIntegraTypeR.cs" />
+    <Compile Include="Models\MotorVehicles\MitsubishiEclipse.cs" />
+    <Compile Include="Models\MotorVehicles\MitsubishiLancerEvolution.cs" />
+    <Compile Include="Models\MotorVehicles\Nissan350Z.cs" />
+    <Compile Include="Models\MotorVehicles\NissanGTR.cs" />
+    <Compile Include="Models\MotorVehicles\NissanSkylineR34.cs" />
+    <Compile Include="Models\MotorVehicles\SubaruImprezaWRX.cs" />
     <Compile Include="Models\Tracks\Abstract\RaceTrack.cs" />
     <Compile Include="Models\Tracks\IndianapolisRaceTrack.cs" />
     <Compile Include="Models\Tracks\MonacoRaceTrack.cs" />
