@@ -2,34 +2,34 @@
 using FastAndFurious.ConsoleApplication.Contracts;
 using FastAndFurious.ConsoleApplication.Models.Tunnings.Abstract;
 
-namespace FastAndFurious.ConsoleApplication.Models.Tunnings.Turbochargers.Abstract
+namespace FastAndFurious.ConsoleApplication.Models.Tunnings.Intercoolers.Abstract
 {
-    public abstract class Turbocharger : TunningPart, ITurbocharger
+    public abstract class Intercooler : TunningPart, IIntercooler
     {
-        private readonly TurbochargerType turbochargerType;
+        private readonly IntercoolerType intercoolerType;
 
-        public Turbocharger(
+        public Intercooler(
             decimal price,
             int weight,
             int acceleration,
             int topSpeed,
-            TunningGradeType grade,
-            TurbochargerType turbochargerType)
+            TunningGradeType gradeType,
+            IntercoolerType intercoolerType)
             : base(
                   price,
                   weight,
                   acceleration,
                   topSpeed,
-                  grade)
+                  gradeType)
         {
-            this.turbochargerType = turbochargerType;
+            this.intercoolerType = intercoolerType;
         }
 
-        public TurbochargerType TurbochargerType
+        public IntercoolerType IntercoolerType
         {
             get
             {
-                return this.turbochargerType;
+                return this.intercoolerType;
             }
         }
     }

@@ -1,10 +1,10 @@
-﻿using System;
-using FastAndFurious.ConsoleApplication.Common.Enums;
+﻿using FastAndFurious.ConsoleApplication.Common.Enums;
 using FastAndFurious.ConsoleApplication.Contracts;
+using FastAndFurious.ConsoleApplication.Models.Tunnings.Abstract;
 
 namespace FastAndFurious.ConsoleApplication.Models.Tunnings.ExhaustSystems.Abstract
 {
-    public abstract class Exhaust : IExhaust, ITunningPart, IAccelerateable, ITopSpeed, IWeightable, IValuable 
+    public abstract class Exhaust : TunningPart, IExhaust
     {
         private readonly ExhaustType exhaustType;
 
@@ -15,16 +15,9 @@ namespace FastAndFurious.ConsoleApplication.Models.Tunnings.ExhaustSystems.Abstr
            int topSpeed,
            TunningGradeType gradeType,
            ExhaustType exhaustType)
+            : base(price, weight, acceleration, topSpeed, gradeType)
         {
             this.exhaustType = exhaustType;
-        }
-
-        public int Acceleration
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
         }
 
         public ExhaustType ExhaustType
@@ -32,46 +25,6 @@ namespace FastAndFurious.ConsoleApplication.Models.Tunnings.ExhaustSystems.Abstr
             get
             {
                 return this.exhaustType;
-            }
-        }
-
-        public TunningGradeType GradeType
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public int Id
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public decimal Price
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public int TopSpeed
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public int Weight
-        {
-            get
-            {
-                throw new NotImplementedException();
             }
         }
     }

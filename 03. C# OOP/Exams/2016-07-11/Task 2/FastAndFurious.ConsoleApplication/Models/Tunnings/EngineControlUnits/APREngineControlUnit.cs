@@ -1,10 +1,9 @@
 ﻿using FastAndFurious.ConsoleApplication.Common.Enums;
-using FastAndFurious.ConsoleApplication.Contracts;
 using FastAndFurious.ConsoleApplication.Models.Tunnings.EngineControlUnits.Abstract;
 
 namespace FastAndFurious.ConsoleApplication.Models.Tunnings.EngineControlUnits
 {
-    public class APREngineControlUnit : EngineControlUnit, IEngineControlUnit, ITunningPart, IAccelerateable, ITopSpeed, IWeightable, IValuable 
+    public class APREngineControlUnit : EngineControlUnit
     {
         private const int APREngineControlUnitWeightInGrams = 22000;
         private const int APREngineControlUnitAccelerationBonus = 45;

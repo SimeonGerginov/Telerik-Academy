@@ -53,6 +53,7 @@
     <Compile Include="Common\Enums\TireType.cs" />
     <Compile Include="Common\Enums\TransmissionType.cs" />
     <Compile Include="Common\Enums\TunningPartGradeType.cs" />
+    <Compile Include="Common\Enums\TurbochargerType.cs" />
     <Compile Include="Common\Exceptions\TunningDuplicationException.cs" />
     <Compile Include="Common\Extensions\IEnumerableExtensions.cs" />
     <Compile Include="Common\Utils\DataGenerator.cs" />
@@ -108,22 +109,31 @@
     <Compile Include="Models\Tunnings\EngineControlUnits\DinanEngineControlUnit.cs" />
     <Compile Include="Models\Tunnings\EngineControlUnits\SCTPerformanceEngineControlUnit.cs" />
     <Compile Include="Models\Tunnings\ExhaustSystems\Abstract\Exhaust.cs" />
+    <Compile Include="Models\Tunnings\ExhaustSystems\BorlaExhaust.cs" />
+    <Compile Include="Models\Tunnings\ExhaustSystems\MagnaflowExhaust.cs" />
+    <Compile Include="Models\Tunnings\ExhaustSystems\RemusExhaust.cs" />
+    <Compile Include="Models\Tunnings\Intercoolers\Abstract\Intercooler.cs" />
+    <Compile Include="Models\Tunnings\Intercoolers\EvolutionXPerformanceIntercooler.cs" />
+    <Compile Include="Models\Tunnings\Intercoolers\ViperGenieIntercooler.cs" />
     <Compile Include="Models\Tunnings\Tires\Abstract\TireSet.cs" />
+    <Compile Include="Models\Tunnings\Transmissions\Abstract\Transmission.cs" />
+    <Compile Include="Models\Tunnings\Transmissions\BMShortShifter.cs" />
+    <Compile Include="Models\Tunnings\Transmissions\HurstCompetitionManualShifter.cs" />
+    <Compile Include="Models\Tunnings\Transmissions\TWMPerformanceTransmission.cs" />
     <Compile Include="Models\Tunnings\Turbochargers\Abstract\Turbocharger.cs" />
     <Compile Include="Models\MotorVehicles\Abstract\MotorVehicle.cs" />
     <Compile Include="Models\Tunnings\Tires\FalkenAzenisTiresSet.cs" />
     <Compile Include="Models\Tunnings\Tires\MichelinPilotTiresSet.cs" />
     <Compile Include="Models\Tunnings\Tires\YokohamaAdvanTiresSet.cs" />
+    <Compile Include="Models\Tunnings\Turbochargers\VortexR35SequentialTurbocharger.cs" />
+    <Compile Include="Models\Tunnings\Turbochargers\ZX8ParallelTwinTurbocharger.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\Tunnings\Intercoolers\Abstract\" />
-    <Folder Include="Models\Tunnings\Transmissions\Abstract\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

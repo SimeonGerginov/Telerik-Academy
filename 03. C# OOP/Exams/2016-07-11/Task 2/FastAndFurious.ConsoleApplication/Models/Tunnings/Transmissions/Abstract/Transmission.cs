@@ -2,29 +2,29 @@
 using FastAndFurious.ConsoleApplication.Contracts;
 using FastAndFurious.ConsoleApplication.Models.Tunnings.Abstract;
 
-namespace FastAndFurious.ConsoleApplication.Models.Tunnings.EngineControlUnits.Abstract
+namespace FastAndFurious.ConsoleApplication.Models.Tunnings.Transmissions.Abstract
 {
-    public abstract class EngineControlUnit : TunningPart, IEngineControlUnit
+    public abstract class Transmission : TunningPart, ITransmission
     {
-        private EngineControlUnitType engineControlUnitType;
+        private readonly TransmissionType transmissionType;
 
-        public EngineControlUnit(
+        public Transmission(
             decimal price,
             int weight,
             int acceleration,
             int topSpeed,
             TunningGradeType gradeType,
-            EngineControlUnitType engineControlUnitType)
+            TransmissionType transmissionType)
             : base(price, weight, acceleration, topSpeed, gradeType)
         {
-            this.engineControlUnitType = EngineControlUnitType;
+            this.transmissionType = transmissionType;
         }
 
-        public EngineControlUnitType EngineControlUnitType
+        public TransmissionType TransmissionType
         {
             get
             {
-                return this.engineControlUnitType;
+                return this.transmissionType;
             }
         }
     }
