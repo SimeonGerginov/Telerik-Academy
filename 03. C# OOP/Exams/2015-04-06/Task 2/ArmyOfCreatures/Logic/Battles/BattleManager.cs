@@ -1,10 +1,10 @@
-﻿namespace ArmyOfCreatures.Logic.Battles
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Globalization;
-    using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
 
+namespace ArmyOfCreatures.Logic.Battles
+{
     public class BattleManager : IBattleManager
     {
         private const string LogFormat = "--- {0} - {1}";

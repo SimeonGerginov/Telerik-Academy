@@ -1,10 +1,10 @@
-﻿namespace ArmyOfCreatures.Logic.Battles
+﻿using System;
+using System.Globalization;
+
+using ArmyOfCreatures.Logic.Creatures;
+
+namespace ArmyOfCreatures.Logic.Battles
 {
-    using System;
-    using System.Globalization;
-
-    using ArmyOfCreatures.Logic.Creatures;
-
     public sealed class CreaturesInBattle : ICreaturesInBattle
     {
         private decimal lastDamage;

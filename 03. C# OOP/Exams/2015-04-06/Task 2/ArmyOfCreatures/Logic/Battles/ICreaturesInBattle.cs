@@ -1,7 +1,7 @@
-﻿namespace ArmyOfCreatures.Logic.Battles
-{
-    using ArmyOfCreatures.Logic.Creatures;
+﻿using ArmyOfCreatures.Logic.Creatures;
 
+namespace ArmyOfCreatures.Logic.Battles
+{
     public interface ICreaturesInBattle
     {
         Creature Creature { get; }

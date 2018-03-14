@@ -1,11 +1,11 @@
-﻿namespace ArmyOfCreatures.Logic.Creatures
+﻿using System.Collections.Generic;
+using System.Globalization;
+using System.Text;
+
+using ArmyOfCreatures.Logic.Specialties;
+
+namespace ArmyOfCreatures.Logic.Creatures
 {
-    using System.Collections.Generic;
-    using System.Globalization;
-    using System.Text;
-
-    using ArmyOfCreatures.Logic.Specialties;
-
     public abstract class Creature
     {
         private readonly ICollection<Specialty> specialtiesList;

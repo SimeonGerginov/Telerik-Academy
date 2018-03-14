@@ -1,7 +1,7 @@
-﻿namespace ArmyOfCreatures.Logic.Creatures
-{
-    using ArmyOfCreatures.Logic.Specialties;
+﻿using ArmyOfCreatures.Logic.Specialties;
 
+namespace ArmyOfCreatures.Logic.Creatures
+{
     public class Devil : Creature
     {
         public Devil()

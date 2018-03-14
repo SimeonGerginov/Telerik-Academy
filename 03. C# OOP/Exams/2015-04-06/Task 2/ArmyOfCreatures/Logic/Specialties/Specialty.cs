@@ -1,7 +1,7 @@
-﻿namespace ArmyOfCreatures.Logic.Specialties
-{
-    using ArmyOfCreatures.Logic.Battles;
+﻿using ArmyOfCreatures.Logic.Battles;
 
+namespace ArmyOfCreatures.Logic.Specialties
+{
     public abstract class Specialty
     {
         public virtual void ApplyWhenAttacking(ICreaturesInBattle attackerWithSpecialty, ICreaturesInBattle defender)

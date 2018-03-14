@@ -1,9 +1,8 @@
-﻿namespace ArmyOfCreatures.Logic.Specialties
+﻿using System;
+using ArmyOfCreatures.Logic.Battles;
+
+namespace ArmyOfCreatures.Logic.Specialties
 {
-    using System;
-
-    using ArmyOfCreatures.Logic.Battles;
-
     public class Resurrection : Specialty
     {
         public override void ApplyAfterDefending(ICreaturesInBattle defenderWithSpecialty)

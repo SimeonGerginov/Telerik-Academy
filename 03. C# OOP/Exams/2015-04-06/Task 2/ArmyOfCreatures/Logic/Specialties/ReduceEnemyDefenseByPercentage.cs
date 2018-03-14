@@ -1,10 +1,10 @@
-﻿namespace ArmyOfCreatures.Logic.Specialties
+﻿using System;
+using System.Globalization;
+
+using ArmyOfCreatures.Logic.Battles;
+
+namespace ArmyOfCreatures.Logic.Specialties
 {
-    using System;
-    using System.Globalization;
-
-    using ArmyOfCreatures.Logic.Battles;
-
     public class ReduceEnemyDefenseByPercentage : Specialty
     {
         public ReduceEnemyDefenseByPercentage(decimal percentage)

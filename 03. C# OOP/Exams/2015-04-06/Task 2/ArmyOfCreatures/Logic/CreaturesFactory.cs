@@ -1,10 +1,10 @@
-﻿namespace ArmyOfCreatures.Logic
+﻿using System;
+using System.Globalization;
+
+using ArmyOfCreatures.Logic.Creatures;
+
+namespace ArmyOfCreatures.Logic
 {
-    using System;
-    using System.Globalization;
-
-    using ArmyOfCreatures.Logic.Creatures;
-
     public class CreaturesFactory : ICreaturesFactory
     {
         public virtual Creature CreateCreature(string name)

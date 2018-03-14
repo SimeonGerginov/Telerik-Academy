@@ -1,8 +1,8 @@
-﻿namespace ArmyOfCreatures.Logic.Battles
-{
-    using System;
-    using System.Globalization;
+﻿using System;
+using System.Globalization;
 
+namespace ArmyOfCreatures.Logic.Battles
+{
     public sealed class CreatureIdentifier
     {
         private CreatureIdentifier(string creatureType, int armyNumber)

@@ -1,10 +1,10 @@
-﻿namespace ArmyOfCreatures.Logic.Specialties
+﻿using System;
+using System.Globalization;
+
+using ArmyOfCreatures.Logic.Battles;
+
+namespace ArmyOfCreatures.Logic.Specialties
 {
-    using System;
-    using System.Globalization;
-
-    using ArmyOfCreatures.Logic.Battles;
-
     public class Hate : Specialty
     {
         private readonly Type creatureTypeToHate;

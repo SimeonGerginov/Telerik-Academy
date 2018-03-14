@@ -51,7 +51,9 @@
     <Compile Include="Console\Commands\SkipCommand.cs" />
     <Compile Include="Console\ConsoleWriter.cs" />
     <Compile Include="Console\Program.cs" />
-    <Compile Include="Extended\DeleteMe.cs" />
+    <Compile Include="Extended\Creatures\AncientBehemoth.cs" />
+    <Compile Include="Extended\Creatures\Goblin.cs" />
+    <Compile Include="Extended\Specialties\DoubleDamage.cs" />
     <Compile Include="Logic\Battles\BattleManager.cs" />
     <Compile Include="Logic\Battles\CreatureIdentifier.cs" />
     <Compile Include="Logic\Battles\CreaturesInBattle.cs" />
@@ -77,10 +79,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Extended\Creatures\" />
-    <Folder Include="Extended\Specialties\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
