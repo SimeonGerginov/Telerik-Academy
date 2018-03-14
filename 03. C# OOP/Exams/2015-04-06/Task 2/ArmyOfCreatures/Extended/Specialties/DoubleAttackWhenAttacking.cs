@@ -6,26 +6,21 @@ using ArmyOfCreatures.Logic.Specialties;
 
 namespace ArmyOfCreatures.Extended.Specialties
 {
-    public class DoubleDamage : Specialty
+    public class DoubleAttackWhenAttacking : Specialty
     {
         private int rounds;
 
-        public DoubleDamage(int rounds)
+        public DoubleAttackWhenAttacking(int rounds)
         {
             if (rounds <= 0)
             {
                 throw new ArgumentOutOfRangeException("rounds", "The number of rounds should be greater than 0");
             }
 
-            if (rounds > 10)
-            {
-                throw new ArgumentOutOfRangeException("rounds", "The number of rounds should be less than or equal to 10");
-            }
-
             this.rounds = rounds;
         }
 
-        public override decimal ChangeDamageWhenAttacking(ICreaturesInBattle attackerWithSpecialty, ICreaturesInBattle defender, decimal currentDamage)
+        public override void ApplyWhenAttacking(ICreaturesInBattle attackerWithSpecialty, ICreaturesInBattle defender)
         {
             if (attackerWithSpecialty == null)
             {
@@ -37,15 +32,14 @@ namespace ArmyOfCreatures.Extended.Specialties
                 throw new ArgumentNullException("defender");
             }
 
-            decimal modifiedDemage = currentDamage;
-
-            if (this.rounds > 0)
+            if (this.rounds <= 0)
             {
-                modifiedDemage *= 2;
-                this.rounds--;
+                // Effect expires after fixed number of rounds
+                return;
             }
-            
-            return modifiedDemage;
+
+            attackerWithSpecialty.CurrentAttack *= 2;
+            this.rounds--;
         }
 
         public override string ToString()
