@@ -17,6 +17,7 @@ namespace Cosmetics.Products
         {
             this.Milliliters = milliliters;
             this.Usage = usage;
+            this.Price *= this.Milliliters;
         }
 
         public uint Milliliters
@@ -52,6 +53,7 @@ namespace Cosmetics.Products
             sb.AppendFormat("  * Quantity: {0} ml", this.Milliliters);
             sb.Append(Environment.NewLine);
             sb.AppendFormat("  * Usage: {0}", this.Usage);
+            sb.Append(Environment.NewLine);
 
             return base.Print() + sb.ToString();
         }

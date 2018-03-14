@@ -60,7 +60,7 @@ namespace Cosmetics.Products.Abstract
                 return this.price;
             }
 
-            private set
+            protected set
             {
                 this.price = value;
             }

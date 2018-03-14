@@ -1,7 +1,7 @@
-﻿namespace Cosmetics.Contracts
-{
-    using Cosmetics.Common;
+﻿using Cosmetics.Common;
 
+namespace Cosmetics.Contracts
+{
     public interface IShampoo : IProduct
     {
         uint Milliliters { get; }

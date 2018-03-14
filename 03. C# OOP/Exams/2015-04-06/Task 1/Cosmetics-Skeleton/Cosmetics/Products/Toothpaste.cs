@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text;
 
 using Cosmetics.Common;
@@ -36,6 +37,7 @@ namespace Cosmetics.Products
             StringBuilder sb = new StringBuilder();
 
             sb.AppendFormat("  * Ingredients: {0}", this.Ingredients);
+            sb.Append(Environment.NewLine);
 
             return base.Print() + sb.ToString();
         }

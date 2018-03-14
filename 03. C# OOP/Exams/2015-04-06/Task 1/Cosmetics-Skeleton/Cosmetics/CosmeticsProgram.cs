@@ -1,4 +1,5 @@
 ﻿using Cosmetics.Engine;
+
 namespace Cosmetics
 {
     public class CosmeticsProgram

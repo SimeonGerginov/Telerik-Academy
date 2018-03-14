@@ -1,9 +1,8 @@
-﻿namespace Cosmetics.Contracts
+﻿using System.Collections.Generic;
+using Cosmetics.Common;
+
+namespace Cosmetics.Contracts
 {
-    using System.Collections.Generic;
-
-    using Cosmetics.Common;
-
     public interface ICosmeticsFactory
     {
         ICategory CreateCategory(string name);

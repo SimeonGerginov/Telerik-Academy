@@ -1,7 +1,7 @@
-﻿namespace Cosmetics.Common
-{
-    using System;
+﻿using System;
 
+namespace Cosmetics.Common
+{
     public static class Validator
     {
         public static void CheckIfNull(object obj, string message = null)

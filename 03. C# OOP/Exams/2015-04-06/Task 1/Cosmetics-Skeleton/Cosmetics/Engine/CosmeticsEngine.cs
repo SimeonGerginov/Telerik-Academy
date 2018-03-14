@@ -1,14 +1,14 @@
-﻿namespace Cosmetics.Engine
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+using Cosmetics.Common;
+using Cosmetics.Contracts;
+using Cosmetics.Products;
+
+namespace Cosmetics.Engine
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-
-    using Cosmetics.Common;
-    using Cosmetics.Contracts;
-    using Cosmetics.Products;
-
     public sealed class CosmeticsEngine : IEngine
     {
         private const string InvalidCommand = "Invalid command name: {0}!";

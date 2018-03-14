@@ -39,6 +39,11 @@ namespace Cosmetics.Products
         {
             get
             {
+                this.products = this.products
+                .OrderBy(p => p.Brand)
+                .ThenByDescending(p => p.Price)
+                .ToList();
+
                 return this.products;
             }
 
@@ -60,11 +65,6 @@ namespace Cosmetics.Products
 
         public string Print()
         {
-            this.products = this.products
-                .OrderBy(p => p.Brand)
-                .OrderByDescending(p => p.Price)
-                .ToList();
-
             StringBuilder sb = new StringBuilder();
 
             if (this.Products.Count == 1)
@@ -79,10 +79,10 @@ namespace Cosmetics.Products
             sb.Append(Environment.NewLine);
             foreach (var product in this.products)
             {
-                sb.AppendLine(product.Print());
+                sb.Append(product.Print());
             }
 
-            return sb.ToString();
+            return sb.ToString().TrimEnd();
         }
 
         public void RemoveCosmetics(IProduct cosmetics)

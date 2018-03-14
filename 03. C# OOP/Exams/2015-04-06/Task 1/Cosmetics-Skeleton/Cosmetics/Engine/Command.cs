@@ -1,10 +1,10 @@
-﻿namespace Cosmetics.Engine
+﻿using System;
+using System.Collections.Generic;
+
+using Cosmetics.Contracts;
+
+namespace Cosmetics.Engine
 {
-    using System;
-    using System.Collections.Generic;
-
-    using Cosmetics.Contracts;
-
     public class Command : ICommand
     {
         private const char SplitCommandSymbol = ' ';

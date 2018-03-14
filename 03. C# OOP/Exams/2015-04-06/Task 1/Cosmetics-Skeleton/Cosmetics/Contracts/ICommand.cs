@@ -1,8 +1,8 @@
-﻿namespace Cosmetics.Contracts
-{
-    using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-    interface ICommand
+namespace Cosmetics.Contracts
+{
+    public interface ICommand
     {
         string Name { get; }
 

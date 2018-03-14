@@ -1,11 +1,11 @@
-﻿namespace Cosmetics.Engine
+﻿using System.Collections.Generic;
+
+using Cosmetics.Common;
+using Cosmetics.Contracts;
+using Cosmetics.Products;
+
+namespace Cosmetics.Engine
 {
-    using System.Collections.Generic;
-
-    using Cosmetics.Common;
-    using Cosmetics.Contracts;
-    using Cosmetics.Products;
-
     public class CosmeticsFactory : ICosmeticsFactory
     {
         public ICategory CreateCategory(string name)
