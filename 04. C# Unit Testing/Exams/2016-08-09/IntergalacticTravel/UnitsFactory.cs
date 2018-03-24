@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Reflection;
+
 using IntergalacticTravel.Contracts;
 using IntergalacticTravel.Exceptions;
 

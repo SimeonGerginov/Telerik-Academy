@@ -35,6 +35,5 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
 
-//[assembly: InternalsVisibleTo("IntergalacticTravel.Tests")]
-//[assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]
-//[assembly: InternalsVisibleTo("Telerik.JustMock")]
+[assembly: InternalsVisibleTo("IntergalacticTravel.Tests")]
+[assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]

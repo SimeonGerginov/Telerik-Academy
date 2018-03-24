@@ -7,7 +7,8 @@ namespace IntergalacticTravel
     {
         private readonly ICollection<ITeleportStation> teleportStations;
 
-        public BusinessOwner(int identificationNumber, string nickName, IEnumerable<ITeleportStation> teleportStations) : base(identificationNumber, nickName)
+        public BusinessOwner(int identificationNumber, string nickName, IEnumerable<ITeleportStation> teleportStations) 
+            : base(identificationNumber, nickName)
         {
             this.teleportStations = (ICollection<ITeleportStation>)teleportStations;
         }
