@@ -58,6 +58,7 @@
     <Compile Include="Exceptions\InvalidUnitCreationCommandException.cs" />
     <Compile Include="Exceptions\LocationNotFoundException.cs" />
     <Compile Include="Exceptions\TeleportOutOfRangeException.cs" />
+    <Compile Include="ExtendedTeleportStation.cs" />
     <Compile Include="Extensions\IEnumerableExtensions.cs" />
     <Compile Include="Extensions\ObjectExtensions.cs" />
     <Compile Include="Lacaille.cs" />
