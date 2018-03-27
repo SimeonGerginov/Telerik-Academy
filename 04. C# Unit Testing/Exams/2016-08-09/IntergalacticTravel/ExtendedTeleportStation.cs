@@ -14,7 +14,7 @@ namespace IntergalacticTravel
         {
             get
             {
-                return this.owner;
+                return this.OwnerOfStation;
             }
         }
 
@@ -22,7 +22,7 @@ namespace IntergalacticTravel
         {
             get
             {
-                return this.galacticMap;
+                return this.GalacticMapOfStation;
             }
         }
 
@@ -30,7 +30,7 @@ namespace IntergalacticTravel
         {
             get
             {
-                return this.location;
+                return this.LocationOfStation;
             }
         }
 
@@ -38,7 +38,7 @@ namespace IntergalacticTravel
         {
             get
             {
-                return this.resources;
+                return this.ResourcesOfStation;
             }
         }
     }

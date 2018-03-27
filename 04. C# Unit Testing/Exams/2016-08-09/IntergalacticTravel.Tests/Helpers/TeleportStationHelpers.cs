@@ -7,10 +7,12 @@ namespace IntergalacticTravel.Tests.Helpers
 {
     internal static class TeleportStationHelpers
     {
-        private static IResources Resources;
-        private static ICollection<IUnit> Units;
-        internal static Mock<IList<IUnit>> UnitsMock;
-        internal static IPath Path;
+        private static IResources resources;
+        private static ICollection<IUnit> units;
+
+        internal static Mock<IList<IUnit>> UnitsMock { get; set; }
+
+        internal static IPath Path { get; set; }
 
         internal static ExtendedTeleportStation ArrangeTeleportStation()
         {
@@ -39,8 +41,8 @@ namespace IntergalacticTravel.Tests.Helpers
         {
             unitToTeleportMock.SetupGet(u => u.CurrentLocation.Planet.Galaxy.Name).Returns(targetGalaxy);
             unitToTeleportMock.SetupGet(u => u.CurrentLocation.Planet.Name).Returns(targetLocation);
-            unitToTeleportMock.SetupGet(u => u.CurrentLocation.Planet.Units).Returns(Units);
-            unitToTeleportMock.Setup(u => u.Pay(Resources)).Returns(Resources);
+            unitToTeleportMock.SetupGet(u => u.CurrentLocation.Planet.Units).Returns(units);
+            unitToTeleportMock.Setup(u => u.Pay(resources)).Returns(resources);
         }
 
         internal static void SetupTargetLocation(ref Mock<ILocation> targetLocationMock, string galaxy, string location, double longtitude, double latitude)
@@ -53,13 +55,13 @@ namespace IntergalacticTravel.Tests.Helpers
 
         private static IEnumerable<IPath> ArrangeGalacticMock(ref Mock<IPath> pathMock, ref Mock<IUnit> unitMock)
         {
-            var resources = new Mock<IResources>();
+            var resourcesMock = new Mock<IResources>();
 
-            resources.SetupGet(r => r.BronzeCoins).Returns(TeleportStationConstants.BronzeCoins);
-            resources.SetupGet(r => r.SilverCoins).Returns(TeleportStationConstants.SilverCoins);
-            resources.SetupGet(r => r.GoldCoins).Returns(TeleportStationConstants.GoldCoins);
+            resourcesMock.SetupGet(r => r.BronzeCoins).Returns(TeleportStationConstants.BronzeCoins);
+            resourcesMock.SetupGet(r => r.SilverCoins).Returns(TeleportStationConstants.SilverCoins);
+            resourcesMock.SetupGet(r => r.GoldCoins).Returns(TeleportStationConstants.GoldCoins);
 
-            Resources = resources.Object;
+            resources = resourcesMock.Object;
 
             unitMock.Setup(u => u.CurrentLocation.Planet.Galaxy.Name).Returns(TeleportStationConstants.Galaxy);
             unitMock.Setup(u => u.CurrentLocation.Planet.Name).Returns(TeleportStationConstants.Location);
@@ -72,14 +74,14 @@ namespace IntergalacticTravel.Tests.Helpers
             unitsMock.Setup(u => u.GetEnumerator()).Returns(unitsCollectionEnumeratorMock);
 
             UnitsMock = unitsMock;
-            Units = unitsMock.Object;
+            units = unitsMock.Object;
 
             pathMock.SetupGet(p => p.TargetLocation.Planet.Galaxy.Name).Returns(TeleportStationConstants.Galaxy);
             pathMock.SetupGet(p => p.TargetLocation.Planet.Name).Returns(TeleportStationConstants.Location);
             pathMock.SetupGet(p => p.TargetLocation.Coordinates.Longtitude).Returns(TeleportStationConstants.Longtitude);
             pathMock.SetupGet(p => p.TargetLocation.Coordinates.Latitude).Returns(TeleportStationConstants.Latitude);
             pathMock.SetupGet(p => p.TargetLocation.Planet.Units).Returns(unitsMock.Object);
-            pathMock.SetupGet(p => p.Cost).Returns(resources.Object);
+            pathMock.SetupGet(p => p.Cost).Returns(resourcesMock.Object);
 
             Path = pathMock.Object;
 

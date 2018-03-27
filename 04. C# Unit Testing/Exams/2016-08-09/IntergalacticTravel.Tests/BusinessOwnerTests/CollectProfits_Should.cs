@@ -13,6 +13,31 @@ namespace IntergalacticTravel.Tests.BusinessOwnerTests
         private const uint SilverCoins = 30;
         private const uint GoldCoins = 35;
 
+        [Test]
+        public void IncreaseTheOwnerResourcesByTheTotalAmountGeneratedFromTheTStations_ThatAreInHisPossession()
+        {
+            // Arrange
+            int identificationNumber = 100;
+            string nickName = "Owner nickName";
+            IEnumerable<ITeleportStation> teleportStations = this.ArrangeTeleportStations();
+
+            BusinessOwner owner = new BusinessOwner(identificationNumber, nickName, teleportStations);
+            uint expectedBronzeCoins = BronzeCoins;
+            uint expectedSilverCoins = SilverCoins;
+            uint expectedGoldCoins = GoldCoins;
+
+            // Act
+            owner.CollectProfits();
+            uint actualBronzeCoins = owner.Resources.BronzeCoins;
+            uint actualSilverCoins = owner.Resources.SilverCoins;
+            uint actualGoldCoins = owner.Resources.GoldCoins;
+
+            // Assert
+            Assert.AreEqual(expectedBronzeCoins, actualBronzeCoins);
+            Assert.AreEqual(expectedSilverCoins, actualSilverCoins);
+            Assert.AreEqual(expectedGoldCoins, actualGoldCoins);
+        }
+
         private IEnumerable<ITeleportStation> ArrangeTeleportStations()
         {
             var teleportStationMock = new Mock<ITeleportStation>();
@@ -41,31 +66,6 @@ namespace IntergalacticTravel.Tests.BusinessOwnerTests
             {
                 yield return item;
             }
-        }
-
-        [Test]
-        public void IncreaseTheOwnerResourcesByTheTotalAmountGeneratedFromTheTStations_ThatAreInHisPossession()
-        {
-            // Arrange
-            int identificationNumber = 100;
-            string nickName = "Owner nickName";
-            IEnumerable<ITeleportStation> teleportStations = this.ArrangeTeleportStations();
-
-            BusinessOwner owner = new BusinessOwner(identificationNumber, nickName, teleportStations);
-            uint expectedBronzeCoins = BronzeCoins;
-            uint expectedSilverCoins = SilverCoins;
-            uint expectedGoldCoins = GoldCoins;
-
-            // Act
-            owner.CollectProfits();
-            uint actualBronzeCoins = owner.Resources.BronzeCoins;
-            uint actualSilverCoins = owner.Resources.SilverCoins;
-            uint actualGoldCoins = owner.Resources.GoldCoins;
-
-            // Assert
-            Assert.AreEqual(expectedBronzeCoins, actualBronzeCoins);
-            Assert.AreEqual(expectedSilverCoins, actualSilverCoins);
-            Assert.AreEqual(expectedGoldCoins, actualGoldCoins);
         }
     }
 }

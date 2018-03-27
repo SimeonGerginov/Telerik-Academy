@@ -28,8 +28,7 @@ namespace IntergalacticTravel
             catch (Exception)
             {
                 throw new InvalidUnitCreationCommandException(); 
-            }
-           
+            }          
         }
     }
 }

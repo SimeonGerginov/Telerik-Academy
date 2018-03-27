@@ -9,17 +9,17 @@ namespace IntergalacticTravel
 {
     public class TeleportStation : ITeleportStation
     {
-        protected readonly IResources resources;
-        protected readonly IBusinessOwner owner;
-        protected readonly ILocation location;
-        protected readonly IEnumerable<IPath> galacticMap;
+        protected readonly IResources ResourcesOfStation;
+        protected readonly IBusinessOwner OwnerOfStation;
+        protected readonly ILocation LocationOfStation;
+        protected readonly IEnumerable<IPath> GalacticMapOfStation;
 
         public TeleportStation(IBusinessOwner owner, IEnumerable<IPath> galacticMap, ILocation location)
         {
-            this.owner = owner;
-            this.galacticMap = galacticMap;
-            this.location = location;
-            this.resources = new Resources();
+            this.OwnerOfStation = owner;
+            this.GalacticMapOfStation = galacticMap;
+            this.LocationOfStation = location;
+            this.ResourcesOfStation = new Resources();
         }
 
         public void TeleportUnit(IUnit unitToTeleport, ILocation targetLocation)
@@ -35,13 +35,13 @@ namespace IntergalacticTravel
 
         public IResources PayProfits(IBusinessOwner owner)
         {
-            if (this.owner.IdentificationNumber != owner.IdentificationNumber)
+            if (this.OwnerOfStation.IdentificationNumber != owner.IdentificationNumber)
             {
                 throw new UnauthorizedAccessException("Payments are allowed only to the owner");
             }
 
-            var payment = this.resources.Clone();
-            this.resources.Clear();
+            var payment = this.ResourcesOfStation.Clone();
+            this.ResourcesOfStation.Clear();
 
             return payment;
         }
@@ -58,7 +58,7 @@ namespace IntergalacticTravel
         {
             var cost = pathToTheTargetPlanet.Cost;
             var payment = unitToTeleport.Pay(cost);
-            this.resources.Add(payment);
+            this.ResourcesOfStation.Add(payment);
         }
 
         private bool LocationsMatch(ILocation firstLocation, ILocation secondLocation)
@@ -86,12 +86,12 @@ namespace IntergalacticTravel
                 throw new ArgumentNullException("destination");
             }
 
-            if (!this.LocationsMatch(this.location, unitToTeleport.CurrentLocation))
+            if (!this.LocationsMatch(this.LocationOfStation, unitToTeleport.CurrentLocation))
             {
                 throw new TeleportOutOfRangeException("unitToTeleport.CurrentLocation");
             }
 
-            var pathsToTheTargetGalaxy = galacticMap
+            var pathsToTheTargetGalaxy = this.GalacticMapOfStation
                 .Where(path => path.TargetLocation.Planet.Galaxy.Name == targetLocation.Planet.Galaxy.Name)
                 .ToList();
             if (pathsToTheTargetGalaxy.IsNullOrEmpty())

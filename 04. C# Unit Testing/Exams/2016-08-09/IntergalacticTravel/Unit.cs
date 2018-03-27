@@ -4,11 +4,11 @@ namespace IntergalacticTravel
 {
     internal class Unit : IUnit
     {
-        private ILocation currentLocation;
-        private ILocation previousLocation;
         private readonly int identificationNumber;
         private readonly string nickName;
         private readonly IResources resources;
+        private ILocation currentLocation;
+        private ILocation previousLocation;
 
         public Unit(int identificationNumber, string nickName)
         {

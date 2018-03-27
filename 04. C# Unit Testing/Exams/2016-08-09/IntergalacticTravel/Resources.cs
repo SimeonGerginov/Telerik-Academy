@@ -14,9 +14,7 @@ namespace IntergalacticTravel
         private uint goldCoins;
 
         public Resources() 
-            : this(GlobalConstants.BronzeCoinsDefaultAmount, 
-                  GlobalConstants.SilverCoinsDefaultAmount, 
-                  GlobalConstants.GoldCoinsDefaultAmount)
+            : this(GlobalConstants.BronzeCoinsDefaultAmount, GlobalConstants.SilverCoinsDefaultAmount, GlobalConstants.GoldCoinsDefaultAmount)
         {
         }
 
@@ -33,6 +31,7 @@ namespace IntergalacticTravel
             {
                 return this.bronzeCoins;
             }
+
             set
             {
                 this.bronzeCoins = value;
@@ -45,6 +44,7 @@ namespace IntergalacticTravel
             {
                 return this.goldCoins;
             }
+
             set
             {
                 this.goldCoins = value;
@@ -57,6 +57,7 @@ namespace IntergalacticTravel
             {
                 return this.silverCoins;
             }
+
             set
             {
                 this.silverCoins = value;
