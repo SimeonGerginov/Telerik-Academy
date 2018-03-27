@@ -52,14 +52,14 @@ namespace PackageManager.Models
                 throw new ArgumentException();
             }
 
-            var thisFersionFinal = this.Version.Major * 1000 + this.Version.Minor * 100 + this.Version.Patch * 10 + (int)this.Version.VersionType;
-            var otherFersionFinal = other.Version.Major * 1000 + other.Version.Minor * 100 + other.Version.Patch * 10 + (int)other.Version.VersionType;
+            var thisVersionFinal = this.Version.Major * 1000 + this.Version.Minor * 100 + this.Version.Patch * 10 + (int)this.Version.VersionType;
+            var otherVersionFinal = other.Version.Major * 1000 + other.Version.Minor * 100 + other.Version.Patch * 10 + (int)other.Version.VersionType;
 
-            if (thisFersionFinal > otherFersionFinal)
+            if (thisVersionFinal > otherVersionFinal)
             {
                 return 1;
             }
-            else if (thisFersionFinal < otherFersionFinal)
+            else if (thisVersionFinal < otherVersionFinal)
             {
                 return -1;
             }
