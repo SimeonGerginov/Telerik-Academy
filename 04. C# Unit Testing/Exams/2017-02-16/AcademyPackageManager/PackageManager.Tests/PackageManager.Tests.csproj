@@ -60,6 +60,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\InstallCommandTests\Ctor_Should.cs" />
+    <Compile Include="Commands\InstallCommandTests\Execute_Should.cs" />
     <Compile Include="Models\PackageTests\CompareTo_Should.cs" />
     <Compile Include="Models\PackageTests\Ctor_Should.cs" />
     <Compile Include="Models\PackageTests\Equals_Should.cs" />
@@ -68,7 +70,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Commands\" />
     <Folder Include="Core\" />
     <Folder Include="Repositories\" />
   </ItemGroup>

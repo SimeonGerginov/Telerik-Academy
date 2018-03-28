@@ -28,6 +28,22 @@ namespace PackageManager.Commands
             this.installer.Operation = InstallerOperation.Install;
         }
 
+        protected IInstaller<IPackage> Installer
+        {
+            get
+            {
+                return this.installer;
+            }
+        }
+
+        protected IPackage Package
+        {
+            get
+            {
+                return this.package;
+            }
+        }
+
         public void Execute()
         {
             this.installer.PerformOperation(this.package);
