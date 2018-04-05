@@ -2,11 +2,11 @@
 using PackageManager.Core.Contracts;
 using PackageManager.Models.Contracts;
 
-namespace PackageManager.Extensions
+namespace PackageManager.Tests.Commands.InstallCommandTests.Mocks
 {
-    internal class InstallCommandExtended : InstallCommand
+    internal class InstallCommandMock : InstallCommand
     {
-        public InstallCommandExtended(IInstaller<IPackage> installer, IPackage package) 
+        public InstallCommandMock(IInstaller<IPackage> installer, IPackage package)
             : base(installer, package)
         {
         }

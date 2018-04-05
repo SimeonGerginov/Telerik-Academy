@@ -1,13 +1,13 @@
 ﻿using System;
 
-using PackageManager.Enums;
-using PackageManager.Core.Contracts;
-using PackageManager.Models.Contracts;
-using PackageManager.Extensions;
-using PackageManager.Commands;
-
 using Moq;
 using NUnit.Framework;
+
+using PackageManager.Commands;
+using PackageManager.Core.Contracts;
+using PackageManager.Enums;
+using PackageManager.Models.Contracts;
+using PackageManager.Tests.Commands.InstallCommandTests.Mocks;
 
 namespace PackageManager.Tests.Commands.InstallCommandTests
 {
@@ -22,7 +22,7 @@ namespace PackageManager.Tests.Commands.InstallCommandTests
             var package = new Mock<IPackage>();
 
             // Act
-            var installCommand = new InstallCommandExtended(installer.Object, package.Object);
+            var installCommand = new InstallCommandMock(installer.Object, package.Object);
 
             // Assert
             Assert.IsInstanceOf<InstallCommand>(installCommand);
@@ -35,7 +35,7 @@ namespace PackageManager.Tests.Commands.InstallCommandTests
             var package = new Mock<IPackage>();
 
             // Act && Assert
-            Assert.Throws<ArgumentNullException>(() => new InstallCommandExtended(null, package.Object));
+            Assert.Throws<ArgumentNullException>(() => new InstallCommandMock(null, package.Object));
         }
 
         [Test]
@@ -45,7 +45,7 @@ namespace PackageManager.Tests.Commands.InstallCommandTests
             var installer = new Mock<IInstaller<IPackage>>();
 
             // Act && Assert
-            Assert.Throws<ArgumentNullException>(() => new InstallCommandExtended(installer.Object, null));
+            Assert.Throws<ArgumentNullException>(() => new InstallCommandMock(installer.Object, null));
         }
 
         [Test]
@@ -57,7 +57,7 @@ namespace PackageManager.Tests.Commands.InstallCommandTests
             var expectedOperation = InstallerOperation.Install;
 
             // Act
-            var installCommand = new InstallCommandExtended(installer.Object, package.Object);
+            var installCommand = new InstallCommandMock(installer.Object, package.Object);
             var actualInstaller = installCommand.MyInstaller;
             var actualPackage = installCommand.MyPackage;
             var actualOperation = installCommand.MyInstaller.Operation;

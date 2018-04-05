@@ -33,7 +33,7 @@ namespace PackageManager.Repositories
             }
         }
 
-        public void Add(IPackage package)
+        public virtual void Add(IPackage package)
         {
             if (package == null)
             {
@@ -90,6 +90,8 @@ namespace PackageManager.Repositories
                 this.logger.Log(string.Format("{0}: The package is a dependency and could not be removed!", package.Name));
                 this.logger.Log("Aborting");
                 this.logger.Log("Please remove the dependencies first!");
+
+                return package;
             }
 
             this.packages.Remove(packageFound);
@@ -135,10 +137,10 @@ namespace PackageManager.Repositories
         public IEnumerable<IPackage> GetAll()
         {
             #region
-            this.AddPackage();
+            // this.AddPackage();
             #endregion
             this.logger.Log("All packages");
-            return this.packages;
+            return new List<IPackage>(this.packages);
         }
 
         // Temporary method for test

@@ -1,9 +1,9 @@
-﻿using PackageManager.Core.Contracts;
-using PackageManager.Extensions;
-using PackageManager.Models.Contracts;
-
-using Moq;
+﻿using Moq;
 using NUnit.Framework;
+
+using PackageManager.Core.Contracts;
+using PackageManager.Models.Contracts;
+using PackageManager.Tests.Commands.InstallCommandTests.Mocks;
 
 namespace PackageManager.Tests.Commands.InstallCommandTests
 {
@@ -17,7 +17,7 @@ namespace PackageManager.Tests.Commands.InstallCommandTests
             var installer = new Mock<IInstaller<IPackage>>();
             var package = new Mock<IPackage>();
 
-            var installCommand = new InstallCommandExtended(installer.Object, package.Object);
+            var installCommand = new InstallCommandMock(installer.Object, package.Object);
 
             // Act
             installCommand.Execute();

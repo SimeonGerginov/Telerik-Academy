@@ -51,7 +51,6 @@
     <Compile Include="Core\PackageInstaller.cs" />
     <Compile Include="Enums\InstallerOperation.cs" />
     <Compile Include="Enums\VersionType.cs" />
-    <Compile Include="Extensions\InstallCommandExtended.cs" />
     <Compile Include="Info\ConsoleLogger.cs" />
     <Compile Include="Info\Contracts\ILogger.cs" />
     <Compile Include="Models\Contracts\IPackage.cs" />
