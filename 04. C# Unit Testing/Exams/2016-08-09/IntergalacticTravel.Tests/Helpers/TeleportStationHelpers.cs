@@ -21,12 +21,12 @@ namespace IntergalacticTravel.Tests.Helpers
             var pathMock = new Mock<IPath>();
             var unitMock = new Mock<IUnit>();
 
-            ownerMock.SetupGet(o => o.IdentificationNumber).Returns(TeleportStationConstants.IdentificationNumber);
+            ownerMock.Setup(o => o.IdentificationNumber).Returns(TeleportStationConstants.IdentificationNumber);
 
-            locationMock.SetupGet(l => l.Planet.Galaxy.Name).Returns(TeleportStationConstants.Galaxy);
-            locationMock.SetupGet(l => l.Planet.Name).Returns(TeleportStationConstants.Location);
-            locationMock.SetupGet(l => l.Coordinates.Longtitude).Returns(TeleportStationConstants.Longtitude);
-            locationMock.SetupGet(l => l.Coordinates.Latitude).Returns(TeleportStationConstants.Latitude);
+            locationMock.Setup(l => l.Planet.Galaxy.Name).Returns(TeleportStationConstants.Galaxy);
+            locationMock.Setup(l => l.Planet.Name).Returns(TeleportStationConstants.Location);
+            locationMock.Setup(l => l.Coordinates.Longtitude).Returns(TeleportStationConstants.Longtitude);
+            locationMock.Setup(l => l.Coordinates.Latitude).Returns(TeleportStationConstants.Latitude);
 
             IBusinessOwner expectedOwner = ownerMock.Object;
             IEnumerable<IPath> expectedMap = ArrangeGalacticMock(ref pathMock, ref unitMock);
@@ -39,27 +39,27 @@ namespace IntergalacticTravel.Tests.Helpers
 
         internal static void SetupUnitToTeleport(ref Mock<IUnit> unitToTeleportMock, string targetGalaxy, string targetLocation)
         {
-            unitToTeleportMock.SetupGet(u => u.CurrentLocation.Planet.Galaxy.Name).Returns(targetGalaxy);
-            unitToTeleportMock.SetupGet(u => u.CurrentLocation.Planet.Name).Returns(targetLocation);
-            unitToTeleportMock.SetupGet(u => u.CurrentLocation.Planet.Units).Returns(units);
+            unitToTeleportMock.Setup(u => u.CurrentLocation.Planet.Galaxy.Name).Returns(targetGalaxy);
+            unitToTeleportMock.Setup(u => u.CurrentLocation.Planet.Name).Returns(targetLocation);
+            unitToTeleportMock.Setup(u => u.CurrentLocation.Planet.Units).Returns(units);
             unitToTeleportMock.Setup(u => u.Pay(resources)).Returns(resources);
         }
 
         internal static void SetupTargetLocation(ref Mock<ILocation> targetLocationMock, string galaxy, string location, double longtitude, double latitude)
         {
-            targetLocationMock.SetupGet(l => l.Planet.Galaxy.Name).Returns(galaxy);
-            targetLocationMock.SetupGet(l => l.Planet.Name).Returns(location);
-            targetLocationMock.SetupGet(l => l.Coordinates.Longtitude).Returns(longtitude);
-            targetLocationMock.SetupGet(l => l.Coordinates.Latitude).Returns(latitude);
+            targetLocationMock.Setup(l => l.Planet.Galaxy.Name).Returns(galaxy);
+            targetLocationMock.Setup(l => l.Planet.Name).Returns(location);
+            targetLocationMock.Setup(l => l.Coordinates.Longtitude).Returns(longtitude);
+            targetLocationMock.Setup(l => l.Coordinates.Latitude).Returns(latitude);
         }
 
         private static IEnumerable<IPath> ArrangeGalacticMock(ref Mock<IPath> pathMock, ref Mock<IUnit> unitMock)
         {
             var resourcesMock = new Mock<IResources>();
 
-            resourcesMock.SetupGet(r => r.BronzeCoins).Returns(TeleportStationConstants.BronzeCoins);
-            resourcesMock.SetupGet(r => r.SilverCoins).Returns(TeleportStationConstants.SilverCoins);
-            resourcesMock.SetupGet(r => r.GoldCoins).Returns(TeleportStationConstants.GoldCoins);
+            resourcesMock.Setup(r => r.BronzeCoins).Returns(TeleportStationConstants.BronzeCoins);
+            resourcesMock.Setup(r => r.SilverCoins).Returns(TeleportStationConstants.SilverCoins);
+            resourcesMock.Setup(r => r.GoldCoins).Returns(TeleportStationConstants.GoldCoins);
 
             resources = resourcesMock.Object;
 
@@ -76,12 +76,12 @@ namespace IntergalacticTravel.Tests.Helpers
             UnitsMock = unitsMock;
             units = unitsMock.Object;
 
-            pathMock.SetupGet(p => p.TargetLocation.Planet.Galaxy.Name).Returns(TeleportStationConstants.Galaxy);
-            pathMock.SetupGet(p => p.TargetLocation.Planet.Name).Returns(TeleportStationConstants.Location);
-            pathMock.SetupGet(p => p.TargetLocation.Coordinates.Longtitude).Returns(TeleportStationConstants.Longtitude);
-            pathMock.SetupGet(p => p.TargetLocation.Coordinates.Latitude).Returns(TeleportStationConstants.Latitude);
-            pathMock.SetupGet(p => p.TargetLocation.Planet.Units).Returns(unitsMock.Object);
-            pathMock.SetupGet(p => p.Cost).Returns(resourcesMock.Object);
+            pathMock.Setup(p => p.TargetLocation.Planet.Galaxy.Name).Returns(TeleportStationConstants.Galaxy);
+            pathMock.Setup(p => p.TargetLocation.Planet.Name).Returns(TeleportStationConstants.Location);
+            pathMock.Setup(p => p.TargetLocation.Coordinates.Longtitude).Returns(TeleportStationConstants.Longtitude);
+            pathMock.Setup(p => p.TargetLocation.Coordinates.Latitude).Returns(TeleportStationConstants.Latitude);
+            pathMock.Setup(p => p.TargetLocation.Planet.Units).Returns(unitsMock.Object);
+            pathMock.Setup(p => p.Cost).Returns(resourcesMock.Object);
 
             Path = pathMock.Object;
 

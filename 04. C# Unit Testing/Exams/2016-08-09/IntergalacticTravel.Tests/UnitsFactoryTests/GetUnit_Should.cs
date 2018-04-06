@@ -1,5 +1,6 @@
 ﻿using IntergalacticTravel.Contracts;
 using IntergalacticTravel.Exceptions;
+
 using NUnit.Framework;
 
 namespace IntergalacticTravel.Tests.UnitsFactoryTests

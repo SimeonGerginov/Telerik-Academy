@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+
 using IntergalacticTravel.Contracts;
 using IntergalacticTravel.Exceptions;
 using IntergalacticTravel.Extensions;

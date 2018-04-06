@@ -44,9 +44,9 @@ namespace IntergalacticTravel.Tests.BusinessOwnerTests
             var resourcesMock = new Mock<IResources>();
             IEnumerable<ITeleportStation> teleportStations;
 
-            resourcesMock.SetupGet(r => r.BronzeCoins).Returns(BronzeCoins);
-            resourcesMock.SetupGet(r => r.SilverCoins).Returns(SilverCoins);
-            resourcesMock.SetupGet(r => r.GoldCoins).Returns(GoldCoins);
+            resourcesMock.Setup(r => r.BronzeCoins).Returns(BronzeCoins);
+            resourcesMock.Setup(r => r.SilverCoins).Returns(SilverCoins);
+            resourcesMock.Setup(r => r.GoldCoins).Returns(GoldCoins);
 
             teleportStationMock.Setup(ts => ts.PayProfits(It.IsAny<IBusinessOwner>())).Returns(resourcesMock.Object);
 

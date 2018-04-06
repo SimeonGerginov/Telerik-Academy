@@ -39,14 +39,14 @@ namespace IntergalacticTravel.Tests.UnitTests
             Unit unit = new Unit(identificationNumber, nickName);
 
             var resourcesMock = new Mock<IResources>();
-            resourcesMock.SetupGet(r => r.BronzeCoins).Returns(BronzeCoins);
-            resourcesMock.SetupGet(r => r.SilverCoins).Returns(SilverCoins);
-            resourcesMock.SetupGet(r => r.GoldCoins).Returns(GoldCoins);
+            resourcesMock.Setup(r => r.BronzeCoins).Returns(BronzeCoins);
+            resourcesMock.Setup(r => r.SilverCoins).Returns(SilverCoins);
+            resourcesMock.Setup(r => r.GoldCoins).Returns(GoldCoins);
 
             var otherResourcesMock = new Mock<IResources>();
-            otherResourcesMock.SetupGet(r => r.BronzeCoins).Returns(OtherBronzeCoins);
-            otherResourcesMock.SetupGet(r => r.SilverCoins).Returns(OtherSilverCoins);
-            otherResourcesMock.SetupGet(r => r.GoldCoins).Returns(OtherGoldCoins);
+            otherResourcesMock.Setup(r => r.BronzeCoins).Returns(OtherBronzeCoins);
+            otherResourcesMock.Setup(r => r.SilverCoins).Returns(OtherSilverCoins);
+            otherResourcesMock.Setup(r => r.GoldCoins).Returns(OtherGoldCoins);
 
             unit.Resources.Add(resourcesMock.Object);
             unit.Resources.Add(otherResourcesMock.Object);
@@ -77,14 +77,14 @@ namespace IntergalacticTravel.Tests.UnitTests
             Unit unit = new Unit(identificationNumber, nickName);
 
             var resourcesMock = new Mock<IResources>();
-            resourcesMock.SetupGet(r => r.BronzeCoins).Returns(BronzeCoins);
-            resourcesMock.SetupGet(r => r.SilverCoins).Returns(SilverCoins);
-            resourcesMock.SetupGet(r => r.GoldCoins).Returns(GoldCoins);
+            resourcesMock.Setup(r => r.BronzeCoins).Returns(BronzeCoins);
+            resourcesMock.Setup(r => r.SilverCoins).Returns(SilverCoins);
+            resourcesMock.Setup(r => r.GoldCoins).Returns(GoldCoins);
 
             var otherResourcesMock = new Mock<IResources>();
-            otherResourcesMock.SetupGet(r => r.BronzeCoins).Returns(OtherBronzeCoins);
-            otherResourcesMock.SetupGet(r => r.SilverCoins).Returns(OtherSilverCoins);
-            otherResourcesMock.SetupGet(r => r.GoldCoins).Returns(OtherGoldCoins);
+            otherResourcesMock.Setup(r => r.BronzeCoins).Returns(OtherBronzeCoins);
+            otherResourcesMock.Setup(r => r.SilverCoins).Returns(OtherSilverCoins);
+            otherResourcesMock.Setup(r => r.GoldCoins).Returns(OtherGoldCoins);
 
             unit.Resources.Add(resourcesMock.Object);
             unit.Resources.Add(otherResourcesMock.Object);

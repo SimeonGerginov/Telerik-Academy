@@ -22,7 +22,7 @@ namespace IntergalacticTravel.Tests.TeleportStationTests
             TeleportStationHelpers.SetupUnitToTeleport(ref unitToTeleportMock, TeleportStationConstants.Galaxy, TeleportStationConstants.Location);
             TeleportStationHelpers.SetupTargetLocation(ref targetLocationMock, TeleportStationConstants.Galaxy, TeleportStationConstants.Location, TeleportStationConstants.OtherLongtitude, TeleportStationConstants.OtherLatitude);
 
-            ownerMock.SetupGet(o => o.IdentificationNumber).Returns(TeleportStationConstants.IdentificationNumber);
+            ownerMock.Setup(o => o.IdentificationNumber).Returns(TeleportStationConstants.IdentificationNumber);
 
             unitToTeleportMock.Setup(u => u.CanPay(It.IsAny<IResources>())).Returns(true);
             unitToTeleportMock.Setup(u => u.Pay(TeleportStationHelpers.Path.Cost)).Returns(TeleportStationHelpers.Path.Cost);
