@@ -1,8 +1,8 @@
-﻿namespace Dealership.Common
-{
-    using System;
-    using System.Text.RegularExpressions;
+﻿using System;
+using System.Text.RegularExpressions;
 
+namespace Dealership.Common
+{
     public static class Validator
     {
         public static void ValidateIntRange(int value, int min, int max, string message)

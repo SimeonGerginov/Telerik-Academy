@@ -1,5 +1,5 @@
-﻿using Dealership.Common.Enums;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Dealership.Common.Enums;
 
 namespace Dealership.Contracts
 {

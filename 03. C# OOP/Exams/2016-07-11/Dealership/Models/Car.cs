@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
+
 using Dealership.Common;
 using Dealership.Common.Enums;
 using Dealership.Contracts;
