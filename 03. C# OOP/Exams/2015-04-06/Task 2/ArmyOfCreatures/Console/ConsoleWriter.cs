@@ -1,7 +1,8 @@
-﻿namespace ArmyOfCreatures.Console
+﻿using ArmyOfCreatures.Logic;
+
+namespace ArmyOfCreatures.Console
 {
     using System;
-    using ArmyOfCreatures.Logic;
 
     public class ConsoleLogger : ILogger
     {

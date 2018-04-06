@@ -1,13 +1,14 @@
-﻿namespace ArmyOfCreatures.Console
+﻿using System.Globalization;
+using System.Threading;
+
+using ArmyOfCreatures.Console.Commands;
+using ArmyOfCreatures.Extended;
+using ArmyOfCreatures.Logic;
+using ArmyOfCreatures.Logic.Battles;
+
+namespace ArmyOfCreatures.Console
 {
     using System;
-    using System.Globalization;
-    using System.Threading;
-
-    using ArmyOfCreatures.Console.Commands;
-    using ArmyOfCreatures.Extended;
-    using ArmyOfCreatures.Logic;
-    using ArmyOfCreatures.Logic.Battles;
 
     // No comments for you! It was hard to write so it should be hard to read.
     public static class Program

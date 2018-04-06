@@ -1,10 +1,10 @@
-﻿namespace ArmyOfCreatures.Console.Commands
+﻿using System;
+using System.Globalization;
+
+using ArmyOfCreatures.Logic.Battles;
+
+namespace ArmyOfCreatures.Console.Commands
 {
-    using System;
-    using System.Globalization;
-
-    using ArmyOfCreatures.Logic.Battles;
-
     public class AddCommand : ICommand
     {
         public void ProcessCommand(IBattleManager battleManager, params string[] arguments)

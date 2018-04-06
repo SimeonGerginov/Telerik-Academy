@@ -1,12 +1,12 @@
-﻿namespace ArmyOfCreatures.Console.Commands
+﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+
+using ArmyOfCreatures.Logic.Battles;
+
+namespace ArmyOfCreatures.Console.Commands
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Globalization;
-    using System.Linq;
-
-    using ArmyOfCreatures.Logic.Battles;
-
     public class CommandManager : ICommandManager
     {
         private readonly Dictionary<string, ICommand> commands =
