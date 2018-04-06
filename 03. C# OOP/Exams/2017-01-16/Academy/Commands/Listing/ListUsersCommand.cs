@@ -28,6 +28,7 @@ namespace Academy.Commands.Listing
             {
                 sb.Append(trainer.ToString());
             }
+
             foreach (var student in this.engine.Students)
             {
                 sb.Append(student.ToString());

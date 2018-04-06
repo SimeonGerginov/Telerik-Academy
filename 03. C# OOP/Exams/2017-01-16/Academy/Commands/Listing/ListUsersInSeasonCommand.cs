@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+
 using Academy.Commands.Contracts;
 using Academy.Core.Contracts;
 
