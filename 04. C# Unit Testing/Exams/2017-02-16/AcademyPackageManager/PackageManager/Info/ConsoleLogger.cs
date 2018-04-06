@@ -1,5 +1,6 @@
-﻿using PackageManager.Info.Contracts;
-using System;
+﻿using System;
+
+using PackageManager.Info.Contracts;
 
 namespace PackageManager.Info
 {

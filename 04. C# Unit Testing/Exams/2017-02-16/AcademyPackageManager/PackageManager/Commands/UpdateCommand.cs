@@ -1,8 +1,9 @@
-﻿using PackageManager.Commands.Contracts;
+﻿using System;
+
+using PackageManager.Commands.Contracts;
 using PackageManager.Core.Contracts;
 using PackageManager.Enums;
 using PackageManager.Models.Contracts;
-using System;
 
 namespace PackageManager.Commands
 {

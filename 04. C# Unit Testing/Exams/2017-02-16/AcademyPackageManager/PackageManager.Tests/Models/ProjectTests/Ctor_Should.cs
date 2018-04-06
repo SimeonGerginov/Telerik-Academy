@@ -1,12 +1,12 @@
 ﻿using System;
 
+using Moq;
+using NUnit.Framework;
+
 using PackageManager.Models;
 using PackageManager.Models.Contracts;
 using PackageManager.Repositories;
 using PackageManager.Repositories.Contracts;
-
-using Moq;
-using NUnit.Framework;
 
 namespace PackageManager.Tests.Models.ProjectTests
 {
@@ -68,8 +68,8 @@ namespace PackageManager.Tests.Models.ProjectTests
             string name = "Project";
             string location = "Location";
 
-            var packages = new Mock<IRepository<IPackage>>();
-            IRepository<IPackage> expectedPackages = packages.Object;
+            var packagesMock = new Mock<IRepository<IPackage>>();
+            IRepository<IPackage> expectedPackages = packagesMock.Object;
 
             // Act
             Project project = new Project(name, location, expectedPackages);
@@ -86,8 +86,8 @@ namespace PackageManager.Tests.Models.ProjectTests
             string name = "Project";
             string location = "Location";
 
-            var packages = new Mock<IRepository<IPackage>>();
-            IRepository<IPackage> expectedPackages = packages.Object;
+            var packagesMock = new Mock<IRepository<IPackage>>();
+            IRepository<IPackage> expectedPackages = packagesMock.Object;
 
             // Act
             Project project = new Project(name, location, expectedPackages);

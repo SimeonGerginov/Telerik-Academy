@@ -1,11 +1,12 @@
-﻿using PackageManager.Enums;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+using PackageManager.Enums;
 using PackageManager.Info.Contracts;
 using PackageManager.Models;
 using PackageManager.Models.Contracts;
 using PackageManager.Repositories.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace PackageManager.Repositories
 {
@@ -119,13 +120,11 @@ namespace PackageManager.Repositories
                 packageFound.Version = package.Version;
                 return true;
             }
-
             else if (package.CompareTo(packageFound) < 0)
             {
                 this.logger.Log(string.Format("{0}: The package has higher version than you are trying to install!", package.Name));
                 throw new ArgumentException();
             }
-
             else
             {
                 this.logger.Log(string.Format("{0}: Package with the same version is already installed!", package.Name));
@@ -136,9 +135,7 @@ namespace PackageManager.Repositories
         // Gets all the packages in the repository
         public IEnumerable<IPackage> GetAll()
         {
-            #region
             // this.AddPackage();
-            #endregion
             this.logger.Log("All packages");
             return new List<IPackage>(this.packages);
         }

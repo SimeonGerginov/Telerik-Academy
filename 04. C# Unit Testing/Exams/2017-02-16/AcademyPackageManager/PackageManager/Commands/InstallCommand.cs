@@ -1,8 +1,9 @@
-﻿using PackageManager.Commands.Contracts;
+﻿using System;
+
+using PackageManager.Commands.Contracts;
 using PackageManager.Core.Contracts;
 using PackageManager.Enums;
 using PackageManager.Models.Contracts;
-using System;
 
 namespace PackageManager.Commands
 {
@@ -13,7 +14,7 @@ namespace PackageManager.Commands
 
         public InstallCommand(IInstaller<IPackage> installer, IPackage package)
         {
-            if(installer == null)
+            if (installer == null)
             {
                 throw new ArgumentNullException();
             }

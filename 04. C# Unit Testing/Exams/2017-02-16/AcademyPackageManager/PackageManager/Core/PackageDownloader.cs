@@ -1,5 +1,5 @@
-﻿using PackageManager.Core.Contracts;
-using System;
+﻿using System;
+using PackageManager.Core.Contracts;
 
 namespace PackageManager.Core
 {

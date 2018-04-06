@@ -1,8 +1,9 @@
 ﻿using System;
-using PackageManager.Enums;
-using PackageManager.Models;
 
 using NUnit.Framework;
+
+using PackageManager.Enums;
+using PackageManager.Models;
 
 namespace PackageManager.Tests.Models.PackageVersionTests
 {

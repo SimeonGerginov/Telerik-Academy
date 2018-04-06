@@ -14,16 +14,16 @@ namespace PackageManager.Tests.Commands.InstallCommandTests
         public void CallPerformOperation_WithThePassedPackage()
         {
             // Arrange
-            var installer = new Mock<IInstaller<IPackage>>();
-            var package = new Mock<IPackage>();
+            var installerMock = new Mock<IInstaller<IPackage>>();
+            var packageMock = new Mock<IPackage>();
 
-            var installCommand = new InstallCommandMock(installer.Object, package.Object);
+            var installCommand = new InstallCommandMock(installerMock.Object, packageMock.Object);
 
             // Act
             installCommand.Execute();
 
             // Assert
-            installer.Verify(i => i.PerformOperation(package.Object), Times.Once());
+            installerMock.Verify(i => i.PerformOperation(packageMock.Object), Times.Once());
         }
     }
 }

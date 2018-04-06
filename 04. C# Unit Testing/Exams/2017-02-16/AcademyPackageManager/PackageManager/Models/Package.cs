@@ -1,6 +1,7 @@
-﻿using PackageManager.Models.Contracts;
-using System;
+﻿using System;
 using System.Collections.Generic;
+
+using PackageManager.Models.Contracts;
 
 namespace PackageManager.Models
 {
@@ -52,8 +53,8 @@ namespace PackageManager.Models
                 throw new ArgumentException();
             }
 
-            var thisVersionFinal = this.Version.Major * 1000 + this.Version.Minor * 100 + this.Version.Patch * 10 + (int)this.Version.VersionType;
-            var otherVersionFinal = other.Version.Major * 1000 + other.Version.Minor * 100 + other.Version.Patch * 10 + (int)other.Version.VersionType;
+            var thisVersionFinal = (this.Version.Major * 1000) + (this.Version.Minor * 100) + (this.Version.Patch * 10) + (int)this.Version.VersionType;
+            var otherVersionFinal = (other.Version.Major * 1000) + (other.Version.Minor * 100) + (other.Version.Patch * 10) + (int)other.Version.VersionType;
 
             if (thisVersionFinal > otherVersionFinal)
             {
@@ -71,7 +72,7 @@ namespace PackageManager.Models
 
         public override bool Equals(object obj)
         {
-            if(obj == null)
+            if (obj == null)
             {
                 throw new ArgumentNullException();
             }

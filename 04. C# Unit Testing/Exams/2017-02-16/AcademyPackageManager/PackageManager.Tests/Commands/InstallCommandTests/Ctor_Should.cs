@@ -18,11 +18,11 @@ namespace PackageManager.Tests.Commands.InstallCommandTests
         public void ReturnAnInstanceOfInstallCommand()
         {
             // Arrange
-            var installer = new Mock<IInstaller<IPackage>>();
-            var package = new Mock<IPackage>();
+            var installerMock = new Mock<IInstaller<IPackage>>();
+            var packageMock = new Mock<IPackage>();
 
             // Act
-            var installCommand = new InstallCommandMock(installer.Object, package.Object);
+            var installCommand = new InstallCommandMock(installerMock.Object, packageMock.Object);
 
             // Assert
             Assert.IsInstanceOf<InstallCommand>(installCommand);
@@ -32,39 +32,39 @@ namespace PackageManager.Tests.Commands.InstallCommandTests
         public void ThrowArgumentNullException_WhenInstallerIsNull()
         {
             // Arrange
-            var package = new Mock<IPackage>();
+            var packageMock = new Mock<IPackage>();
 
             // Act && Assert
-            Assert.Throws<ArgumentNullException>(() => new InstallCommandMock(null, package.Object));
+            Assert.Throws<ArgumentNullException>(() => new InstallCommandMock(null, packageMock.Object));
         }
 
         [Test]
         public void ThrowArgumentNullException_WhenPackageIsNull()
         {
             // Arrange
-            var installer = new Mock<IInstaller<IPackage>>();
+            var installerMock = new Mock<IInstaller<IPackage>>();
 
             // Act && Assert
-            Assert.Throws<ArgumentNullException>(() => new InstallCommandMock(installer.Object, null));
+            Assert.Throws<ArgumentNullException>(() => new InstallCommandMock(installerMock.Object, null));
         }
 
         [Test]
         public void SetTheCorrectValuesForTheMembersOfTheClass()
         {
             // Arrange
-            var installer = new Mock<IInstaller<IPackage>>();
-            var package = new Mock<IPackage>();
+            var installerMock = new Mock<IInstaller<IPackage>>();
+            var packageMock = new Mock<IPackage>();
             var expectedOperation = InstallerOperation.Install;
 
             // Act
-            var installCommand = new InstallCommandMock(installer.Object, package.Object);
+            var installCommand = new InstallCommandMock(installerMock.Object, packageMock.Object);
             var actualInstaller = installCommand.MyInstaller;
             var actualPackage = installCommand.MyPackage;
             var actualOperation = installCommand.MyInstaller.Operation;
 
             // Assert
-            Assert.AreEqual(installer.Object, actualInstaller);
-            Assert.AreEqual(package.Object, actualPackage);
+            Assert.AreEqual(installerMock.Object, actualInstaller);
+            Assert.AreEqual(packageMock.Object, actualPackage);
             Assert.AreEqual(expectedOperation, actualOperation);
         }
     }

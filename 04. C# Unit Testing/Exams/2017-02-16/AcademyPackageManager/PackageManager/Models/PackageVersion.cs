@@ -1,6 +1,7 @@
-﻿using PackageManager.Models.Contracts;
+﻿using System;
+
 using PackageManager.Enums;
-using System;
+using PackageManager.Models.Contracts;
 
 namespace PackageManager.Models
 {
@@ -25,6 +26,7 @@ namespace PackageManager.Models
             {
                 return this.major;
             }
+
             private set
             {
                 if (value < 0)
@@ -42,6 +44,7 @@ namespace PackageManager.Models
             {
                 return this.minor;
             }
+
             private set
             {
                 if (value < 0)
@@ -52,12 +55,14 @@ namespace PackageManager.Models
                 this.minor = value;
             }
         }
+
         public int Patch
         {
             get
             {
                 return this.patch;
             }
+
             private set
             {
                 if (value < 0)
@@ -75,9 +80,10 @@ namespace PackageManager.Models
             {
                 return this.versionType;
             }
+
             private set
             {
-                if(!Enum.IsDefined(typeof(VersionType), value))
+                if (!Enum.IsDefined(typeof(VersionType), value))
                 {
                     throw new ArgumentException();
                 }

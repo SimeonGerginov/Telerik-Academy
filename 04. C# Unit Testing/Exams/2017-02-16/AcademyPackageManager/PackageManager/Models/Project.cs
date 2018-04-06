@@ -1,8 +1,9 @@
-﻿using PackageManager.Repositories.Contracts;
-using PackageManager.Repositories;
+﻿using System;
+
 using PackageManager.Info;
 using PackageManager.Models.Contracts;
-using System;
+using PackageManager.Repositories;
+using PackageManager.Repositories.Contracts;
 
 namespace PackageManager.Models
 {
@@ -35,10 +36,8 @@ namespace PackageManager.Models
 
         public string Location { get; private set; }
 
-
         public string Name { get; private set; }
 
         public IRepository<IPackage> PackageRepository { get; private set; }
     }
-
 }

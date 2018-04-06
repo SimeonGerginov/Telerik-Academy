@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using PackageManager.Models;
-using PackageManager.Enums;
-using PackageManager.Models.Contracts;
-
 using Moq;
 using NUnit.Framework;
+
+using PackageManager.Enums;
+using PackageManager.Models;
+using PackageManager.Models.Contracts;
 
 namespace PackageManager.Tests.Models.PackageTests
 {
@@ -18,10 +18,10 @@ namespace PackageManager.Tests.Models.PackageTests
         {
             // Arrange
             string name = "Package name";
-            var version = new Mock<IVersion>();
+            var versionMock = new Mock<IVersion>();
 
             // Act
-            Package package = new Package(name, version.Object);
+            Package package = new Package(name, versionMock.Object);
 
             // Assert
             Assert.IsInstanceOf<Package>(package);
@@ -31,10 +31,10 @@ namespace PackageManager.Tests.Models.PackageTests
         public void ThrowAnArgumentNullException_WhenPassedNameIsNull()
         {
             // Arrange
-            var version = new Mock<IVersion>();
+            var versionMock = new Mock<IVersion>();
 
             // Act && Assert
-            Assert.Throws<ArgumentNullException>(() => new Package(null, version.Object));
+            Assert.Throws<ArgumentNullException>(() => new Package(null, versionMock.Object));
         }
 
         [Test]
@@ -52,10 +52,10 @@ namespace PackageManager.Tests.Models.PackageTests
         {
             // Arrange
             string name = "Package";
-            var version = new Mock<IVersion>();
+            var versionMock = new Mock<IVersion>();
 
             // Act
-            Package package = new Package(name, version.Object);
+            Package package = new Package(name, versionMock.Object);
 
             // Assert
             Assert.IsInstanceOf<HashSet<IPackage>>(package.Dependencies);
@@ -66,13 +66,13 @@ namespace PackageManager.Tests.Models.PackageTests
         {
             // Arrange
             string name = "Package";
-            var version = new Mock<IVersion>();
+            var versionMock = new Mock<IVersion>();
 
-            var dependencies = new Mock<ICollection<IPackage>>();
-            ICollection<IPackage> expectedDependencies = dependencies.Object;
+            var dependenciesMock = new Mock<ICollection<IPackage>>();
+            ICollection<IPackage> expectedDependencies = dependenciesMock.Object;
 
             // Act
-            Package package = new Package(name, version.Object, expectedDependencies);
+            Package package = new Package(name, versionMock.Object, expectedDependencies);
             ICollection<IPackage> actualDependencies = package.Dependencies;
 
             // Assert
@@ -84,16 +84,16 @@ namespace PackageManager.Tests.Models.PackageTests
         {
             // Arrange
             string name = "Package";
-            var version = new Mock<IVersion>();
-            var dependencies = new Mock<ICollection<IPackage>>();
+            var versionMock = new Mock<IVersion>();
+            var dependenciesMock = new Mock<ICollection<IPackage>>();
 
-            version.Setup(v => v.Major).Returns(5);
-            version.Setup(v => v.Minor).Returns(3);
-            version.Setup(v => v.Patch).Returns(4);
-            version.Setup(v => v.VersionType).Returns(VersionType.alpha);
+            versionMock.Setup(v => v.Major).Returns(5);
+            versionMock.Setup(v => v.Minor).Returns(3);
+            versionMock.Setup(v => v.Patch).Returns(4);
+            versionMock.Setup(v => v.VersionType).Returns(VersionType.alpha);
 
-            ICollection<IPackage> expectedDependencies = dependencies.Object;
-            IVersion expectedVersion = version.Object;
+            ICollection<IPackage> expectedDependencies = dependenciesMock.Object;
+            IVersion expectedVersion = versionMock.Object;
             string expectedUrl = string.Format("{0}.{1}.{2}-{3}", expectedVersion.Major, expectedVersion.Minor, expectedVersion.Patch, expectedVersion.VersionType);
 
             // Act 

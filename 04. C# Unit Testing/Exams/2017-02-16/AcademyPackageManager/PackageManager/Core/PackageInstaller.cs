@@ -1,8 +1,9 @@
-﻿using PackageManager.Core.Contracts;
+﻿using System;
+using System.Linq;
+
+using PackageManager.Core.Contracts;
 using PackageManager.Enums;
 using PackageManager.Models.Contracts;
-using System;
-using System.Linq;
 
 namespace PackageManager.Core
 {
@@ -18,15 +19,6 @@ namespace PackageManager.Core
             this.downloader.Location = project.Location + "\\" + this.BasicFolder;
 
             this.RestorePackages();
-        }
-
-        private void RestorePackages()
-        {
-            foreach (var package in this.project.PackageRepository.GetAll())
-            {
-                this.Operation = InstallerOperation.Install;
-                this.PerformOperation(package);
-            }
         }
 
         public string BasicFolder
@@ -96,6 +88,15 @@ namespace PackageManager.Core
 
                 default:
                     throw new NotImplementedException();
+            }
+        }
+
+        private void RestorePackages()
+        {
+            foreach (var package in this.project.PackageRepository.GetAll())
+            {
+                this.Operation = InstallerOperation.Install;
+                this.PerformOperation(package);
             }
         }
     }
