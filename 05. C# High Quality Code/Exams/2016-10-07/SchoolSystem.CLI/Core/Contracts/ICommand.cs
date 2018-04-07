@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace ConsoleApplication3
+namespace SchoolSystem.CLI.Core.Contracts
 {
-    interface ICommand
+    public interface ICommand
     {
         string Execute(IList<string> parameters);
     }

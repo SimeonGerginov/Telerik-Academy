@@ -8,5 +8,7 @@ namespace SchoolSystem.CLI.Models.Contracts
         Grade Grade { get; set; }
 
         IList<IMark> Marks { get; set; }
+
+        string ListMarks();
     }
 }

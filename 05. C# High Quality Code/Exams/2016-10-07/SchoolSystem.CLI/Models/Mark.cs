@@ -9,7 +9,7 @@ namespace SchoolSystem.CLI.Models
     public class Mark : IMark
     {
         private float value;
-        private Subject subject; 
+        private Subject subject;
 
         public Mark(float value, Subject subject)
         {

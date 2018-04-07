@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 using SchoolSystem.CLI.Enums;
 using SchoolSystem.CLI.Models.Abstractions;
@@ -42,6 +44,28 @@ namespace SchoolSystem.CLI.Models
             {
                 this.marks = value;
             }
+        }
+
+        public string ListMarks()
+        {
+            if (this.Marks.Count == 0)
+            {
+                return "This student has no marks.";
+            }
+
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine("The student has these marks:");
+
+            foreach (var mark in this.Marks)
+            {
+                string markInfo = mark.Subject + " " + "=>" + " " + mark.Value;
+                sb.AppendLine(markInfo);
+            }
+
+            sb.Append(Environment.NewLine);
+
+            return sb.ToString();
         }
     }
 }
