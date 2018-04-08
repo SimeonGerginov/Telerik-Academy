@@ -1,12 +1,12 @@
 ﻿Bottleneck description: --------------------
-#1:
+#1: The method Writeline in the Engine class is doing too many redundant things and should by simplified to just Console.WriteLine(parameter).
 
 
 Bug reports: --------------------
 Format: #Bug number - Class name - Bug description
 Example: #1 - PartnerBankingService - The variable "money" at line 36 overflows when you try to add more than 2.1 billion dollars.
 --------
-#1 -
-#2 -
-#3 -
-#4 - 
+#1 - Grades enum - The grades from one to eight are missing.
+#2 - StudentListMarks - The command does not return a proper message when there are not any marks.
+#3 - CreateStudentCommand - The command is not implementing ICommand interface and cannot be found by the reflcetion logic.
+#4 - TeacherAddMarkCommand - The parameters for teacher and student are swapped.

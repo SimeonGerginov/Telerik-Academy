@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
+using SchoolSystem.CLI.Constants;
 using SchoolSystem.CLI.Core.Contracts;
 using SchoolSystem.CLI.Models.Contracts;
 
@@ -10,9 +12,17 @@ namespace SchoolSystem.CLI.Core.Commands
         public string Execute(IList<string> parameters)
         {
             int studentId = int.Parse(parameters[0]);
-            IStudent student = Engine.Students[studentId];
 
-            return student.ListMarks();
+            if (Engine.Students.ContainsKey(studentId))
+            {
+                IStudent student = Engine.Students[studentId];
+
+                return student.ListMarks();
+            }
+            else
+            {
+                throw new ArgumentException(GlobalConstants.NotFoundStudentErrorMessage);
+            }
         }
     }
 }

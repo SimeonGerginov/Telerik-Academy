@@ -75,7 +75,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Docs\Exam.ruleset" />
+    <None Include="Docs\Exam.ruleset">
+      <ExcludeFromStyleCop>False</ExcludeFromStyleCop>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />

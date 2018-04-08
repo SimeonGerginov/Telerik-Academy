@@ -22,5 +22,8 @@
         public const string ReaderNullErrorMessage = "Reader cannot be null!";
         public const string WriterNullErrorMessage = "Writer cannot be null!";
         public const string ParserNullErrorMessage = "Parser cannot be null!";
+
+        public const string NotFoundStudentErrorMessage = "The dictionary of students does not contain a student with that id!";
+        public const string NotFoundPersonErrorMessage = "The dictionary does not contain a person with that id!";
     }
 }
