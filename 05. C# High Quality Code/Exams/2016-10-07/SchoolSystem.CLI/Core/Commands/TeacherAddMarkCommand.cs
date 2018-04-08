@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using SchoolSystem.CLI.Constants;
 using SchoolSystem.CLI.Core.Contracts;
-using SchoolSystem.CLI.Models;
+using SchoolSystem.CLI.Models.Contracts;
 
 namespace SchoolSystem.CLI.Core.Commands
 {
@@ -17,8 +17,8 @@ namespace SchoolSystem.CLI.Core.Commands
 
             if (Engine.Students.ContainsKey(studentId) && Engine.Teachers.ContainsKey(teacherId))
             {
-                Student student = Engine.Students[studentId];
-                Teacher teacher = Engine.Teachers[teacherId];
+                IStudent student = Engine.Students[studentId];
+                ITeacher teacher = Engine.Teachers[teacherId];
 
                 teacher.AddMark(student, value);
 
@@ -26,7 +26,7 @@ namespace SchoolSystem.CLI.Core.Commands
             }
             else
             {
-                throw new ArgumentException(GlobalConstants.NotFoundPersonErrorMessage);
+                throw new ArgumentException(GlobalConstants.KeyNotFoundErrorMessage);
             }
         }
     }

@@ -63,8 +63,6 @@ namespace SchoolSystem.CLI.Models
                 sb.AppendLine(markInfo);
             }
 
-            sb.Append(Environment.NewLine);
-
             return sb.ToString();
         }
     }

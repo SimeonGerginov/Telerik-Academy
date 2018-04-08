@@ -3,21 +3,20 @@ using System.Collections.Generic;
 
 using SchoolSystem.CLI.Constants;
 using SchoolSystem.CLI.Core.Contracts;
-using SchoolSystem.CLI.Models.Contracts;
 
 namespace SchoolSystem.CLI.Core.Commands
 {
-    public class StudentListMarksCommand : ICommand
+    public class RemoveTeacherCommand : ICommand
     {
         public string Execute(IList<string> parameters)
         {
-            int studentId = int.Parse(parameters[0]);
+            int teacherId = int.Parse(parameters[0]);
 
-            if (Engine.Students.ContainsKey(studentId))
+            if (Engine.Teachers.ContainsKey(teacherId))
             {
-                IStudent student = Engine.Students[studentId];
+                Engine.Teachers.Remove(teacherId);
 
-                return student.ListMarks();
+                return $"Teacher with ID {teacherId} was sucessfully removed.";
             }
             else
             {

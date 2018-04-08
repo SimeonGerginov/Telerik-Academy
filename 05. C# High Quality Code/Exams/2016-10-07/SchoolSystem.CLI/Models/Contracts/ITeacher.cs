@@ -5,7 +5,7 @@ namespace SchoolSystem.CLI.Models.Contracts
     /// <summary>
     /// Represents a Teacher and extends Person, has a Subject and a way of assinging Marks to Students.
     /// </summary>
-    public interface ITeacher
+    public interface ITeacher : IPerson
     {
         Subject Subject { get; set; }
 

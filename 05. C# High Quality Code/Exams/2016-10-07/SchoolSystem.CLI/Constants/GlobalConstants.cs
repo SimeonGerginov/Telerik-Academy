@@ -10,7 +10,7 @@
 
         public const int MaxMarkCountPerStudent = 20;
 
-        public const string TerminationCommand = "END";
+        public const string TerminationCommand = "End";
 
         public const string NameErrorMessage = "Name must be between 2 and 31 symbols long!";
         public const string NameCharactersErrorMessage = "Name must contaion only latin letters!";
@@ -23,7 +23,6 @@
         public const string WriterNullErrorMessage = "Writer cannot be null!";
         public const string ParserNullErrorMessage = "Parser cannot be null!";
 
-        public const string NotFoundStudentErrorMessage = "The dictionary of students does not contain a student with that id!";
-        public const string NotFoundPersonErrorMessage = "The dictionary does not contain a person with that id!";
+        public const string KeyNotFoundErrorMessage = "The given key was not present in the dictionary.";
     }
 }

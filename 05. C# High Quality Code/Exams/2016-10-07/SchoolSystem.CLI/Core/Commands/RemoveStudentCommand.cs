@@ -20,7 +20,7 @@ namespace SchoolSystem.CLI.Core.Commands
             }
             else
             {
-                throw new ArgumentException(GlobalConstants.NotFoundStudentErrorMessage);
+                throw new ArgumentException(GlobalConstants.KeyNotFoundErrorMessage);
             }
         }
     }

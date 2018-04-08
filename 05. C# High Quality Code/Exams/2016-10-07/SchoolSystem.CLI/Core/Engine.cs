@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using SchoolSystem.CLI.Constants;
 using SchoolSystem.CLI.Core.Contracts;
-using SchoolSystem.CLI.Models;
+using SchoolSystem.CLI.Models.Contracts;
 
 namespace SchoolSystem.CLI.Core
 {
@@ -34,13 +34,13 @@ namespace SchoolSystem.CLI.Core
             this.writer = writer;
             this.parser = parser;
 
-            Teachers = new Dictionary<int, Teacher>();
-            Students = new Dictionary<int, Student>();
+            Teachers = new Dictionary<int, ITeacher>();
+            Students = new Dictionary<int, IStudent>();
         }
 
-        public static IDictionary<int, Teacher> Teachers { get; set; }
+        public static IDictionary<int, ITeacher> Teachers { get; set; }
 
-        public static IDictionary<int, Student> Students { get; set; }
+        public static IDictionary<int, IStudent> Students { get; set; }
 
         public void Start()
         {

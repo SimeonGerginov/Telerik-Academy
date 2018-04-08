@@ -3,6 +3,7 @@
 using SchoolSystem.CLI.Core.Contracts;
 using SchoolSystem.CLI.Enums;
 using SchoolSystem.CLI.Models;
+using SchoolSystem.CLI.Models.Contracts;
 
 namespace SchoolSystem.CLI.Core.Commands
 {
@@ -16,7 +17,7 @@ namespace SchoolSystem.CLI.Core.Commands
             string lastName = parameters[1];
             Grade grade = (Grade)int.Parse(parameters[2]);
 
-            Student student = new Student(firstName, lastName, grade);
+            IStudent student = new Student(firstName, lastName, grade);
             Engine.Students.Add(currentStudentId, student);
 
             return $"A new student with name {firstName} {lastName}, grade {grade} and ID {currentStudentId++} was created.";

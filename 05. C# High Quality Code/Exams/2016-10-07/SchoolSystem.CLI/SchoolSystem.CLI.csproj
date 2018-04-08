@@ -49,7 +49,9 @@
   <ItemGroup>
     <Compile Include="Constants\GlobalConstants.cs" />
     <Compile Include="Core\Commands\CreateStudentCommand.cs" />
+    <Compile Include="Core\Commands\CreateTeacherCommand.cs" />
     <Compile Include="Core\Commands\RemoveStudentCommand.cs" />
+    <Compile Include="Core\Commands\RemoveTeacherCommand.cs" />
     <Compile Include="Core\Commands\StudentListMarksCommand.cs" />
     <Compile Include="Core\Commands\TeacherAddMarkCommand.cs" />
     <Compile Include="Core\Contracts\ICommand.cs" />
