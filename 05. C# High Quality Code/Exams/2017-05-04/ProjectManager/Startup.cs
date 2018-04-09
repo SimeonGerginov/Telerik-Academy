@@ -1,26 +1,15 @@
-﻿using ProjectManager.Commands;
-using ProjectManager.Common;
-
-
-using ProjectManager.Common.Providers;
+﻿using ProjectManager.Core;
+using ProjectManager.Core.Contracts;
 
 namespace ProjectManager
 {
-    using ProjectManager.Data;
-    using ProjectManager.Models;
-
     public class Startup
     {
         public static void Main()
         {
-            var eng = new Engine(new FileLogger(),
-                new CmdCPU(
-                    new CmdsFactory(
-                        new Database(),
-                        new ModelsFactory())));
+            IEngine engine = new Engine(null, null, null, null);
 
-            var provider = new EnginePRovider(eng);
-            provider.Start();
+            engine.Start();
         }
     }
 }

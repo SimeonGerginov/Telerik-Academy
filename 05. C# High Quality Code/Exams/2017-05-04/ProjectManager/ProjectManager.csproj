@@ -51,29 +51,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EnginePRovider.cs" />
-    <Compile Include="ICommand.cs" />
-    <Compile Include="CreationalCommands.cs" />
-    <Compile Include="CommandsFactory.cs" />
-    <Compile Include="ListingCommands.cs" />
-    <Compile Include="Common\UserValidationException.cs" />
-    <Compile Include="Validator.cs" />
+    <Compile Include="Commands\Abstract\CreateCommand.cs" />
+    <Compile Include="Commands\Creational\CreateProjectCommand.cs" />
+    <Compile Include="Commands\Creational\CreateTaskCommand.cs" />
+    <Compile Include="Commands\Creational\CreateUserCommand.cs" />
+    <Compile Include="Common\Contracts\ICommandProcessor.cs" />
+    <Compile Include="Common\Contracts\ILogger.cs" />
+    <Compile Include="Common\Contracts\IReader.cs" />
+    <Compile Include="Common\Contracts\IValidator.cs" />
+    <Compile Include="Common\Contracts\IWriter.cs" />
+    <Compile Include="Common\Providers\ConsoleReader.cs" />
+    <Compile Include="Common\Providers\ConsoleWriter.cs" />
+    <Compile Include="Core\Contracts\IEngine.cs" />
+    <Compile Include="Enums\ProjectState.cs" />
+    <Compile Include="Enums\TaskState.cs" />
+    <Compile Include="Factories\Contracts\ICommandsFactory.cs" />
+    <Compile Include="Factories\Contracts\IModelsFactory.cs" />
+    <Compile Include="Commands\Contracts\ICommand.cs" />
+    <Compile Include="Factories\CommandsFactory.cs" />
+    <Compile Include="Commands\Listing\ListingCommands.cs" />
+    <Compile Include="Common\Exceptions\UserValidationException.cs" />
+    <Compile Include="Models\Contracts\IProject.cs" />
+    <Compile Include="Models\Contracts\ITask.cs" />
+    <Compile Include="Models\Contracts\IUser.cs" />
+    <Compile Include="Common\Providers\Validator.cs" />
     <Compile Include="Data\Database.cs" />
-    <Compile Include="IProject.cs" />
-    <Compile Include="ModelsFactory.cs" />
+    <Compile Include="Factories\ModelsFactory.cs" />
     <Compile Include="Data\IDatabase.cs" />
-    <Compile Include="Project.cs" />
-    <Compile Include="Task.cs" />
-    <Compile Include="User.cs" />
-    <Compile Include="Engine.cs" />
+    <Compile Include="Models\Project.cs" />
+    <Compile Include="Models\Task.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Core\Engine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Common\CommandProcessor.cs" />
-    <Compile Include="Common\FileLogger.cs" />
+    <Compile Include="Common\Providers\CommandProcessor.cs" />
+    <Compile Include="Common\Providers\FileLogger.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -88,7 +104,8 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Documentation.txt" />
+    <Content Include="Docs\Documentation.txt" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
