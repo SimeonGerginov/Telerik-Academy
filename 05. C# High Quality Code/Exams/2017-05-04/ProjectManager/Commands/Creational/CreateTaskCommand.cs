@@ -18,8 +18,7 @@ namespace ProjectManager.Commands.Creational
         }
 
         public override string Execute(IList<string> parameters)
-        {
-           
+        {         
             if (parameters.Count != 4)
             {
                 throw new UserValidationException("Invalid command parameters count!");
@@ -38,12 +37,12 @@ namespace ProjectManager.Commands.Creational
             IProject project;
             IUser owner;
 
-            if (this.database.Projects[projectId] == null)
+            if (this.Database.Projects[projectId] == null)
             {
                 throw new UserValidationException("Project is not found in the database!");
             }
 
-            project = this.database.Projects[projectId];
+            project = this.Database.Projects[projectId];
 
             if (project.Users[ownerId] == null)
             {
@@ -52,7 +51,7 @@ namespace ProjectManager.Commands.Creational
 
             owner = project.Users[ownerId];
 
-            ITask task = this.factory.CreateTask(owner, name, state);
+            ITask task = this.Factory.CreateTask(owner, name, state);
             project.Tasks.Add(task);
 
             return "Successfully created a new task!";

@@ -2,26 +2,21 @@
 using System.Collections.Generic;
 using System.Linq;
 
-using Bytes2you.Validation;
-
+using ProjectManager.Commands.Abstract;
 using ProjectManager.Commands.Contracts;
 using ProjectManager.Common.Exceptions;
 using ProjectManager.Data;
 
 namespace ProjectManager.Commands.Listing
 {
-    public class ListProjectsCommand : ICommand
+    public class ListProjectsCommand : ListCommand, ICommand
     {
-        private readonly IDatabase database;
-
         public ListProjectsCommand(IDatabase database)
+            : base(database)
         {
-            Guard.WhenArgument(database, "Database").IsNull().Throw();
-
-            this.database = database;
         }
 
-        public string Execute(IList<string> parameters)
+        public override string Execute(IList<string> parameters)
         {
             if (parameters.Count != 0)
             {
@@ -33,7 +28,7 @@ namespace ProjectManager.Commands.Listing
                 throw new UserValidationException("Some of the passed parameters are empty!");
             }
 
-            return string.Join(Environment.NewLine, this.database.Projects);
+            return string.Join(Environment.NewLine, this.Database.Projects);
         }
     }
 }

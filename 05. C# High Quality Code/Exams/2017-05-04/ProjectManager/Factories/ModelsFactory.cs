@@ -63,7 +63,7 @@ namespace ProjectManager.Factories
             }
 
             ITask task = new Task(name, owner, stateParsed);
-            validator.Validate(task);
+            this.validator.Validate(task);
 
             return task;
         }
@@ -71,7 +71,7 @@ namespace ProjectManager.Factories
         public IUser CreateUser(string username, string email)
         {
             IUser user = new User(username, email);
-            validator.Validate(user);
+            this.validator.Validate(user);
 
             return user;
         }       

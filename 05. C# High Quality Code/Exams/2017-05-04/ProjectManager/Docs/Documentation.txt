@@ -1,10 +1,10 @@
 ﻿Bugs:
 
-#1
-#2
-#3
-#4
+#1 User has swapped username and email when creating new user in the models factory.
+#2 CreateUser command missing from the switch case.
+#3 FileLogger not logging when calling the log method.
+#4 Task is missing the owner name.
 
 Bottleneck:
 
-#1
+#1 The bottleneck is the two lines of datetime related operations with the empty while loop in the CommandsFactory BuildCommand method.

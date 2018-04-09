@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Text;
 
 using ProjectManager.Enums;
 using ProjectManager.Models.Contracts;
@@ -35,27 +36,32 @@ namespace ProjectManager.Models
 
         public virtual IList<ITask> Tasks { get; set; }
 
-        //public override string ToString()
-        //{
-        //    var sb = new StringBuilder();
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
 
-        //    sb.AppendLine("Name: " + this.Name);
-        //    sb.AppendLine("  Starting date: " + this.StartingDate.ToString("yyyy-MM-dd"));
-        //    sb.AppendLine("  Ending date: " + this.EndingDate.ToString("yyyy-MM-dd"));
-        //    sb.AppendLine("  State: " + this.State.ToString());
-        //    sb.AppendLine("  Users: ");
+            sb.AppendLine("Name: " + this.Name);
+            sb.AppendLine("  Starting date: " + this.StartingDate.ToString("yyyy-MM-dd"));
+            sb.AppendLine("  Ending date: " + this.EndingDate.ToString("yyyy-MM-dd"));
+            sb.AppendLine("  State: " + this.State.ToString());
 
-        //    sb.Append(string.Join(Environment.NewLine + "  -------------" + Environment.NewLine, this.Users));
+            sb.AppendLine("  Users: ");
+            sb.Append(string.Join(Environment.NewLine + "  -------------" + Environment.NewLine, this.Users));
 
-        //    if (this.Users.Count == 0)
-        //        sb.AppendLine("  - This project has no users!");
-        //    sb.AppendLine("  Tasks: ");
-        //    sb.Append(string.Join(Environment.NewLine + "  -------------" + Environment.NewLine, this.Tasks));
+            if (this.Users.Count == 0)
+            {
+                sb.AppendLine("  - This project has no users!");
+            }
+            
+            sb.AppendLine("  Tasks: ");
+            sb.Append(string.Join(Environment.NewLine + "  -------------" + Environment.NewLine, this.Tasks));
 
-        //    if (this.Tasks.Count == 0)
-        //        sb.Append("  - This project has no tasks!");
+            if (this.Tasks.Count == 0)
+            {
+                sb.Append("  - This project has no tasks!");
+            }
 
-        //    return sb.ToString();
-        //}
+            return sb.ToString();
+        }
     }
 }

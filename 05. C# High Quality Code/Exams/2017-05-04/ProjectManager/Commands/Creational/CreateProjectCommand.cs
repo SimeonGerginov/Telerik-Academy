@@ -23,6 +23,7 @@ namespace ProjectManager.Commands.Creational
             {
                 throw new UserValidationException("Invalid command parameters count!");
             }
+
             if (parameters.Any(p => p == string.Empty))
             {
                 throw new UserValidationException("Some of the passed parameters are empty!");
@@ -33,13 +34,13 @@ namespace ProjectManager.Commands.Creational
             string endingDate = parameters[2];
             string state = parameters[3];
 
-            if (this.database.Projects.Any(p => p.Name == projectName))
+            if (this.Database.Projects.Any(p => p.Name == projectName))
             {
                 throw new UserValidationException("A project with that name already exists!");
             }
 
-            IProject project = this.factory.CreateProject(projectName, startingDate, endingDate, state);
-            this.database.Projects.Add(project);
+            IProject project = this.Factory.CreateProject(projectName, startingDate, endingDate, state);
+            this.Database.Projects.Add(project);
 
             return "Successfully created a new project!";
         }

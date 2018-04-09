@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text;
 
 using ProjectManager.Enums;
 using ProjectManager.Models.Contracts;
@@ -22,14 +23,15 @@ namespace ProjectManager.Models
 
         public TaskState State { get; set; }
 
-        //public override string ToString()
-        //{
-        //    var builder = new StringBuilder();
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
 
-        //    builder.AppendLine("    Name: " + this.Name);
-        //    builder.Append("    State: " + this.st);
+            sb.AppendLine("    Name: " + this.Name);
+            sb.AppendLine("    Owner: " + this.Owner.Username);
+            sb.Append("    State: " + this.State.ToString());
 
-        //    return builder.ToString();
-        //}
+            return sb.ToString();
+        }
     }
 }

@@ -52,9 +52,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\Abstract\CreateCommand.cs" />
+    <Compile Include="Commands\Abstract\ListCommand.cs" />
     <Compile Include="Commands\Creational\CreateProjectCommand.cs" />
     <Compile Include="Commands\Creational\CreateTaskCommand.cs" />
     <Compile Include="Commands\Creational\CreateUserCommand.cs" />
+    <Compile Include="Commands\Listing\ListProjectDetailsCommand.cs" />
     <Compile Include="Common\Contracts\ICommandProcessor.cs" />
     <Compile Include="Common\Contracts\ILogger.cs" />
     <Compile Include="Common\Contracts\IReader.cs" />
@@ -69,7 +71,7 @@
     <Compile Include="Factories\Contracts\IModelsFactory.cs" />
     <Compile Include="Commands\Contracts\ICommand.cs" />
     <Compile Include="Factories\CommandsFactory.cs" />
-    <Compile Include="Commands\Listing\ListingCommands.cs" />
+    <Compile Include="Commands\Listing\ListProjectsCommand.cs" />
     <Compile Include="Common\Exceptions\UserValidationException.cs" />
     <Compile Include="Models\Contracts\IProject.cs" />
     <Compile Include="Models\Contracts\ITask.cs" />

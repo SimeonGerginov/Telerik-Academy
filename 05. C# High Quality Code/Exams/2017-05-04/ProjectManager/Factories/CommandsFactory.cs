@@ -1,5 +1,6 @@
 ﻿using ProjectManager.Commands.Contracts;
 using ProjectManager.Commands.Creational;
+using ProjectManager.Commands.Listing;
 using ProjectManager.Common.Exceptions;
 using ProjectManager.Common.Providers;
 using ProjectManager.Data;
@@ -29,7 +30,10 @@ namespace ProjectManager.Commands
                     return this.CreateTaskCommand();
                 case "createuser":
                     return this.CreateUserCommand();
-               // case "listprojects": return new ListProjectsCommand(db);
+                case "listprojects":
+                    return this.ListProjects();
+                case "listprojectdetails":
+                    return this.ListProjectDetails();
                default: throw new UserValidationException("The passed command is not valid!");
             }
         }
@@ -47,6 +51,16 @@ namespace ProjectManager.Commands
         public ICommand CreateUserCommand()
         {
             return new CreateUserCommand(this.database, this.modelsFactory);
+        }
+
+        public ICommand ListProjectDetails()
+        {
+            return new ListProjectDetailsCommand(this.database);
+        }
+
+        public ICommand ListProjects()
+        {
+            return new ListProjectsCommand(this.database);
         }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text;
+
 using ProjectManager.Models.Contracts;
 
 namespace ProjectManager.Models
@@ -18,12 +20,14 @@ namespace ProjectManager.Models
         [EmailAddress(ErrorMessage = "User Email is not valid!")]
         public string Email { get; set; }
 
-        //public override string ToString()
-        //{
-        //    var b = new StringBuilder();
-        //    b.AppendLine("    Username: " + this.UN);
-        //    b.AppendLine("    Email: " + this.Email);
-        //    return b.ToString();
-        //}
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine("    Username: " + this.Username);
+            sb.AppendLine("    Email: " + this.Email);
+
+            return sb.ToString();
+        }
     }
 }

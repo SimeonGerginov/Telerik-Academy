@@ -33,19 +33,19 @@ namespace ProjectManager.Commands.Creational
             string username = parameters[1];
             string email = parameters[2];
 
-            if (this.database.Projects[projectId] == null)
+            if (this.Database.Projects[projectId] == null)
             {
                 throw new UserValidationException("Project with the passed id is not found in the database!");
             }
 
-            if (this.database.Projects[projectId].Users.Any() && 
-                this.database.Projects[projectId].Users.Any(u => u.Username == username))
+            if (this.Database.Projects[projectId].Users.Any() && 
+                this.Database.Projects[projectId].Users.Any(u => u.Username == username))
             {
                 throw new UserValidationException("A user with that username already exists!");
             }
 
-            IUser user = this.factory.CreateUser(username, email);
-            this.database.Projects[projectId].Users.Add(user);
+            IUser user = this.Factory.CreateUser(username, email);
+            this.Database.Projects[projectId].Users.Add(user);
 
             return "Successfully created a new user!";
         }

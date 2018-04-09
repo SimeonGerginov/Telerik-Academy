@@ -33,7 +33,7 @@ namespace ProjectManager.Core
 
                 if (commandAsString.ToLower() == "exit")
                 {
-                    this.writer.WriteLine(sb.ToString());
+                    this.writer.Write(sb.ToString());
                     this.writer.WriteLine("Program terminated.");
                     break;
                 }
