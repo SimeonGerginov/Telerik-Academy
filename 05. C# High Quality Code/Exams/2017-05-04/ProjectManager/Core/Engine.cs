@@ -49,7 +49,7 @@ namespace ProjectManager.Core
                 }
                 catch (Exception ex)
                 {
-                    sb.AppendLine(ex.Message);
+                    sb.AppendLine("Something happened!");
                     this.logger.Error(ex.Message);
                 }
             }

@@ -5,7 +5,7 @@ namespace ProjectManager.Common.Providers
 {
     public class FileLogger : ILogger
     {
-        private static FileLogger instance;
+        private static ILogger instance;
         private static ILog log;
 
         private FileLogger()
