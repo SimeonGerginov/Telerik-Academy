@@ -82,6 +82,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Commands\CreateStudentCommandTests\Execute_Should.cs" />
+    <Compile Include="Core\Commands\RemoveStudentCommandTests\Execute_Should.cs" />
+    <Compile Include="Core\Commands\TeacherAddMarkCommandTests\Execute_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

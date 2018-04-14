@@ -48,7 +48,7 @@ namespace SchoolSystem.Cli
 
             var studentFactoryBinding = Bind<IStudentFactory>().ToFactory().InSingletonScope();
             var markFactoryBinding = Bind<IMarkFactory>().ToFactory().InSingletonScope();
-            var commandFactoryBinding =Bind<ICommandFactory>().ToFactory().InSingletonScope();
+            var commandFactoryBinding = Bind<ICommandFactory>().ToFactory().InSingletonScope();
             Bind<ITeacherFactory>().ToFactory().InSingletonScope();
 
             IConfigurationProvider configurationProvider = Kernel.Get<IConfigurationProvider>();

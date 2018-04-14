@@ -8,11 +8,11 @@ using SchoolSystem.Framework.Models.Enums;
 namespace SchoolSystem.Framework.Core.Commands
 {
     public class CreateTeacherCommand : ICommand
-    {
-        private int currentTeacherId = 0;
-
+    { 
         private readonly ITeacherFactory teacherFactory;
         private readonly IAddTeacher addTeacher;
+
+        private int currentTeacherId = 0;
 
         public CreateTeacherCommand(ITeacherFactory teacherFactory, IAddTeacher addTeacher)
         {
@@ -27,7 +27,7 @@ namespace SchoolSystem.Framework.Core.Commands
             var subject = (Subject)int.Parse(parameters[2]);
 
             var teacher = this.teacherFactory.CreateTeacher(firstName, lastName, subject);
-            this.addTeacher.AddTeacher(currentTeacherId, teacher);
+            this.addTeacher.AddTeacher(this.currentTeacherId, teacher);
 
             return $"A new teacher with name {firstName} {lastName}, subject {subject} and ID {currentTeacherId++} was created.";
         }
