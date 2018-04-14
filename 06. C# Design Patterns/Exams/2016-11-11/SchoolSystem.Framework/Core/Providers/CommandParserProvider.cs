@@ -10,11 +10,18 @@ namespace SchoolSystem.Framework.Core.Providers
 {
     public class CommandParserProvider : IParser
     {
+        private readonly ICommandFactory commandFactory;
+
+        public CommandParserProvider(ICommandFactory commandFactory)
+        {
+            this.commandFactory = commandFactory;
+        }
+
         public ICommand ParseCommand(string fullCommand)
         {
             var commandName = fullCommand.Split(' ')[0];
             var commandTypeInfo = this.FindCommand(commandName);
-            var command = Activator.CreateInstance(commandTypeInfo) as ICommand;
+            var command = this.commandFactory.GetCommand(commandTypeInfo);
 
             return command;
         }

@@ -1,9 +1,21 @@
-﻿using Ninject;
-using Ninject.Extensions.Conventions;
-using Ninject.Modules;
-using SchoolSystem.Cli.Configuration;
+﻿using System;
 using System.IO;
+using System.Linq;
 using System.Reflection;
+
+using Ninject;
+using Ninject.Extensions.Conventions;
+using Ninject.Extensions.Factory;
+using Ninject.Modules;
+
+using SchoolSystem.Cli.Configuration;
+using SchoolSystem.Framework.Core;
+using SchoolSystem.Framework.Core.Commands;
+using SchoolSystem.Framework.Core.Commands.Contracts;
+using SchoolSystem.Framework.Core.Contracts;
+using SchoolSystem.Framework.Core.Providers;
+using SchoolSystem.Framework.Models;
+using SchoolSystem.Framework.Models.Contracts;
 
 namespace SchoolSystem.Cli
 {
@@ -15,13 +27,42 @@ namespace SchoolSystem.Cli
             {
                 x.FromAssembliesInPath(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location))
                 .SelectAllClasses()
+                .Where(type => type != typeof(Engine))
                 .BindDefaultInterface();
             });
+
+            Bind<IEngine>().To<Engine>().InSingletonScope();
+
+            Bind<CreateStudentCommand>().ToSelf().InSingletonScope();
+            Bind<CreateTeacherCommand>().ToSelf().InSingletonScope();
+            Bind<RemoveStudentCommand>().ToSelf().InSingletonScope();
+            Bind<RemoveTeacherCommand>().ToSelf().InSingletonScope();
+            Bind<StudentListMarksCommand>().ToSelf().InSingletonScope();
+            Bind<TeacherAddMarkCommand>().ToSelf().InSingletonScope();
+
+            Bind<IReader>().To<ConsoleReaderProvider>().InSingletonScope();
+            Bind<IWriter>().To<ConsoleWriterProvider>().InSingletonScope();
+            Bind<IParser>().To<CommandParserProvider>().InSingletonScope();
+
+            Bind<IStudentFactory>().ToFactory().InSingletonScope();
+            Bind<ITeacherFactory>().ToFactory().InSingletonScope();
+            Bind<IMarkFactory>().ToFactory().InSingletonScope();
+            Bind<ICommandFactory>().ToFactory().InSingletonScope();
 
             IConfigurationProvider configurationProvider = Kernel.Get<IConfigurationProvider>();
             if (configurationProvider.IsTestEnvironment)
             {
             }
+
+            Bind(typeof(IAddStudent), typeof(IAddTeacher), typeof(IRemoveStudent), typeof(IRemoveTeacher), typeof(IGetStudent), typeof(IGetTeacher), typeof(IGetStudentAndTeacher))
+                .To<School>()
+                .InSingletonScope();
+
+            Bind<ICommand>().ToMethod(context =>
+            {
+                Type commandType = (Type)context.Parameters.Single().GetValue(context, null);
+                return (ICommand)context.Kernel.Get(commandType);
+            }).NamedLikeFactoryMethod((ICommandFactory commandFactory) => commandFactory.GetCommand(null));
         }
     }
 }
