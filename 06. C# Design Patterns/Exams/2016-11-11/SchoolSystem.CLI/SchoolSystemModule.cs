@@ -6,9 +6,11 @@ using System.Reflection;
 using Ninject;
 using Ninject.Extensions.Conventions;
 using Ninject.Extensions.Factory;
+using Ninject.Extensions.Interception.Infrastructure.Language;
 using Ninject.Modules;
 
 using SchoolSystem.Cli.Configuration;
+using SchoolSystem.Cli.Interceptors;
 using SchoolSystem.Framework.Core;
 using SchoolSystem.Framework.Core.Commands;
 using SchoolSystem.Framework.Core.Commands.Contracts;
@@ -44,14 +46,17 @@ namespace SchoolSystem.Cli
             Bind<IWriter>().To<ConsoleWriterProvider>().InSingletonScope();
             Bind<IParser>().To<CommandParserProvider>().InSingletonScope();
 
-            Bind<IStudentFactory>().ToFactory().InSingletonScope();
+            var studentFactoryBinding = Bind<IStudentFactory>().ToFactory().InSingletonScope();
+            var markFactoryBinding = Bind<IMarkFactory>().ToFactory().InSingletonScope();
+            var commandFactoryBinding =Bind<ICommandFactory>().ToFactory().InSingletonScope();
             Bind<ITeacherFactory>().ToFactory().InSingletonScope();
-            Bind<IMarkFactory>().ToFactory().InSingletonScope();
-            Bind<ICommandFactory>().ToFactory().InSingletonScope();
 
             IConfigurationProvider configurationProvider = Kernel.Get<IConfigurationProvider>();
             if (configurationProvider.IsTestEnvironment)
             {
+                studentFactoryBinding.Intercept().With<StopwatchInterceptor>();
+                markFactoryBinding.Intercept().With<StopwatchInterceptor>();
+                commandFactoryBinding.Intercept().With<StopwatchInterceptor>();
             }
 
             Bind(typeof(IAddStudent), typeof(IAddTeacher), typeof(IRemoveStudent), typeof(IRemoveTeacher), typeof(IGetStudent), typeof(IGetTeacher), typeof(IGetStudentAndTeacher))
