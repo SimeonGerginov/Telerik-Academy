@@ -1,9 +1,6 @@
 ﻿using ProjectManager.ConsoleClient.Configs;
 using ProjectManager.Framework.Core;
-using ProjectManager.Framework.Core.Commands.Factories;
 using ProjectManager.Framework.Core.Common.Providers;
-using ProjectManager.Framework.Data;
-using ProjectManager.Framework.Data.Factories;
 using ProjectManager.Framework.Services;
 
 namespace ProjectManager.ConsoleClient

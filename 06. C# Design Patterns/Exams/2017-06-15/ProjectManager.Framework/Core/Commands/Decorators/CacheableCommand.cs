@@ -1,32 +1,54 @@
-﻿using ProjectManager.Framework.Core.Commands.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using Bytes2you.Validation;
+
+using ProjectManager.Framework.Core.Commands.Contracts;
+using ProjectManager.Framework.Services;
 
 namespace ProjectManager.Framework.Core.Commands.Decorators
 {
     public class CacheableCommand : ICommand
     {
         private readonly ICommand command;
+        private readonly ICachingService cachingService;
 
-        public CacheableCommand(ICommand command)
+        public CacheableCommand(ICommand command, ICachingService cachingService)
         {
+            Guard.WhenArgument(command, "Command").IsNull().Throw();
+            Guard.WhenArgument(cachingService, "CachingService").IsNull().Throw();
+
             this.command = command;
+            this.cachingService = cachingService;
         }
 
         public int ParameterCount
         {
             get
             {
-                throw new NotImplementedException();
+                return this.command.ParameterCount;
             }
         }
 
         public string Execute(IList<string> parameters)
         {
-            throw new NotImplementedException();
+            Guard.WhenArgument(parameters, "Parameters").IsNull().Throw();
+
+            string className = this.command.GetType().Name;
+            string methodName = "Execute";
+            string result = null;
+
+            if (this.cachingService.IsExpired)
+            {
+                result = this.command.Execute(parameters);
+
+                this.cachingService.ResetCache();
+                this.cachingService.AddCacheValue(className, methodName, result);
+            }
+            else
+            {
+                result = (string)this.cachingService.GetCacheValue(className, methodName);
+            }
+
+            return result;
         }
     }
 }

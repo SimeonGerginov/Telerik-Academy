@@ -4,6 +4,7 @@ using ProjectManager.Framework.Core.Commands.Abstracts;
 using ProjectManager.Framework.Core.Commands.Contracts;
 using ProjectManager.Framework.Core.Common.Exceptions;
 using ProjectManager.Framework.Data;
+using ProjectManager.Framework.Data.Factories;
 
 namespace ProjectManager.Framework.Core.Commands.Listing
 {
@@ -11,7 +12,8 @@ namespace ProjectManager.Framework.Core.Commands.Listing
     {
         private const int ParameterCountConstant = 1;
 
-        public ListProjectDetailsCommand()
+        public ListProjectDetailsCommand(IModelsFactory factory, IDatabase database)
+            : base(database)
         {
         }
 
@@ -25,8 +27,6 @@ namespace ProjectManager.Framework.Core.Commands.Listing
 
         public override string Execute(IList<string> parameters)
         {
-            this.ValidateParameters(parameters);
-
             var projectId = int.Parse(parameters[0]);
             if (this.Database.Projects.Count <= projectId || projectId < 0)
             {

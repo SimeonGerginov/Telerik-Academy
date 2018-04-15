@@ -13,8 +13,8 @@ namespace ProjectManager.Framework.Core.Commands.Creational
     {
         private const int ParameterCountConstant = 3;
 
-        public CreateUserCommand(ModelsFactory factory) 
-            : base(factory)
+        public CreateUserCommand(IModelsFactory factory, IDatabase database) 
+            : base(factory, database)
         {
         }
 
@@ -28,8 +28,6 @@ namespace ProjectManager.Framework.Core.Commands.Creational
 
         public override string Execute(IList<string> parameters)
         {
-            this.ValidateParameters(parameters);
-
             var projectId = int.Parse(parameters[0]);
             var project = this.Database.Projects[projectId];
 

@@ -13,8 +13,8 @@ namespace ProjectManager.Framework.Core.Commands.Creational
     {
         private const int ParameterCountConstant = 4;
 
-        public CreateProjectCommand(ModelsFactory factory)
-            : base(factory)
+        public CreateProjectCommand(IModelsFactory factory, IDatabase database)
+            : base(factory, database)
         {
         }
 
@@ -28,8 +28,6 @@ namespace ProjectManager.Framework.Core.Commands.Creational
 
         public override string Execute(IList<string> parameters)
         {
-            this.ValidateParameters(parameters);
-
             if (this.Database.Projects.Any(x => x.Name == parameters[0]))
             {
                 throw new UserValidationException("A project with that name already exists!");

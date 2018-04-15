@@ -1,6 +1,6 @@
 ﻿using System;
-
 using Bytes2you.Validation;
+
 using ProjectManager.Framework.Core.Common.Contracts;
 using ProjectManager.Framework.Core.Common.Exceptions;
 using ProjectManager.Framework.Data.Models;
@@ -8,7 +8,7 @@ using ProjectManager.Framework.Data.Models.States;
 
 namespace ProjectManager.Framework.Data.Factories
 {
-    public class ModelsFactory
+    public class ModelsFactory : IModelsFactory
     {
         private readonly IValidator validator;
 

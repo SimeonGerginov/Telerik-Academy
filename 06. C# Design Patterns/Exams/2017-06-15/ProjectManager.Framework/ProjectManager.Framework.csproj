@@ -55,13 +55,14 @@
     <Compile Include="Core\Commands\Creational\CreateUserCommand.cs" />
     <Compile Include="Core\Commands\Decorators\CacheableCommand.cs" />
     <Compile Include="Core\Commands\Decorators\ValidatableCommand.cs" />
-    <Compile Include="Core\Commands\Factories\CommandsFactory.cs" />
     <Compile Include="Core\Commands\Listing\ListProjectDetailsCommand.cs" />
     <Compile Include="Core\Commands\Listing\ListProjectsCommand.cs" />
     <Compile Include="Core\Common\Contracts\IReader.cs" />
     <Compile Include="Core\Common\Contracts\IValidator.cs" />
     <Compile Include="Core\Common\Contracts\IWriter.cs" />
     <Compile Include="Core\Common\Exceptions\UserValidationException.cs" />
+    <Compile Include="Core\Common\Providers\ConsoleReader.cs" />
+    <Compile Include="Core\Common\Providers\ConsoleWriter.cs" />
     <Compile Include="Core\Common\Providers\Validator.cs" />
     <Compile Include="Core\Common\Contracts\IEngine.cs" />
     <Compile Include="Core\Common\Contracts\ILogger.cs" />

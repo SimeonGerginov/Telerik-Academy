@@ -6,7 +6,7 @@ using ProjectManager.Framework.Core.Common.Contracts;
 
 namespace ProjectManager.Framework.Core.Common.Providers
 {
-    public class FileLogger
+    public class FileLogger : ILogger
     {
         private string filePath;
 

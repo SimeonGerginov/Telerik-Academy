@@ -1,33 +1,18 @@
 ﻿using System.Linq;
 
-using Bytes2you.Validation;
+using ProjectManager.Framework.Core.Commands.Contracts;
 using ProjectManager.Framework.Core.Common.Contracts;
 using ProjectManager.Framework.Core.Common.Exceptions;
-using ProjectManager.Framework.Core.Commands.Factories;
 
 namespace ProjectManager.Framework.Core.Common.Providers
 {
-    public class CommandProcessor
+    public class CommandProcessor : IProcessor
     {
-        private CommandsFactory commandFactory;
+        private ICommandsFactory commandFactory;
 
-        public CommandProcessor(CommandsFactory commandFactory)
+        public CommandProcessor(ICommandsFactory commandFactory)
         {
             this.commandFactory = commandFactory;
-        }
-
-        public CommandsFactory CommandFactory
-        {
-            get
-            {
-                return this.commandFactory;
-            }
-
-            set
-            {
-                Guard.WhenArgument(value, "CommandProcessor CommandsFactory").IsNull().Throw();
-                this.commandFactory = value;
-            }
         }
 
         public string ProcessCommand(string commandLine)
@@ -43,7 +28,7 @@ namespace ProjectManager.Framework.Core.Common.Providers
                 .Skip(1)
                 .ToList();
 
-            var command = this.CommandFactory.GetCommandFromString(commandName);
+            var command = this.commandFactory.GetCommandFromString(commandName);
 
             return command.Execute(commandParameters);
         }
