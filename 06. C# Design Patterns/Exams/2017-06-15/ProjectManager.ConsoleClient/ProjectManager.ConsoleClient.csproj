@@ -70,6 +70,8 @@
     <Compile Include="Configs\ConfigurationProvider.cs" />
     <Compile Include="Configs\IConfigurationProvider.cs" />
     <Compile Include="Configs\NinjectManagerModule.cs" />
+    <Compile Include="Interceptors\InfoInterceptor.cs" />
+    <Compile Include="Interceptors\LogErrorInterceptor.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -77,9 +79,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Interceptors\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\ProjectManager.Framework\ProjectManager.Framework.csproj">
       <Project>{6d548169-75e7-495f-bc01-0c8cf6f6be04}</Project>

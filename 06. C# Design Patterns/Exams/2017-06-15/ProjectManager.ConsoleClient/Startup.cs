@@ -1,7 +1,7 @@
-﻿using ProjectManager.ConsoleClient.Configs;
-using ProjectManager.Framework.Core;
-using ProjectManager.Framework.Core.Common.Providers;
-using ProjectManager.Framework.Services;
+﻿using Ninject;
+
+using ProjectManager.Configs;
+using ProjectManager.Framework.Core.Common.Contracts;
 
 namespace ProjectManager.ConsoleClient
 {
@@ -9,14 +9,8 @@ namespace ProjectManager.ConsoleClient
     {
         public static void Main()
         {
-            var configProvider = new ConfigurationProvider();
-
-            // This is an example of how to create the caching service. Think about how and where to use it in the project.
-            var cacheService = new CachingService(configProvider.CacheDurationInSeconds);
-
-            var fileLogger = new FileLogger(configProvider.LogFilePath);
-
-            var engine = new Engine(fileLogger);
+            var kernel = new StandardKernel(new NinjectManagerModule());
+            var engine = kernel.Get<IEngine>();
 
             engine.Start();
         }

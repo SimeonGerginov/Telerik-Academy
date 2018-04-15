@@ -1,0 +1,7 @@
+ERROR: No command has been provided!
+ERROR: No such command!
+ERROR: No command has been provided!
+ERROR: No such command!
+ERROR: No such command!
+ERROR: No such command!
+ERROR: No such command!
