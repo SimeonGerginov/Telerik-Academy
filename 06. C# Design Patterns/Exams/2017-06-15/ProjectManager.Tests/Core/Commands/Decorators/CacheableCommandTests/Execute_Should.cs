@@ -40,7 +40,6 @@ namespace ProjectManager.Tests.Core.Commands.Decorators.CacheableCommandTests
                 "2018-05-04",
                 "Active"
             };
-            string className = "ObjectProxy";
             string methodName = "Execute";
             string result = "Result of command execution";
 
@@ -48,7 +47,7 @@ namespace ProjectManager.Tests.Core.Commands.Decorators.CacheableCommandTests
 
             cachingServiceMock.Setup(c => c.IsExpired).Returns(true);
             cachingServiceMock.Setup(c => c.ResetCache());
-            cachingServiceMock.Setup(c => c.AddCacheValue(className, methodName, result));
+            cachingServiceMock.Setup(c => c.AddCacheValue(It.IsAny<string>(), methodName, result));
 
             ICommand cacheableCommand = new CacheableCommand(commandMock.Object, cachingServiceMock.Object);
 
@@ -58,7 +57,7 @@ namespace ProjectManager.Tests.Core.Commands.Decorators.CacheableCommandTests
             // Assert
             commandMock.Verify(c => c.Execute(parameters), Times.Once());
             cachingServiceMock.Verify(c => c.ResetCache(), Times.Once());
-            cachingServiceMock.Verify(c => c.AddCacheValue(className, methodName, result), Times.Once());
+            cachingServiceMock.Verify(c => c.AddCacheValue(It.IsAny<string>(), methodName, result), Times.Once());
         }
 
         [Test]
@@ -75,12 +74,11 @@ namespace ProjectManager.Tests.Core.Commands.Decorators.CacheableCommandTests
                 "2018-05-04",
                 "Active"
             };
-            string className = "ObjectProxy";
             string methodName = "Execute";
             string result = "Result of command execution";
             
             cachingServiceMock.Setup(c => c.IsExpired).Returns(false);
-            cachingServiceMock.Setup(c => c.GetCacheValue(className, methodName)).Returns(result);
+            cachingServiceMock.Setup(c => c.GetCacheValue(It.IsAny<string>(), methodName)).Returns(result);
 
             ICommand cacheableCommand = new CacheableCommand(commandMock.Object, cachingServiceMock.Object);
 
@@ -88,7 +86,7 @@ namespace ProjectManager.Tests.Core.Commands.Decorators.CacheableCommandTests
             cacheableCommand.Execute(parameters);
 
             // Assert
-            cachingServiceMock.Verify(c => c.GetCacheValue(className, methodName), Times.Once());
+            cachingServiceMock.Verify(c => c.GetCacheValue(It.IsAny<string>(), methodName), Times.Once());
         }
 
         [Test]
@@ -105,7 +103,6 @@ namespace ProjectManager.Tests.Core.Commands.Decorators.CacheableCommandTests
                 "2018-05-04",
                 "Active"
             };
-            string className = "ObjectProxy";
             string methodName = "Execute";
             string result = "Result of command execution";
 
@@ -113,7 +110,7 @@ namespace ProjectManager.Tests.Core.Commands.Decorators.CacheableCommandTests
 
             cachingServiceMock.Setup(c => c.IsExpired).Returns(true);
             cachingServiceMock.Setup(c => c.ResetCache());
-            cachingServiceMock.Setup(c => c.AddCacheValue(className, methodName, result));
+            cachingServiceMock.Setup(c => c.AddCacheValue(It.IsAny<string>(), methodName, result));
 
             ICommand cacheableCommand = new CacheableCommand(commandMock.Object, cachingServiceMock.Object);
 
@@ -138,12 +135,11 @@ namespace ProjectManager.Tests.Core.Commands.Decorators.CacheableCommandTests
                 "2018-05-04",
                 "Active"
             };
-            string className = "ObjectProxy";
             string methodName = "Execute";
             string result = "Result of command execution";
 
             cachingServiceMock.Setup(c => c.IsExpired).Returns(false);
-            cachingServiceMock.Setup(c => c.GetCacheValue(className, methodName)).Returns(result);
+            cachingServiceMock.Setup(c => c.GetCacheValue(It.IsAny<string>(), methodName)).Returns(result);
 
             ICommand cacheableCommand = new CacheableCommand(commandMock.Object, cachingServiceMock.Object);
 

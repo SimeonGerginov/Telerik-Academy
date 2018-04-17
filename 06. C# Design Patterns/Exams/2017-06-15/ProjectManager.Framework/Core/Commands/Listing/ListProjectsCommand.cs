@@ -29,7 +29,7 @@ namespace ProjectManager.Framework.Core.Commands.Listing
         {
             var projects = this.Database.Projects;
 
-            if(projects.Count == 0)
+            if (projects.Count == 0)
             {
                 return "No projects in the database!";
             }

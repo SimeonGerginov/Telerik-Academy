@@ -16,17 +16,17 @@ namespace ProjectManager.Framework.Core.Commands.Abstracts
             this.database = database;
         }
 
+        public abstract int ParameterCount
+        {
+            get;
+        }
+
         protected IDatabase Database
         {
             get
             {
                 return this.database;
             }
-        }
-
-        public abstract int ParameterCount
-        {
-            get;
         }
 
         public abstract string Execute(IList<string> parameters);

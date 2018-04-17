@@ -21,12 +21,6 @@ namespace ProjectManager.Framework.Services
             this.cache = new Dictionary<string, object>();
         }
 
-        public void ResetCache()
-        {
-            this.cache = new Dictionary<string, object>();
-            this.timeExpiring = DateTimeProvider.Current.UtcNow + this.duration;
-        }
-
         public bool IsExpired
         {
             get
@@ -56,6 +50,12 @@ namespace ProjectManager.Framework.Services
             {
                 return this.timeExpiring;
             }
+        }
+
+        public void ResetCache()
+        {
+            this.cache = new Dictionary<string, object>();
+            this.timeExpiring = DateTimeProvider.Current.UtcNow + this.duration;
         }
 
         public object GetCacheValue(string className, string methodName)

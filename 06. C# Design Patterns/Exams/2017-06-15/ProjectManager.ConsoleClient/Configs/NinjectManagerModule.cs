@@ -102,7 +102,6 @@ namespace ProjectManager.Configs
                 {
                     throw new UserValidationException("No such command!");
                 }
-
             }).NamedLikeFactoryMethod((ICommandsFactory commandsFactory) => commandsFactory.GetCommandFromString(null));
         }
     }
