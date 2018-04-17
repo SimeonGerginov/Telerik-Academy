@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 
 using Bytes2you.Validation;
+using ProjectManager.Common;
 
 namespace ProjectManager.Framework.Services
 {
@@ -9,7 +10,6 @@ namespace ProjectManager.Framework.Services
     {
         private readonly TimeSpan duration;
         private DateTime timeExpiring;
-
         private IDictionary<string, object> cache;
 
         public CachingService(TimeSpan duration)
@@ -17,21 +17,21 @@ namespace ProjectManager.Framework.Services
             Guard.WhenArgument(duration, "duration").IsLessThan(TimeSpan.Zero).Throw();
 
             this.duration = duration;
-            this.timeExpiring = DateTime.Now;
+            this.timeExpiring = DateTimeProvider.Current.UtcNow;
             this.cache = new Dictionary<string, object>();
         }
 
         public void ResetCache()
         {
             this.cache = new Dictionary<string, object>();
-            this.timeExpiring = DateTime.Now + this.duration;
+            this.timeExpiring = DateTimeProvider.Current.UtcNow + this.duration;
         }
 
         public bool IsExpired
         {
             get
             {
-                if (this.timeExpiring < DateTime.Now)
+                if (this.timeExpiring < DateTimeProvider.Current.UtcNow)
                 {
                     return true;
                 }
@@ -39,6 +39,22 @@ namespace ProjectManager.Framework.Services
                 {
                     return false;
                 }
+            }
+        }
+
+        protected IDictionary<string, object> Cache
+        {
+            get
+            {
+                return this.cache;
+            }
+        }
+
+        protected DateTime TimeExpiring
+        {
+            get
+            {
+                return this.timeExpiring;
             }
         }
 

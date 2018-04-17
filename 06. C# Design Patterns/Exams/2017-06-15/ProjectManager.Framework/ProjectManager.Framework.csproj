@@ -98,6 +98,11 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\ProjectManager.Common\ProjectManager.Common.csproj">
+      <Project>{bbd7ac82-83dd-46f2-a711-4e77b1274cf4}</Project>
+      <Name>ProjectManager.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
