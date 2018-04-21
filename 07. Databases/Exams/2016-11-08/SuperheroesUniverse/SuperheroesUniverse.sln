@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperheroesUniverse.Common"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperheroesUniverse.Data", "SuperheroesUniverse.Data\SuperheroesUniverse.Data.csproj", "{ABA7BCDB-C6C7-4751-85D1-279627719AFD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperheroesUniverse.Client", "SuperheroesUniverse.Client\SuperheroesUniverse.Client.csproj", "{A0A6E62B-5C18-489D-83C6-3B4019724E30}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{ABA7BCDB-C6C7-4751-85D1-279627719AFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABA7BCDB-C6C7-4751-85D1-279627719AFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABA7BCDB-C6C7-4751-85D1-279627719AFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0A6E62B-5C18-489D-83C6-3B4019724E30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0A6E62B-5C18-489D-83C6-3B4019724E30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0A6E62B-5C18-489D-83C6-3B4019724E30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0A6E62B-5C18-489D-83C6-3B4019724E30}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
