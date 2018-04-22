@@ -80,40 +80,13 @@ namespace SuperheroesUniverse.Client.Importers
                 superheroToAdd.Alignment = heroAlignment;
 
                 // add planet
-                string heroPlanet = hero.City.Planet;
-                IEnumerable<Planet> currentPlanets = this.planets.GetAll();
-
-                Planet planetToAdd = currentPlanets.Where(p => p.Name == heroPlanet).FirstOrDefault();
-
-                if (planetToAdd == null)
-                {
-                    planetToAdd = new Planet() { Name = heroPlanet };
-                    this.planets.Add(planetToAdd);
-                }
+                Planet planetToAdd = this.AddPlanetToDbIfItIsANewEntry(hero);
 
                 // add country
-                string heroCountry = hero.City.Country;
-                IEnumerable<Country> currentCountries = this.countries.GetAll();
-
-                Country countryToAdd = currentCountries.Where(c => c.Name == heroCountry).FirstOrDefault();
-
-                if (countryToAdd == null)
-                {
-                    countryToAdd = new Country() { Name = heroCountry, PlanetId = planetToAdd.Id };
-                    this.countries.Add(countryToAdd);
-                }
+                Country countryToAdd = this.AddCountryToDbIfItIsANewEntry(hero, planetToAdd);
 
                 // add city
-                string heroCity = hero.City.Name;
-                IEnumerable<City> currentCities = this.cities.GetAll();
-
-                City cityToAdd = currentCities.Where(c => c.Name == heroCity).FirstOrDefault();
-
-                if (cityToAdd == null)
-                {
-                    cityToAdd = new City() { Name = heroCity, CountryId = countryToAdd.Id };
-                }
-
+                City cityToAdd = this.GetCityOfSuperhero(hero, countryToAdd);
                 superheroToAdd.City = cityToAdd;
 
                 // add story
@@ -121,44 +94,108 @@ namespace SuperheroesUniverse.Client.Importers
                 superheroToAdd.Story = heroStory;
 
                 // add powers
-                foreach (var power in hero.Powers)
-                {
-                    IEnumerable<Power> currentPowers = this.powers.GetAll();
-                    Power powerToAdd = currentPowers.Where(p => p.Name == power).FirstOrDefault();
-
-                    if (powerToAdd == null)
-                    {
-                        powerToAdd = new Power()
-                        {
-                            Name = power
-                        };
-                    }
-
-                    superheroToAdd.Powers.Add(powerToAdd);
-                }
+                this.AddPowersToSuperhero(hero.Powers, superheroToAdd);
 
                 // add fractions
-                foreach (var fraction in hero.Fractions)
-                {
-                    IEnumerable<Fraction> currentFractions = this.fractions.GetAll();
-                    Fraction fractionToAdd = currentFractions.Where(f => f.Name == fraction).FirstOrDefault();
-
-                    if (fractionToAdd == null)
-                    {
-                        fractionToAdd = new Fraction()
-                        {
-                            Name = fraction,
-                            Alignment = heroAlignment
-                        };
-
-                        fractionToAdd.Planets.Add(planetToAdd);
-                    }
-
-                    superheroToAdd.Fractions.Add(fractionToAdd);
-                }
+                this.AddFractionsToSuperhero(hero.Fractions, heroAlignment, planetToAdd, superheroToAdd);
 
                 this.superheroes.Add(superheroToAdd);
                 this.unitOfWork.SaveChanges();
+            }
+        }
+
+        private Planet AddPlanetToDbIfItIsANewEntry(SuperheroJsonModel hero)
+        {
+            string heroPlanet = hero.City.Planet;
+            Planet planetToAdd = this.planets.GetAllFiltered(p => p.Name == heroPlanet).FirstOrDefault();
+
+            if (planetToAdd == null)
+            {
+                planetToAdd = new Planet() { Name = heroPlanet };
+                this.planets.Add(planetToAdd);
+                this.unitOfWork.SaveChanges();
+
+                return this.planets.GetAllFiltered(p => p.Name == heroPlanet).FirstOrDefault();
+            }
+            else
+            {
+                return planetToAdd;
+            }
+        }
+
+        private Country AddCountryToDbIfItIsANewEntry(SuperheroJsonModel hero, Planet planetToAdd)
+        {
+            string heroCountry = hero.City.Country;
+            Country countryToAdd = this.countries.GetAllFiltered(c => c.Name == heroCountry).FirstOrDefault();
+
+            if (countryToAdd == null)
+            {
+                countryToAdd = new Country() { Name = heroCountry, PlanetId = planetToAdd.Id };
+                this.countries.Add(countryToAdd);
+                this.unitOfWork.SaveChanges();
+
+                return this.countries.GetAllFiltered(c => c.Name == heroCountry).FirstOrDefault();
+            }
+            else
+            {
+                return countryToAdd;
+            }
+        }
+
+        private City GetCityOfSuperhero(SuperheroJsonModel hero, Country countryToAdd)
+        {
+            string heroCity = hero.City.Name;
+            City cityToAdd = this.cities.GetAllFiltered(c => c.Name == heroCity).FirstOrDefault();
+
+            if (cityToAdd == null)
+            {
+                cityToAdd = new City() { Name = heroCity, CountryId = countryToAdd.Id };
+
+                return cityToAdd;
+            }
+            else
+            {
+                return cityToAdd;
+            }
+        }
+
+        private void AddPowersToSuperhero(IEnumerable<string> powers, Superhero superheroToAdd)
+        {
+            foreach (var power in powers)
+            {
+                Power powerToAdd = this.powers.GetAllFiltered(p => p.Name == power).FirstOrDefault();
+
+                if (powerToAdd == null)
+                {
+                    powerToAdd = new Power()
+                    {
+                        Name = power
+                    };
+                }
+
+                superheroToAdd.Powers.Add(powerToAdd);
+            }
+        }
+
+        private void AddFractionsToSuperhero(IEnumerable<string> fractions, Alignment heroAlignment, Planet planetToAdd, Superhero superheroToAdd)
+        {
+            foreach (var fraction in fractions)
+            {
+                Fraction fractionToAdd = this.fractions.GetAllFiltered(f => f.Name == fraction).FirstOrDefault();
+
+                if (fractionToAdd == null)
+                {
+                    fractionToAdd = new Fraction()
+                    {
+                        Name = fraction,
+                        Alignment = heroAlignment
+                    };
+
+                    fractionToAdd.Planets.Add(planetToAdd);
+                    this.fractions.Add(fractionToAdd);
+                }
+
+                fractionToAdd.Members.Add(superheroToAdd);
             }
         }
     }

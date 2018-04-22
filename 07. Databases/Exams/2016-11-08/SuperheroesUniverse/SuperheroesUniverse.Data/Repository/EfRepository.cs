@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
 
 using SuperheroesUniverse.Data.Repository.Contracts;
 
@@ -33,6 +34,11 @@ namespace SuperheroesUniverse.Data.Repository
         public IEnumerable<T> GetAll()
         {
             return this.dbSet.ToList();
+        }
+
+        public IEnumerable<T> GetAllFiltered(Expression<Func<T, bool>> filterExpression)
+        {
+            return this.dbSet.Where(filterExpression).ToList();
         }
 
         public T GetById(int id)
