@@ -113,9 +113,8 @@ namespace SuperheroesUniverse.Client.Importers
             {
                 planetToAdd = new Planet() { Name = heroPlanet };
                 this.planets.Add(planetToAdd);
-                this.unitOfWork.SaveChanges();
 
-                return this.planets.GetAllFiltered(p => p.Name == heroPlanet).FirstOrDefault();
+                return planetToAdd;
             }
             else
             {
@@ -130,11 +129,10 @@ namespace SuperheroesUniverse.Client.Importers
 
             if (countryToAdd == null)
             {
-                countryToAdd = new Country() { Name = heroCountry, PlanetId = planetToAdd.Id };
+                countryToAdd = new Country() { Name = heroCountry, Planet = planetToAdd };
                 this.countries.Add(countryToAdd);
-                this.unitOfWork.SaveChanges();
 
-                return this.countries.GetAllFiltered(c => c.Name == heroCountry).FirstOrDefault();
+                return countryToAdd;
             }
             else
             {
@@ -149,7 +147,7 @@ namespace SuperheroesUniverse.Client.Importers
 
             if (cityToAdd == null)
             {
-                cityToAdd = new City() { Name = heroCity, CountryId = countryToAdd.Id };
+                cityToAdd = new City() { Name = heroCity, Country = countryToAdd };
 
                 return cityToAdd;
             }
