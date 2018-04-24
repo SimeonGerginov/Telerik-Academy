@@ -52,6 +52,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exporters\Contracts\ISuperheroesUniverseExporter.cs" />
+    <Compile Include="Exporters\SuperheroesUniverseExporter.cs" />
     <Compile Include="Importers\Contracts\ISuperheroesImporter.cs" />
     <Compile Include="Importers\JsonModels\CityJsonModel.cs" />
     <Compile Include="Importers\JsonModels\SuperheroesCollectionJsonModel.cs" />

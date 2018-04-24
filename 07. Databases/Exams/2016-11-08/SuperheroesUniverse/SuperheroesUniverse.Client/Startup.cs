@@ -1,4 +1,5 @@
-﻿using SuperheroesUniverse.Client.Importers;
+﻿using SuperheroesUniverse.Client.Exporters;
+using SuperheroesUniverse.Client.Importers;
 using SuperheroesUniverse.Data;
 
 namespace SuperheroesUniverse.Client
@@ -12,6 +13,10 @@ namespace SuperheroesUniverse.Client
             // importers
             JsonSuperheroesImporter jsonImporter = new JsonSuperheroesImporter(context);
             jsonImporter.LoadSuperheroesData("../../Data/sample-data.json");
+
+            // exporters
+            SuperheroesUniverseExporter xmlExporter = new SuperheroesUniverseExporter(context, "../../heroes.xml");
+            xmlExporter.ExportAllSuperheroes();
         }
     }
 }
