@@ -1,26 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
+using UnitsOfWork.Common;
 using UnitsOfWork.Contracts;
+using UnitsOfWork.Models;
 
-namespace UnitsOfWork
+namespace UnitsOfWork.Core
 {
     public class Engine : IEngine
     {
         private readonly Dictionary<string, Unit> units;
         private readonly SortedSet<Unit> sortedUnits;
-        private readonly StringBuilder stringBuilder;
+        private readonly IWriter writer;
 
-        public Engine()
+        public Engine(IWriter writer)
         {
             this.units = new Dictionary<string, Unit>();
             this.sortedUnits = new SortedSet<Unit>();
-            this.stringBuilder = new StringBuilder();
+            this.writer = writer;
         }
 
-        public string Start()
+        public void Start()
         {
             while (true)
             {
@@ -53,8 +54,6 @@ namespace UnitsOfWork
                         break;
                 }
             }
-
-            return this.stringBuilder.ToString().TrimEnd();
         }
 
         private void AddUnit(string[] commandParameters)
@@ -65,7 +64,7 @@ namespace UnitsOfWork
 
             if (this.units.ContainsKey(name))
             {
-                this.stringBuilder.AppendLine($"FAIL: {name} already exists!");
+                this.writer.AppendLine($"FAIL: {name} already exists!");
             }
             else
             {
@@ -73,7 +72,7 @@ namespace UnitsOfWork
                 this.units[name] = unit;
                 this.sortedUnits.Add(unit);
 
-                this.stringBuilder.AppendLine($"SUCCESS: {name} added!");
+                this.writer.AppendLine($"SUCCESS: {name} added!");
             }
         }
 
@@ -83,14 +82,14 @@ namespace UnitsOfWork
             
             if (!this.units.ContainsKey(name))
             {
-                this.stringBuilder.AppendLine($"FAIL: {name} could not be found!");
+                this.writer.AppendLine($"FAIL: {name} could not be found!");
             }
             else
             {
                 this.sortedUnits.Remove(this.units[name]);
                 this.units.Remove(name);
 
-                this.stringBuilder.AppendLine($"SUCCESS: {name} removed!");
+                this.writer.AppendLine($"SUCCESS: {name} removed!");
             }
         }
 
@@ -102,7 +101,7 @@ namespace UnitsOfWork
                 .Where(u => u.Type == type)
                 .Take(Constants.UnitsToTake);
 
-            this.stringBuilder.AppendLine("RESULT: " + string.Join(", ", foundUnits));
+            this.writer.AppendLine("RESULT: " + string.Join(", ", foundUnits));
         }
 
         private void TopUnits(string[] commandParameters)
@@ -112,7 +111,7 @@ namespace UnitsOfWork
             var topUnits = this.sortedUnits
                 .Take(numberOfUnitsToTake);
 
-            this.stringBuilder.AppendLine("RESULT: " + string.Join(", ", topUnits));
+            this.writer.AppendLine("RESULT: " + string.Join(", ", topUnits));
         }
     }
 }

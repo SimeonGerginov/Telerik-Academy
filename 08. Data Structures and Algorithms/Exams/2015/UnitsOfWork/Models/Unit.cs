@@ -1,6 +1,7 @@
 ﻿using System;
+using UnitsOfWork.Common;
 
-namespace UnitsOfWork
+namespace UnitsOfWork.Models
 {
     public class Unit : IComparable<Unit>
     {
@@ -68,18 +69,6 @@ namespace UnitsOfWork
             }
 
             return other.Attack.CompareTo(this.Attack);
-        }
-
-        public override int GetHashCode()
-        {
-            return this.Name.GetHashCode();
-        }
-
-        public override bool Equals(object obj)
-        {
-            var other = obj as Unit;
-
-            return this.Name == other.Name;
         }
 
         public override string ToString()

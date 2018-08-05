@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Text;
+
+using UnitsOfWork.Common;
+using UnitsOfWork.Core;
 
 namespace UnitsOfWork
 {
@@ -6,8 +10,13 @@ namespace UnitsOfWork
     {
         public static void Main()
         {
-            var engine = new Engine();
-            var result = engine.Start();
+            var stringBuilder = new StringBuilder();
+            var stringWriter = new StringWriter(stringBuilder);
+
+            var engine = new Engine(stringWriter);
+            engine.Start();
+
+            var result = stringBuilder.ToString().TrimEnd();
 
             Console.WriteLine(result);
         }

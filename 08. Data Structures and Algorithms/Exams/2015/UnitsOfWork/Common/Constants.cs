@@ -1,4 +1,4 @@
-﻿namespace UnitsOfWork
+﻿namespace UnitsOfWork.Common
 {
     public static class Constants
     {
