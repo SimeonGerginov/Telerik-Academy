@@ -2,6 +2,6 @@
 {
     public interface IEngine
     {
-        void Start();
+        string Start();
     }
 }

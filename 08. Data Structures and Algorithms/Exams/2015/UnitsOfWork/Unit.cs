@@ -2,7 +2,7 @@
 
 namespace UnitsOfWork
 {
-    public class Unit
+    public class Unit : IComparable<Unit>
     {
         private string name;
         private string type;
@@ -58,6 +58,28 @@ namespace UnitsOfWork
 
                 this.attack = value;
             }
+        }
+
+        public int CompareTo(Unit other)
+        {
+            if (this.Attack == other.Attack)
+            {
+                return this.Name.CompareTo(other.Name);
+            }
+
+            return other.Attack.CompareTo(this.Attack);
+        }
+
+        public override int GetHashCode()
+        {
+            return this.Name.GetHashCode();
+        }
+
+        public override bool Equals(object obj)
+        {
+            var other = obj as Unit;
+
+            return this.Name == other.Name;
         }
 
         public override string ToString()

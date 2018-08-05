@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 using UnitsOfWork.Contracts;
 
@@ -8,14 +9,18 @@ namespace UnitsOfWork
 {
     public class Engine : IEngine
     {
-        private readonly HashSet<Unit> units;
+        private readonly Dictionary<string, Unit> units;
+        private readonly SortedSet<Unit> sortedUnits;
+        private readonly StringBuilder stringBuilder;
 
         public Engine()
         {
-            this.units = new HashSet<Unit>();
+            this.units = new Dictionary<string, Unit>();
+            this.sortedUnits = new SortedSet<Unit>();
+            this.stringBuilder = new StringBuilder();
         }
 
-        public void Start()
+        public string Start()
         {
             while (true)
             {
@@ -48,6 +53,8 @@ namespace UnitsOfWork
                         break;
                 }
             }
+
+            return this.stringBuilder.ToString().TrimEnd();
         }
 
         private void AddUnit(string[] commandParameters)
@@ -56,33 +63,34 @@ namespace UnitsOfWork
             var type = commandParameters[1];
             var attack = int.Parse(commandParameters[2]);
 
-            var unitExists = this.units.FirstOrDefault(u => u.Name == name);
-
-            if (unitExists != null)
+            if (this.units.ContainsKey(name))
             {
-                Console.WriteLine($"FAIL: {name} already exists!");
+                this.stringBuilder.AppendLine($"FAIL: {name} already exists!");
             }
             else
             {
                 var unit = new Unit(name, type, attack);
-                this.units.Add(unit);
-                Console.WriteLine($"SUCCESS: {name} added!");
+                this.units[name] = unit;
+                this.sortedUnits.Add(unit);
+
+                this.stringBuilder.AppendLine($"SUCCESS: {name} added!");
             }
         }
 
         private void RemoveUnit(string[] commandParameters)
         {
             var name = commandParameters[0];
-            var unit = this.units.FirstOrDefault(u => u.Name == name);
-
-            if (unit == null)
+            
+            if (!this.units.ContainsKey(name))
             {
-                Console.WriteLine($"FAIL: {name} could not be found!");
+                this.stringBuilder.AppendLine($"FAIL: {name} could not be found!");
             }
             else
             {
-                this.units.Remove(unit);
-                Console.WriteLine($"SUCCESS: {name} removed!");
+                this.sortedUnits.Remove(this.units[name]);
+                this.units.Remove(name);
+
+                this.stringBuilder.AppendLine($"SUCCESS: {name} removed!");
             }
         }
 
@@ -90,26 +98,21 @@ namespace UnitsOfWork
         {
             var type = commandParameters[0];
 
-            var foundUnits = this.units
+            var foundUnits = this.sortedUnits
                 .Where(u => u.Type == type)
-                .Take(Constants.UnitsToTake)
-                .OrderByDescending(u => u.Attack)
-                .ThenBy(u => u.Name)
-                .ToList();
+                .Take(Constants.UnitsToTake);
 
-            Console.WriteLine("RESULT: " + string.Join(", ", foundUnits));
+            this.stringBuilder.AppendLine("RESULT: " + string.Join(", ", foundUnits));
         }
 
         private void TopUnits(string[] commandParameters)
         {
             var numberOfUnitsToTake = int.Parse(commandParameters[0]);
 
-            var topUnits = this.units
-                .OrderByDescending(u => u.Attack)
-                .Take(numberOfUnitsToTake)
-                .ToList();
+            var topUnits = this.sortedUnits
+                .Take(numberOfUnitsToTake);
 
-            Console.WriteLine("RESULT: " + string.Join(", ", topUnits));
+            this.stringBuilder.AppendLine("RESULT: " + string.Join(", ", topUnits));
         }
     }
 }
